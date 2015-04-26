@@ -124,12 +124,12 @@ a:hover
   @viewport { width: 400px; }
 }
 @media screen and (min-width: 500px) and (max-width: 700px) {
-  @-ms-viewport { width: 700px; }
-  @viewport { width: 700px; }
+  @-ms-viewport { width: 550px; }
+  @viewport { width: 550px; }
 }
 @media screen and (min-width: 700px) and (max-width: 1100px) {
-  @-ms-viewport { width: 1024px; }
-  @viewport { width: 1024px; }
+  @-ms-viewport { width: 768px; }
+  @viewport { width: 768px; }
 }
 @media screen and (min-width: 1100px) and (max-width: 1366px) {
   @-ms-viewport { width: 1366px; }
