@@ -1,0 +1,213 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://www.alphastudiossoftware.nl/royzolled/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="shortcut icon" href="hedgerolled.ico">
+ 
+<link rel="stylesheet" href="https://dl.dropbox.com/u/7284637/ezhik.me/thatfuckingcat/stylesheet.css" type="text/css"> 
+<title>THAT FUCKING CAT</title>
+	
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]-->
+
+<script src="http://assets.tumblr.com/assets/scripts/tumblelog.js?_v=129874daf82ea8718007ffa601fae0cb"></script>
+<meta http-equiv="x-dns-prefetch-control" content="off"/>
+
+
+</head>
+<body feedly-version="---">
+<center>
+<div>
+	<img src="https://dl.dropbox.com/u/7284637/ezhik.me/thatfuckingcat/thatcat.gif" alt="THAT FUCKING CAT" />
+		<object width="1" height="1"> 
+	<param name="movie" value="https://dl.dropbox.com/u/7284637/ezhik.me/thatfuckingcat/song.swf"> 
+	<embed src="https://dl.dropbox.com/u/7284637/ezhik.me/thatfuckingcat/song.swf" width="1" height="1"> 
+	</object>
+<form name="TimerForm"><p>You have spent <span id="timewasted">21 seconds</span> of your life watching THAT FUCKING CAT<br><span id="commentary">Might as well just enjoy the song.<br></span>Credit to <a href="http://chickenonaraft.com/">Mister Royzo</a> and <a href="http://silverblog.ru/hedgerolled">Funnycat</a>. The song is by <a href="http://www.alphastudiossoftware.nl/royzolled/">Duck Sause</a></p></form>
+
+<script>
+<!--
+var milisec=0
+var seconds=0
+var time = 0;
+document.TimerForm.TimerInput='0'
+function FormatTime() {
+	var responce = "";
+	var hours = 0;
+	var mins = 0;
+	var secs = time;
+
+	while (secs >= 60) {
+		secs -= 60;
+		mins += 1;
+	}
+
+	while (mins >= 60) {
+		mins -= 60;
+		hours += 1;
+	}
+
+	if (secs == 0) {
+		secs = "";
+	} else if (secs == 1) {
+		secs += " second";
+	} else if (secs > 1) {
+		secs += " seconds";
+	}
+
+	if (mins == 0) {
+		mins = "";
+	} else if (mins == 1) {
+		mins += " minute";
+	} else if (mins > 1) {
+		mins += " minutes";
+	}
+
+	if (hours == 0) {
+		hours = "";
+	} else if (hours == 1) {
+		hours += " hour";
+	} else if (hours > 1) {
+		hours += " hours";
+	}
+
+	if (hours != "") {
+		responce += hours + " ";
+	}
+	
+	if (mins != "") {
+		responce += mins + " ";
+	}
+	
+	if (secs != "") {
+		responce += secs;
+	}
+	
+	return responce;
+}
+function display(){
+time+=1;
+if (milisec>=9){
+milisec=0
+seconds+=1
+}
+else
+milisec+=1
+var out = FormatTime();//seconds+"."+milisec;
+//document.timewasted.value=seconds+"."+milisec	
+var com;
+var monkeyMode = false;
+if (time<10)
+	com = "";
+else if (time<20)
+	com = "";
+else if (time<30)
+	com = "OOOooOOooOOOO o, OOoOOOooOOooo";
+else if (time<50)
+	com = "THAT FUCKING CAT";
+else if (time<80)
+	com = "Wow. You must really like the song.";
+else if (time<100)
+	com = "Cat squared";
+else if (time<120)
+	com = "NYAN AIN'T GOT SHIT ON THAT FUCKING CAT";
+else if (time<140)
+	com = "Tom > Jerry";
+else if (time<160)
+	com = "IM IN UR CAPITOONS, MISPEELIN SHEET";
+else if (time<200)
+	com = "Nyan nyan nyan nyan";
+else if (time<250)
+	com = "Dedicated to Funnycat";
+else if (time<300)
+	com = "You should probably post about this on Facepunch.";
+else if (time<400)
+	com = "Rainbows are diarrhea from a poptart";
+else if (time<430)
+	com = "Skittles aren't so tasty after you found out the truth.";
+else if (time<500)
+	com = "Every time you minimize, a double rainbow never happens.";
+else if (time<600)
+	com = "Coming soon: Unicorn DLC";
+else if (time<700)
+	com = "Gonna run out of witty texts some time.";
+else if (time<800)
+	com = "You spent 13 minutes of your life enjoying that fucking cat.";
+else if (time<900)
+	com = "I'm proud of you.";
+else if (time<1200)
+	com = "Are you waiting for an achievement or something?";
+else if (time<1500)
+	com = "You wish.";
+else if (time<6000)
+	com = "You're still here?";
+else if (time<9000)
+	com = "Don't you have anything better to do?";	
+else if (time<15000)
+	com = "I guess that's a no.";
+else if (time<60000)
+	com = "Now if only you actually looked at this page this whole time.";
+else if (time<90000)
+	com = "You could use your computer's power for something like SETI@Home, but instead you use it to watch that fucking cat.";
+else if (time<99000)
+	com = "Be right back, hiring more monkeys...";
+else if (time<100000)
+{
+	com = monkey();
+	monkeyMode = true;
+}
+com += "<br />";
+document.getElementById("timewasted").innerHTML = out;
+document.getElementById("commentary").innerHTML = com;
+setTimeout("display()",1000)
+}
+function monkey()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?/!@#$%^&*()";
+
+	var r = Math.random()*100;
+	if (r<=1)
+		text = "If music be the food of love, play on, Give me excess of it; that surfeiting, The appetite may sicken, and so die.";
+	else if (r<=2)
+		text = "Et tu, Brute?";
+	else if (r<=3)
+		text = "Cowards die many times before their deaths, The valiant never taste of death but once.";
+	else if (r<=4)
+		text = "So wise so young, they say do never live long.";
+	else if (r<=5)
+		text = "Love looks not with the eyes but with the mind.";
+	else
+	{
+		for( var i=0; i < 10+Math.random()*100; i++ )
+			text += possible.charAt(Math.floor(Math.random() * possible.length));
+	}
+
+    return text;
+}
+display()
+//-->
+</script>
+
+</div>
+</center>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62280982-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
