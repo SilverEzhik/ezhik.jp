@@ -115,3 +115,25 @@ a:hover
     font-weight:lighter;
 }
 
+@media screen and (max-width: 399px) {
+  @-ms-viewport { width: 350px; height:}
+  @viewport { width: 350px; }
+}
+@media screen and (min-width: 399px) and (max-width: 500px) {
+  @-ms-viewport { width: 400px; }
+  @viewport { width: 400px; }
+}
+@media screen and (min-width: 500px) and (max-width: 700px) {
+  @-ms-viewport { width: 700px; }
+  @viewport { width: 700px; }
+}
+@media screen and (min-width: 700px) and (max-width: 1100px) {
+  @-ms-viewport { width: 1024px; }
+  @viewport { width: 1024px; }
+}
+@media screen and (min-width: 1100px) and (max-width: 1366px) {
+  @-ms-viewport { width: 1366px; }
+  @viewport { width: 1366px; }
+}
+@media screen and (min-width: 1366px) {
+}
