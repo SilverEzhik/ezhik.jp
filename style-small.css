@@ -19,7 +19,20 @@ body
 .ez-buttoncontainer ul li
 {
 	display: inline;
-	line-height: 60px;
+	line-height: 40px;
+	margin: 5px;
+	
+}
+.ez-logo
+{
+	height: 30px;
+	width: 30px;
+	background-size: 30px;
+}
+.ez-buttoncontainer a
+{
+	font-size: 150%;
+	line-height: 30px;
 }
 .ez-contentcontainer
 {	
