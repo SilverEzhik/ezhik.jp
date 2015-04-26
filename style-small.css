@@ -1,0 +1,30 @@
+body
+{
+	text-align: center;
+	min-height: 320px;
+}
+.ez-sidebar
+{
+	bottom: 0;
+	width: 100%;
+	position: fixed;
+	height: 60px;
+}
+.ez-buttoncontainer:
+{
+	width: 100%;
+  	min-width: 100%;
+  	max-width: 100%;
+}
+.ez-buttoncontainer ul li
+{
+	display: inline;
+	line-height: 60px;
+}
+.ez-contentcontainer
+{	
+	text-align: left;
+	display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
