@@ -36,6 +36,12 @@ body
 	font-size: 150%;
 	line-height: 30px;
 }
+
+#sociallinks:after 
+{ 
+    content: "bottom.";
+}
+
 .ez-contentcontainer
 {	
 	text-align: left;
