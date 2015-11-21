@@ -1,4 +1,4 @@
-iframe {display:none !important;}
+
 
 html {height:100%;}
 
@@ -10,6 +10,9 @@ body
     margin: 0;
     padding: 0;
     display: table;
+
+    text-align: center;
+    position:relative;
 }
 
 body
@@ -25,6 +28,7 @@ background-size: cover;
     vertical-align: middle;
     height: 100%;
     overflow: auto;
+    text-align: left;
 
 }
 .ez-buttoncontainer
@@ -71,6 +75,7 @@ background-size: cover;
     padding-right: 7px;
 
     line-height: 50px;
+
 }
 .ez-logo
 {
@@ -90,6 +95,13 @@ background-size: cover;
     color: black;
     background-color: white;
 }
+.ez-logo-a
+{
+    padding:0;
+    margin:0;
+    padding-bottom: 31px;
+    line-height: normal;
+}
 
 a
 {
@@ -99,6 +111,13 @@ a
     padding: 2px;
     padding-right: 2px;
     margin-bottom: 3px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #212121;
+    text-shadow: none;
+
+    line-height: 2;
 }
 a:hover
 {
@@ -106,10 +125,7 @@ a:hover
     background-color: white;
 }
 
-#stufflinks
-{
-    line-height: 2;
-}
+
 #stufflinks a
 {
     margin-right: 6px;
@@ -125,15 +141,54 @@ a:hover
     content: "left.";
 }
 
-.ez-contentcontainer
+#frontpage
+{   
+    text-align: left;
+}
+
+#frontpage .ez-contentcontainer
 {
     padding-left: 250px;
+    text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000;
+}
+
+.ez-contentcontainer
+{
+    padding: 10px;
+    display: inline-block;
+
+    text-align: left;
+
     word-wrap: break-word;
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
     font-stretch:condensed;
     font-weight:lighter;
-    text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000;
+    text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000, 0px 0px 15px #000000, 0px 0px 20px #000000;
+    max-width: 70%;
+}
+
+/* http://www.mademyday.de/css-height-equals-width-with-pure-css.html */
+/* https://stackoverflow.com/questions/12676725/responsive-iframe-google-maps-and-weird-resizing */
+
+.iframe-youtube
+{
+    position: relative;
+    width: 100%;     /* desired width */
+}
+.iframe-youtube::before
+{
+    content: "";
+    display: block;
+    padding-top: 75%;
+}
+.iframe-youtube iframe
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (max-width: 399px) {
