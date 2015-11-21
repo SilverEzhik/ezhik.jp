@@ -150,6 +150,7 @@ a:hover
 {
     padding-left: 250px;
     text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000;
+    max-width: 100%;
 }
 
 .ez-contentcontainer
