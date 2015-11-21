@@ -54,7 +54,10 @@ body
 	display: inline-block;
 	max-width: 100%;
 }
-
+#frontpage
+{
+	text-align: center;
+}
 #frontpage .ez-contentcontainer
 {
 	text-align: left;

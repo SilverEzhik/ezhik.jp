@@ -192,6 +192,7 @@ a:hover
     height: 100%;
 }
 
+/* Microsoft */
 @media screen and (max-width: 399px) {
   @-ms-viewport { width: 350px; height:}
   @viewport { width: 350px; }
@@ -207,4 +208,52 @@ a:hover
 @media screen and (min-width: 700px) and (max-width: 1100px) {
   @-ms-viewport { width: 768px; }
   @viewport { width: 768px; }
+}
+
+/* hella hd */
+@media screen and (min-width: 1920px) and (min-height: 860px), screen and (min-height: 1081px) {
+    html { zoom: 1.3;}
+    body {}
+    #frontpage
+    {
+        text-align: center;   
+    }
+    #frontpage .ez-contentcontainer
+    {
+        max-width: 70%;
+        zoom: 1.3;
+        padding-top: 10%;
+        text-align: left;
+        padding-left: 0px;
+    }
+    .ez-sidebar
+    {
+        margin-top:20px;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        height: 60px;
+        text-align: center;
+
+        padding-bottom: 10%;
+    }
+    .ez-buttoncontainer ul li
+    {
+        width: 80%;
+        display: inline;
+        line-height: 40px;
+        margin: 5px;
+        margin-bottom: 10%;
+    }
+
+    #sociallinks:after 
+    { 
+        content: "bottom.";
+    }
+}
+@media screen and (min-width: 2500px) {
+    html { zoom: 1.5;}
+}
+@media screen and (min-width: 3000px) {
+    html { zoom: 2;}
 }
