@@ -17,18 +17,18 @@ body
 
 body
 {
-background:url("img/city-bg-lowres.jpg") center fixed;
+background:url("img/city-bg.jpg") center fixed;
 background-size: cover;
 }
 
 /* Switch to higher-resolution BG */
-@media screen and (min-width: 1920.1px), screen and (min-height: 1440.1px), screen and (-webkit-min-device-pixel-ratio: 2) {
+/*@media screen and (min-width: 1920.1px), screen and (min-height: 1440.1px), screen and (-webkit-min-device-pixel-ratio: 2) {
     body
     {
     background:url("img/city-bg.jpg") center fixed;
     background-size: cover;
     }
-}
+} */
 
 .ez-sidebar
 {
