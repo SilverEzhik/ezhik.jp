@@ -62,7 +62,7 @@ body
 }
 #frontpage .ez-contentcontainer
 {
-
+	max-width: 100%;
     padding-top: 0%;
 	text-align: left;
 	display: inline-block;
