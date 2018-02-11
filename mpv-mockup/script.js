@@ -1,11 +1,14 @@
 var menu = [
     {
-        name: "Open", 
+        name: "Open local file", 
         fun: function() {
             var input = document.createElement('input');
             input.type = 'file';
             input.click();
         }
+    },
+    {
+        name: "Open URL", 
     },
     { 
         name: "",
@@ -207,7 +210,7 @@ var menu = [
                     ]
             },
             {
-                name: "Panscan",
+                name: "Pan & Scan",
                     subMenu: [
                         { 
                             name: "0.000",
