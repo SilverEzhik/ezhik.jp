@@ -1,0 +1,45 @@
+html {
+    background-color: #5c2039;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.window-container {
+    background-color: #0063b1;
+    padding: 1px;
+    width: 90vw; 
+    height: calc(50.6186727vw + 25px); 
+    max-width: 177.78vh;
+    max-height: calc(100vh + 25px);
+    margin: auto;
+}
+
+.window-title {
+    height: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.window-content {
+    background-color: white;
+    width: 100%;
+    height: calc(100% - 25px);
+    background-image: url("mpv-no-osd.png");
+    background-size: contain;
+    transition: .5s;
+}
+
+.window-content:hover {
+    background-image: url("mpv-osd.png");
+}
+
