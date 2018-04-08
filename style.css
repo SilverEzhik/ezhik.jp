@@ -17,8 +17,9 @@ body
 
 body
 {
-background:url("img/city-bg.jpg") center fixed;
-background-size: cover;
+    /*background:url("img/city-bg.jpg") center fixed;*/
+    background-color: #333; /* no noise */
+    background-size: cover;
 }
 
 /* Switch to higher-resolution BG */
@@ -81,7 +82,7 @@ background-size: cover;
 
 .ez-buttoncontainer a
 {
-        text-align:left;
+    text-align:left;
     color:white;
     background-color: black;
 
