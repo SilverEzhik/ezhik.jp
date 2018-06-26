@@ -1,109 +1,99 @@
-
-
-html {height:100%;}
-
-body
-
-{
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: table;
-
-    text-align: center;
-    position:relative;
+html {
+    background-color: #333;
+}
+.long {
+    background-color: #eee;
 }
 
-body
-{
-    /*background:url("img/city-bg.jpg") center fixed;*/
-    background-color: #333; /* no noise */
-    background-size: cover;
-}
-
-/* Switch to higher-resolution BG */
-/*@media screen and (min-width: 1920.1px), screen and (min-height: 1440.1px), screen and (-webkit-min-device-pixel-ratio: 2) {
-    body
-    {
-    background:url("img/city-bg.jpg") center fixed;
-    background-size: cover;
-    }
-} */
-
-.ez-sidebar
-{
-    position: absolute;
-    display: table;
-    vertical-align: middle;4
-    overflow: auto;
-
-    margin-top:20px;
-    bottom: 0;
-    width: 100%;
-    position: absolute;
-    height: 60px;
-    text-align: center;
-
-    padding-bottom: 10%;
-
-}
-.ez-buttoncontainer
-{
-    display: table-cell;
-    vertical-align: middle;
-    width: 250px;
-    min-width: 250px;
-    max-width: 250px;
-}
-.ez-buttoncontainer ul li
-{
-    width: 80%;
-    display: inline;
-    line-height: 40px;
-    margin: 5px;
-    margin-bottom: 10%;
-}
-
-.ez-buttoncontainer ul 
-{
-    list-style:none; 
-    margin:0; 
-    padding:0;
-}
-
-.ez-buttoncontainer li
-{
+body {
+    line-height: 1.2;
+    font-size: 18px;
+    color: white;
+    font-family: Bahnschrift, DIN, "DIN Alternate", Roboto, sans-serif;
+    font-weight: 300;
+    text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000, 0px 0px 15px #000000, 0px 0px 20px #000000;
     margin: 10px;
     padding: 0;
+    min-height: calc(100vh - 20px);
+
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.long body {
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    padding: 0 10px;
+    text-shadow: none;
+    justify-content: initial;
+    min-height: 0;
+} 
+
+#stufflinks {
+    margin-bottom: -7px;
 }
 
+p {
+    margin-bottom: 0;
+}
 
-
-.ez-buttoncontainer a
-{
-    text-align:left;
-    color:white;
+a {
+    text-decoration: none;
+    color: white;
     background-color: black;
-
-    font-family: 'Roboto Condensed', sans-serif;
-    font-stretch:condensed;
-    font-style:italic;
-    font-weight:lighter;
-    font-size:250%;
-
-    line-height:100%;
-
+    font-stretch: semi-condensed;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #212121;
+    padding: 5px;
+    margin-right: 4px;
+    margin-bottom: 7px;
+    text-shadow: none;
     display: inline-block;
-
-    padding: 1px;
-    padding-left:7px;
-    padding-right: 7px;
-
-    line-height: 50px;
-
 }
-.ez-logo
+.long a {
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    margin: 0;
+    border-width: 1px;
+}
+
+a:hover {
+    color: black;
+    background-color: white;
+}
+
+/* nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333333F0;
+}
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    margin-right: -4px;
+}
+header ul li {
+    display: inline;
+}
+
+header ul a {
+    height: 40px;
+    font-size: 210%;
+}
+/* no margin on last link */
+header ul li:last-child a {
+}
+
+#logo
 {
     background-image: url("img/logo.png");
     background-size: 50px;
@@ -111,146 +101,65 @@ body
     display: inline-block;
     height: 50px;
     width: 50px;
+    min-width: 50px;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px;
 }
-.ez-logo:hover
+#logo:hover
 {
     background-image: url("img/logo-white.png");
 }
-.ez-button:hover
-{
-    color: black;
-    background-color: white;
-}
-.ez-logo-a
-{
-    padding:0;
-    margin:0;
-    padding-bottom: 31px;
-    line-height: normal;
-}
-
-a
-{
-    text-decoration:none;
-    color:white;
+.long #logo {
+    float: left;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-size: 40px;
     background-color: black;
-    padding: 2px;
-    padding-right: 2px;
-    margin-bottom: 3px;
-
-    border-style: solid;
-    border-width: 1px;
-    border-color: #212121;
-    text-shadow: none;
-
-    line-height: 2;
-}
-a:hover
-{
-    color:black;
-    background-color: white;
-}
-
-
-#stufflinks a
-{
-    margin-right: 6px;
-    white-space: nowrap; /* keeps the links on one line (as much as possible) */ 
-    border-style: solid;
-    border-width: 1px;
-    border-color: #212121;
-    text-shadow: none;
-}
-
-#sociallinks:after 
-{ 
-    content: "bottom.";
-}
-
-#frontpage
-{   
-    text-align: center;
-}
-
-#frontpage .ez-contentcontainer
-{
-    text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000;
-    
-
-    max-width: 70%;
-    padding-top: 10%;
-    text-align: left;
-    padding-left: 0px;
-}
-
-.ez-contentcontainer
-{
-    padding: 10px;
     display: inline-block;
-
-    text-align: left;
-
-    word-wrap: break-word;
-    color: white;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-stretch:condensed;
-    font-weight:lighter;
-    text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000, 0px 0px 15px #000000, 0px 0px 20px #000000;
-    max-width: 70%;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
 }
-
-/* http://www.mademyday.de/css-height-equals-width-with-pure-css.html */
-/* https://stackoverflow.com/questions/12676725/responsive-iframe-google-maps-and-weird-resizing */
-
-.iframe-youtube
-{
-    position: relative;
-    width: 100%;     /* desired width */
-}
-.iframe-youtube::before
-{
-    content: "";
-    display: block;
-    padding-top: 75%;
-}
-.iframe-youtube iframe
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Microsoft */
-@media screen and (max-width: 399px) {
-  @-ms-viewport { width: 350px; height:}
-  @viewport { width: 350px; }
-}
-@media screen and (min-width: 399px) and (max-width: 500px) {
-  @-ms-viewport { width: 400px; }
-  @viewport { width: 400px; }
-}
-@media screen and (min-width: 500px) and (max-width: 700px) {
-  @-ms-viewport { width: 500px; }
-  @viewport { width: 500px; }
-}
-@media screen and (min-width: 700px) and (max-width: 1100px) {
-  @-ms-viewport { width: 768px; }
-  @viewport { width: 768px; }
+@media screen and (max-width: 800px) {
+    .long #logo {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
 }
 
 /* hella hd */
-@media screen and (min-width: 1920px) and (min-height: 860px), screen and (min-height: 1081px) {
-    html { zoom: 1.3;}
-    #frontpage .ez-contentcontainer
-    {
-        zoom: 1.3;
+@media screen and (min-width: 1024px) and (min-height: 768px) {
+    body {
+        font-size: 3vmin;
+        margin: 10px;
+        min-height: calc(100vh - 3vmin);
+        margin: 1.5vmin;
     }
-}
-@media screen and (min-width: 2500px) {
-    html { zoom: 1.5;}
-}
-@media screen and (min-width: 3000px) {
-    html { zoom: 2;}
+    #stufflinks {
+        margin-bottom: -1.05vmin;
+    }
+    a {
+        border-width: 0.2vmin;
+        padding: 0.5vmin;
+        margin-right: 0.6vmin;
+        margin-bottom: 1.05vmin;
+    }
+    header ul {
+        margin-right: -0.6vmin;
+    }
+    header ul a {
+        height: 7vmin;
+        font-size: 210%;
+    }
+    #logo
+    {
+        background-size: 7vmin;
+        height: 7vmin;
+        width: 7vmin;
+        min-width: 7vmin;
+        margin-right: 3.5vmin;
+    }
 }
