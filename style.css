@@ -36,6 +36,9 @@ content {
     flex-direction: column; 
     justify-content: center;
 }
+.long content {
+    display: initial;
+}
 a {
     text-decoration: none;
     color: white;
