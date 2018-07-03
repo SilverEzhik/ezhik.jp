@@ -141,6 +141,11 @@ header ul li:last-child a {
     padding: 0;
     margin: 0;
     margin-right: 20px;
+
+    /* have a label on the hedgehog but hide the text */
+    overflow: hidden;
+    color: transparent;
+    font-size: 0;
 }
 #logo:hover
 {
@@ -207,10 +212,10 @@ header ul li:last-child a {
     }
     #logo
     {
-        background-size: 7vmin;
-        height: 7vmin;
-        width: 7vmin;
-        min-width: 7vmin;
+        background-size: 8vmin;
+        height: 8vmin;
+        width: 8vmin;
+        min-width: 8vmin;
         margin-right: 3.5vmin;
     }
 }
