@@ -47,7 +47,7 @@ noremap <expr> P  (v:register ==# '"' ? '"+' : '') . 'P'</pre>
 
         <p>Anyone first starting to learn Vim will absolutely not be expecting their clipboard to be wiped every time they delete something, and it will drive them <i>insane</i>. They'll look around the internet for a solution, and they will only find two things.</p>
 
-        <p>The first is a bunch of ideology from Unix purists about how you're supposed to just live with that, get used to the Vim way, that poetry declined under the Kamakura shogunate, et cetera. Those people are important and help prevent this world from going completely off the rails drunk on overhyped technology, but listening to them for too long will quickly make the newcomer to Vim start to hate life. To any Vim newcomers reading this, now is also a good time to mention that if you want to have tabs in Vim, search for how to use Vim's buffers. Vim has another feature called tabs, but those are not actually tabs at all. It's complicated and everyone online will be telling you about the Vim way even though you just want to have a little bar on top with two text files with two files you can quickly switch between.</p>
+        <p>The first is a bunch of ideology from Unix purists about how you're supposed to just live with that, get used to the Vim way, that poetry declined under the Kamakura shogunate, et cetera. Those people are important and help prevent this world from going completely off the rails drunk on overhyped technology, but listening to them for too long will quickly make the newcomer to Vim start to hate life. To any Vim newcomers reading this, now is also a good time to mention that if you want to have tabs in Vim, search for how to use Vim's buffers. Vim has another feature called tabs, but those are not actually tabs at all. It's complicated and everyone online will be telling you about the Vim way even though you just want to have a little bar on top with two text files that you can quickly switch between.</p>
 
         <p>But anyway. Any newcomer not scared off at this point will keep looking and will find a bunch of solutions that remap the various delete commands to use the "void" (<code>_</code>) register. Those are <i>okay</i>, until you actually do want to use registers the Vim way, plus you'll have to play whack-a-mole with every single command that puts text in the clipboard register.</p>
 
@@ -57,9 +57,9 @@ noremap <expr> P  (v:register ==# '"' ? '"+' : '') . 'P'</pre>
 
         <p>The last four lines change the main yank and paste keys: if you invoke a yank or paste command with the default unnamed register, it swaps that register out for the system clipboard one instead.</p>
 
-        <p>The four lines above that add an exception to this rule: if you explicitly try to use the unnamed register, it will be used instead.</p>
+        <p>The four lines above those add an exception to the rule: if you explicitly try to use the unnamed register, it will be used instead. Make sure you get the order of the lines right in your Vim configuration file, or who knows what might happen.</p>
 
-        <p>This way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
+        <p>So, with the clipboard set up this way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
 
         <p>The end!</p>
 
