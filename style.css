@@ -13,9 +13,10 @@ body {
     min-height: calc(100vh - 20px);
 
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     overflow-x: hidden;
 }
+
 .long body {
     margin: 40px auto;
     max-width: 650px;
@@ -24,7 +25,7 @@ body {
     padding: 0 10px;
     justify-content: initial;
     min-height: 0;
-} 
+}
 
 p {
     margin-bottom: 0;
@@ -33,12 +34,14 @@ p {
 content {
     flex: 1;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
 }
+
 .long content {
     display: initial;
 }
+
 a {
     text-decoration: none;
     color: white;
@@ -56,6 +59,16 @@ a {
     position: relative;
     bottom: 0px;
 }
+
+pre,
+code {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #212121;
+    padding: 3px;
+    background-color: #00000011;
+}
+
 a:hover {
     color: black;
     background-color: white;
@@ -63,23 +76,27 @@ a:hover {
     position: relative;
     transform: scale(1.03);
 }
+
 #thumbnails {
     margin: 0 auto;
     text-align: center;
     transition: all 0.5s;
 }
+
 #thumbnails a {
     min-width: 200px;
     min-height: 150px;
     text-align: left;
     display: inline-block;
 
-    background-size:cover;
+    background-size: cover;
     text-shadow: 0px 0px 6px #212121, 0px 0px 6px #212121, 0px 0px 10px #000000, 0px 0px 15px #000000, 0px 0px 20px #000000;
 }
+
 #thumbnails a:hover {
     color: white;
 }
+
 #thumbnails .hidden {
     opacity: 0;
     max-height: 0px;
@@ -98,6 +115,7 @@ a:hover {
     margin: 0;
     border-width: 1px;
 }
+
 .long a:hover {
     box-shadow: 0px 3px 20px #000000;
     position: relative;
@@ -109,6 +127,7 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
 header ul {
     list-style: none;
     margin: 0;
@@ -116,6 +135,7 @@ header ul {
     text-align: right;
     margin-right: -4px;
 }
+
 header ul li {
     display: inline;
 }
@@ -124,12 +144,11 @@ header ul a {
     height: 40px;
     font-size: 210%;
 }
-/* no margin on last link */
-header ul li:last-child a {
-}
 
-#logo
-{
+/* no margin on last link */
+header ul li:last-child a {}
+
+#logo {
     background-image: url("img/logo.png");
     background-size: 50px;
     display: inline-block;
@@ -145,10 +164,11 @@ header ul li:last-child a {
     color: transparent;
     font-size: 0;
 }
-#logo:hover
-{
+
+#logo:hover {
     background-image: url("img/logo-white.png");
 }
+
 .long #logo {
     float: left;
     position: fixed;
@@ -161,16 +181,17 @@ header ul li:last-child a {
     width: 40px;
     min-width: 40px;
 }
-.long #logo:hover {
-} 
+
+.long #logo:hover {}
+
 @media screen and (max-width: 800px) {
     .long #logo {
         position: relative;
         top: 0;
         left: 0;
     }
-    .long #logo:hover {
-    } 
+
+    .long #logo:hover {}
 }
 
 /* hella hd */
@@ -181,15 +202,18 @@ header ul li:last-child a {
         min-height: calc(100vh - 3vmin);
         margin: 1.5vmin;
     }
+
     a {
         border-width: 0.2vmin;
         padding: 0.5vmin;
         margin-right: 0.6vmin;
         margin-bottom: 1.05vmin;
     }
+
     a:hover {
         box-shadow: 0px 1vmin 10vmin #000000;
     }
+
     #thumbnails {
         max-width: 130vmin;
     }
@@ -198,15 +222,17 @@ header ul li:last-child a {
         min-width: 30vmin;
         min-height: 22.5vmin;
     }
+
     header ul {
         margin-right: -0.6vmin;
     }
+
     header ul a {
         height: 7vmin;
         font-size: 210%;
     }
-    #logo
-    {
+
+    #logo {
         background-size: 8vmin;
         height: 8vmin;
         width: 8vmin;
@@ -214,10 +240,12 @@ header ul li:last-child a {
         margin-right: 3.5vmin;
     }
 }
+
 @media screen and (max-width: 455px) {
     #thumbnails {
         margin-top: 3vw;
     }
+
     #thumbnails a {
         min-width: 90vw;
         min-height: 67.5vw;

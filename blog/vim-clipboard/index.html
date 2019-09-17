@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="long">
+
+<head>
+    <meta charset="utf-8" />
+    <title>The Objectively Correct Guide to Making Vim Use the System Clipboard</title>
+    <link rel="shortcut icon" href="../../img/logo.png" />
+
+    <meta property="og:title" content="The Objectively Correct Guide to Making Vim Use the System Clipboard - Ezhik's blog" />
+    <meta property="og:description" content="Stop recommending people what they do not actually want." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ezhik.me/blog/vim-clipboard" />
+    <meta property="og:image" content="http://ezhik.me/img/logo.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <a href="../../" id="logo">ezhik.me</a>
+    <content>
+        <h1>The Objectively Correct Guide to Making Vim Use the System Clipboard</h1>
+
+        <p>Make sure your vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or neovim's <code>init.vim</code>, enjoy life:</p>
+        <pre>
+set clipboard=
+noremap ""y ""y
+noremap ""yy ""yy
+noremap ""p ""p
+noremap ""P ""P
+noremap <expr> y  (v:register ==# '"' ? '"+' : '') . 'y'
+noremap <expr> yy (v:register ==# '"' ? '"+' : '') . 'yy'
+noremap <expr> p  (v:register ==# '"' ? '"+' : '') . 'p'
+noremap <expr> P  (v:register ==# '"' ? '"+' : '') . 'P'</pre>
+        <p>That's it, post over, go home.</p>
+
+        &nbsp;
+
+        <h2>Wait, what?</h2>
+
+        <p>Okay, so. Vi was originally invented in 1300 BC, before we had GUIs and even the idea of a shared system clipboard. What it had (and what Vim still has today) instead were registers. Registers are basically a bunch of internal Vim clipboards that you can use through the <code>"</code> key &mdash; for example, <code>"fy</code> to copy something into the <code>f</code> register, then <code>"fp</code> to paste from it.</p>
+
+        <p>By default, anything you yank (Vim's word for copy) goes into the unnamed register (which is actually assigned to the <code>"</code> key, so you can yank something into it explicitly by doing <code>""y</code>. Then, what Vim's standard way of handling the system clipboard does is simply link up this unnamed register to your global clipboard. Nice and cool, until you overwrite everything you copied with a single character that you just deleted.</p>
+
+        <p>See, anything you delete using keys such as <code>x</code>, <code>d</code>, <code>c</code>, and the like, also goes into this unnamed register, overwriting it (<code>"fd</code> would delete something into the <code>f</code> register, by the way). This may have been okay if you were back in Heian Era Japan and all you had was a simple VT100 terminal to write love poems on, as you would have been living inside Vi anyway, using its registers extensively. However, in this day and age, you want to be consistent with the modern OS you're running Vim on (and if you aren't on a modern OS, the Vim on the ancient computer you're configuring is compiled without clipboard support anyway).</p>
+
+        <p>Anyone first starting to learn Vim will absolutely not be expecting their clipboard to be wiped every time they delete something, and it will drive them <i>insane</i>. They'll look around the internet for a solution, and they will only find two things.</p>
+
+        <p>The first is a bunch of ideology from Unix purists about how you're supposed to just live with that, get used to the Vim way, that poetry declined under the Kamakura shogunate, et cetera. Those people are important and help prevent this world from going completely off the rails drunk on overhyped technology, but listening to them for too long will quickly make the newcomer to Vim start to hate life. To any Vim newcomers reading this, now is also a good time to mention that if you want to have tabs in Vim, search for how to use Vim's buffers. Vim has another feature called tabs, but those are not actually tabs at all. It's complicated and everyone online will be telling you about the Vim way even though you just want to have a little bar on top with two text files with two files you can quickly switch between.</p>
+
+        <p>But anyway. Any newcomer not scared off at this point will keep looking and will find a bunch of solutions that remap the various delete commands to use the "void" (<code>_</code>) register. Those are <i>okay</i>, until you actually do want to use registers the Vim way, plus you'll have to play whack-a-mole with every single command that puts text in the clipboard register.</p>
+
+        <p>So what you really want is to just remap the yank (copy) and paste keys to use the system clipboard register. That's exactly what that snippet of code does.</p>
+
+        <p>The first line disables any sort of clipboard integration that may have been enabled by default (along with selections automatically getting yanked &mdash; change that to <code>set clipboard=autoselect</code> if you're really into that sort of thing and if your Vim supports it).</p>
+
+        <p>The last four lines change the main yank and paste keys: if you invoke a yank or paste command with the default unnamed register, it swaps that register out for the system clipboard one instead.</p>
+
+        <p>The four lines above that add an exception to this rule: if you explicitly try to use the unnamed register, it will be used instead.</p>
+
+        <p>This way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
+
+        <p>The end!</p>
+
+        <p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.me">i@ezhik.me</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/SilverEzhik.github.io/issues">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p>
+
+    </content>
+</body>
+
+</html>
