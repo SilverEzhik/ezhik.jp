@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Radical Lookup</title>    
+    <link rel="shortcut icon" href="../img/logo.png" />
+
+    <meta property="og:title" content="Kanji Radical Lookup" />
+    <meta property="og:description" content="A tool for kanji-radical-kanji search on Jisho.org" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ezhik.me/radical-lookup" />
+    <meta property="og:image" content="https://ezhik.me/img/frontpage-buttons/radical-lookup-static.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+<body>
+
+<content> 
+    <p id="js-error"><strong>Please enable JavaScript to use this tool!</strong></p>
+    <div id="tool" style="display: none">
+        <p>
+        <form onsubmit="return openJisho()" action="#">
+            <p>
+                Kanji: <input type="text" id="input" oninput="getRadicals(this)"> <a onclick="clearInput()">Clear</a>
+            </p>
+            <p>
+                <div class="list" id="radical-list"></div>
+            </p>
+            <p>
+                Selected radicals:<br>
+                <div class="list" id="selected-radicals-list"></div>
+            </p>
+            <p>
+                Found kanji:<br>
+                <div class="list" id="kanji-list"></div>
+            </p>
+            <p>
+                Output: <input type="text" name="out" id="output" required> 
+                <a onclick="openJisho()">Search Jisho</a>
+            </p>
+        </form> 
+        </p> 
+    </div>
+    <p>
+        <a href="https://github.com/SilverEzhik/radical-lookup">Source (GPL3)</a>
+        <a href="https://ezhik.me">ezhik.me</a>
+    </p>
+</content>
+<script language="javascript" type="text/javascript" src="script.js"></script>
+</body>
+</html>

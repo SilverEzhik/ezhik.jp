@@ -1,0 +1,9 @@
+@import url("/fonts/iosevka-fixed-ss04/font.css");
+@import url("/fonts/cormorant-garamond/font.css");
+@import url("/fonts/pt-serif/font.css");
+
+:root {
+    --garamond: 'Cormorant Garamond', Garamond, Baskerville, Georgia, 'Times New Roman', Times, serif;
+    --pt-serif: 'PT Serif', Georgia, 'Times New Roman', Times, serif;
+    --iosevka: 'Iosevka Fixed SS04 Web', 'Iosevka Fixed SS04', 'Iosevka SS04', 'Iosevka Fixed', 'Iosekva', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}

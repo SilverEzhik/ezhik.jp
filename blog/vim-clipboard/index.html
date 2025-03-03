@@ -1,71 +1,45 @@
-<!DOCTYPE html>
-<html lang="en" class="long">
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../favicon.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="RSS Feed for ezhik.me"
+			href="/feed.xml"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:type" content="article"> <meta property="og:title" content="The objectively correct guide to making Vim use the system clipboard – ezhik.me"> <meta property="og:description" content="&lt;p>Make sure your Vim has clipboard support (run &lt;code>vim --version&lt;/code> and check for &lt;code>+clipboard&lt;/code>), stick this in your &lt;code>.vimrc&lt;/code> or Neovim's &lt;code>init.vim&lt;/code>, enjoy life:&lt;/p>"> <meta property="og:url" content="https://ezhik.me/vim-clipboard"> <meta property="og:image" content="https://ezhik.me/favicon.png">
+	</head>
 
-<head>
-    <meta charset="utf-8" />
-    <title>The Objectively Correct Guide to Making Vim Use the System Clipboard</title>
-    <link rel="shortcut icon" href="../../img/logo.png" />
-
-    <meta property="og:title" content="The Objectively Correct Guide to Making Vim Use the System Clipboard - Ezhik's blog" />
-    <meta property="og:description" content="Stop recommending people what they do not actually want." />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ezhik.me/blog/vim-clipboard" />
-    <meta property="og:image" content="http://ezhik.me/img/logo.png" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../style.css">
-</head>
-
-<body>
-    <a href="../../" id="logo">ezhik.me</a>
-    <content>
-        <h1>The Objectively Correct Guide to Making Vim Use the System Clipboard</h1>
-
-        <p>Make sure your vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or neovim's <code>init.vim</code>, enjoy life:</p>
-        <pre>
-set clipboard=
-noremap ""y ""y
-noremap ""yy ""yy
-noremap ""p ""p
-noremap ""P ""P
-noremap <expr> y  (v:register ==# '"' ? '"+' : '') . 'y'
-noremap <expr> yy (v:register ==# '"' ? '"+' : '') . 'yy'
-noremap <expr> p  (v:register ==# '"' ? '"+' : '') . 'p'
-noremap <expr> P  (v:register ==# '"' ? '"+' : '') . 'P'</pre>
-        <p>That's it, post over, go home.</p>
-
-        &nbsp;
-
-        <h2>Wait, what?</h2>
-
-        <p>Okay, so. Vi was originally invented in 1300 BC, before we had GUIs and even the idea of a shared system clipboard. What it had (and what Vim still has today) instead were registers. Registers are basically a bunch of internal Vim clipboards that you can use through the <code>"</code> key &mdash; for example, <code>"fy</code> to copy something into the <code>f</code> register, then <code>"fp</code> to paste from it.</p>
-
-        <p>By default, anything you yank (Vim's word for copy) goes into the unnamed register (which is actually assigned to the <code>"</code> key, so you can yank something into it explicitly by doing <code>""y</code>. Then, what Vim's standard way of handling the system clipboard does is simply link up this unnamed register to your global clipboard. Nice and cool, until you overwrite everything you copied with a single character that you just deleted.</p>
-
-        <p>See, anything you delete using keys such as <code>x</code>, <code>d</code>, <code>c</code>, and the like, also goes into this unnamed register, overwriting it (<code>"fd</code> would delete something into the <code>f</code> register, by the way). This may have been okay if you were back in Heian Era Japan and all you had was a simple VT100 terminal to write love poems on, as you would have been living inside Vi anyway, using its registers extensively. However, in this day and age, you want to be consistent with the modern OS you're running Vim on (and if you aren't on a modern OS, the Vim on the ancient computer you're configuring is compiled without clipboard support anyway).</p>
-
-        <p>Anyone first starting to learn Vim will absolutely not be expecting their clipboard to be wiped every time they delete something, and it will drive them <i>insane</i>. They'll look around the internet for a solution, and they will only find two things.</p>
-
-        <p>The first is a bunch of ideology from Unix purists about how you're supposed to just live with that, get used to the Vim way, that poetry declined under the Kamakura shogunate, et cetera. Those people are important and help prevent this world from going completely off the rails drunk on overhyped technology, but listening to them for too long will quickly make the newcomer to Vim start to hate life. To any Vim newcomers reading this, now is also a good time to mention that if you want to have tabs in Vim, search for how to use Vim's buffers. Vim has another feature called tabs, but those are not actually tabs at all. It's complicated and everyone online will be telling you about the Vim way even though you just want to have a little bar on top with two text files that you can quickly switch between.</p>
-
-        <p>But anyway. Any newcomer not scared off at this point will keep looking and will find a bunch of solutions that remap the various delete commands to use the "void" (<code>_</code>) register. Those are <i>okay</i>, until you actually do want to use registers the Vim way, plus you'll have to play whack-a-mole with every single command that puts text in the clipboard register.</p>
-
-        <p>So what you really want is to just remap the yank (copy) and paste keys to use the system clipboard register. That's exactly what that snippet of code does.</p>
-
-        <p>The first line disables any sort of clipboard integration that may have been enabled by default (along with selections automatically getting yanked &mdash; change that to <code>set clipboard=autoselect</code> if you're really into that sort of thing and if your Vim supports it).</p>
-
-        <p>The last four lines change the main yank and paste keys: if you invoke a yank or paste command with the default unnamed register, it swaps that register out for the system clipboard one instead.</p>
-
-        <p>The four lines above those add an exception to the rule: if you explicitly try to use the unnamed register, it will be used instead. Make sure you get the order of the lines right in your Vim configuration file, or who knows what might happen.</p>
-
-        <p>So, with the clipboard set up this way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
-
-        <p>The end!</p>
-
-        <p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.me">i@ezhik.me</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/SilverEzhik.github.io/issues">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p>
-
-    </content>
-</body>
-
+	<body>
+		<title>The objectively correct guide to making Vim use the system clipboard – ezhik.me</title> <nav class="sidebar"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.me">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.me">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> <article><h1>The objectively correct guide to making Vim use the system clipboard</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>Make sure your Vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or Neovim's <code>init.vim</code>, enjoy life:</p>
+<pre><code class="hljs language-vim"><span class="keyword">set</span> clipboard=
+<span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">y</span> <span class="string">""</span><span class="keyword">y</span>
+<span class="keyword">noremap</span> <span class="string">""</span>yy <span class="string">""</span>yy
+<span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">p</span> <span class="string">""</span><span class="keyword">p</span>
+<span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">P</span> <span class="string">""</span><span class="keyword">P</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> <span class="keyword">y</span>  (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'y'</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> yy (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'yy'</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> <span class="keyword">p</span>  (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'p'</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> <span class="keyword">P</span>  (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'P'</span>
+</code></pre>
+<p>That's it, post over, go home.</p>
+<h2>Wait, what?</h2>
+<p>Okay, so. Vi was originally invented in 1300 BC, before we had GUIs and even the idea of a shared system clipboard. What it had (and what Vim still has today) instead were registers. Registers are basically a bunch of internal Vim clipboards that you can use through the <code>"</code> key — for example, <code>"fy</code> to copy something into the <code>f</code> register, then <code>"fp</code> to paste from it.</p>
+<p>By default, anything you yank (Vim's word for copy) goes into the unnamed register (which is actually assigned to the <code>"</code> key, so you can yank something into it explicitly by doing <code>""y</code>. Then, what Vim's standard way of handling the system clipboard does is simply link up this unnamed register to your global clipboard. Nice and cool, until you overwrite everything you copied with a single character that you just deleted.</p>
+<p>See, anything you delete using keys such as <code>x</code>, <code>d</code>, <code>c</code>, and the like, also goes into this unnamed register, overwriting it (<code>"fd</code> would delete something into the <code>f</code> register, by the way). This may have been okay if you were back in Heian Era Japan and all you had was a simple VT100 terminal to write love poems on, as you would have been living inside Vi anyway, using its registers extensively. However, in this day and age, you want to be consistent with the modern OS you're running Vim on (and if you aren't on a modern OS, the Vim on the ancient computer you're configuring is compiled without clipboard support anyway).</p>
+<p>Anyone first starting to learn Vim will absolutely not be expecting their clipboard to be wiped every time they delete something, and it will drive them <em>insane</em>. They'll look around the internet for a solution, and they will only find two things.</p>
+<p>The first is a bunch of ideology from Unix purists about how you're supposed to just live with that, get used to the Vim way, that poetry declined under the Kamakura shogunate, et cetera. Those people are important and help prevent this world from going completely off the rails drunk on overhyped technology, but listening to them for too long will quickly make the newcomer to Vim start to hate life. To any Vim newcomers reading this, now is also a good time to mention that if you want to have tabs in Vim, search for how to use Vim's buffers. Vim has another feature called tabs, but those are not actually tabs at all. It's complicated and everyone online will be telling you about the Vim way even though you just want to have a little bar on top with two text files that you can quickly switch between.</p>
+<p>But anyway. Any newcomer not scared off at this point will keep looking and will find a bunch of solutions that remap the various delete commands to use the "void" (<code>_</code>) register. Those are <em>okay</em>, until you actually do want to use registers the Vim way, plus you'll have to play whack-a-mole with every single command that puts text in the clipboard register.</p>
+<p>So what you really want is to just remap the yank (copy) and paste keys to use the system clipboard register. That's exactly what that snippet of code does.</p>
+<p>The first line disables any sort of clipboard integration that may have been enabled by default (along with selections automatically getting yanked — change that to <code>set clipboard=autoselect</code> if you're really into that sort of thing and if your Vim supports it).</p>
+<p>The last four lines change the main yank and paste keys: if you invoke a yank or paste command with the default unnamed register, it swaps that register out for the system clipboard one instead.</p>
+<p>The four lines above those add an exception to the rule: if you explicitly try to use the unnamed register, it will be used instead. Make sure you get the order of the lines right in your Vim configuration file, or who knows what might happen.</p>
+<p>So, with the clipboard set up this way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
+<p>The end!</p>
+<p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/SilverEzhik.github.io/issues" class="external">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2019-09-17</time></sub></center></article> <nav class="backlinks"><p>Backlinks</p> <ul><li><a href="/test-post">Test Post</a></li></ul></nav> 
+	</body>
 </html>

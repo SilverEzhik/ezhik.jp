@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ezhik.me</title>
+        <link>https://ezhik.me</link>
+        <description>A website for an Internet Hedgehog</description>
+        <lastBuildDate>Mon, 03 Mar 2025 16:26:39 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>ezhik.me</generator>
+        <copyright>© 2025 Ezhik</copyright>
+        <atom:link href="https:/ezhik.me/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[The new website]]></title>
+            <link>/the-new-website</link>
+            <guid>6c08f5dd70a1b546c9c9e49a0931b12546288829683b320bb62c05905af6dc0d</guid>
+            <pubDate>Mon, 03 Mar 2025 23:59:00 GMT</pubDate>
+            <description><![CDATA[<p>I wanted to make a new website for a while. I thought I'd be cool and do it right and stuff, but then I watched Lu Wilson's <a href="https://www.youtube.com/watch?v=73mEhS0gxgI" class="external"><em>Death of the Tadiweb</em></a> and decided to wing it because life is too short to bikeshed a homebrew blogging engine especially since this one is a horror show that uses SvelteKit for some reason even though the whole thing is just a static website with some islands of interactivity Flash applet-style. Don't ask. Or do. Do ask. Email me. <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>. Let's chat. Send me stories. Send me your favorite hedgehog picture or story or video or song or app or novel. Send me small computers.</p>]]></description>
+            <content:encoded><![CDATA[<p>I wanted to make a new website for a while. I thought I'd be cool and do it right and stuff, but then I watched Lu Wilson's <a href="https://www.youtube.com/watch?v=73mEhS0gxgI" class="external"><em>Death of the Tadiweb</em></a> and decided to wing it because life is too short to bikeshed a homebrew blogging engine especially since this one is a horror show that uses SvelteKit for some reason even though the whole thing is just a static website with some islands of interactivity Flash applet-style. Don't ask. Or do. Do ask. Email me. <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>. Let's chat. Send me stories. Send me your favorite hedgehog picture or story or video or song or app or novel. Send me small computers.</p>
+<p>So here we are. I'm still scouring the internet for my various blog posts (I recovered one so far and it's a silly one!). I've also moved most of my existing stuff on the old site over - ping me if anything's missing as I'm sure it's not gone forever and I want to put it all back.</p>
+<p>Also... There's now an <a href="/feed.xml">✨RSS feed✨</a>. Please follow it.</p>
+<p>I've also got ✨backlinks✨. It's all because of my <a href="https://obsidian.md" class="external">Obsidian</a> addiction. Who needs folders or tags when you have hypertext? Hypertext is all you need. Expect lots of hypertext.</p>
+<p>Since it's been a while since I did web stuff and the internet became a very different place during that time, I also now have a <a href="/privacy-policy">Privacy Policy</a>.</p>
+<p>Please enjoy.</p>
+<p>P.S.<br>
+What do you think of that hog? I was kinda winging it with this one and don't know if I like this hog or not.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Privacy Policy]]></title>
+            <link>/privacy-policy</link>
+            <guid>8f75388c2d6c62bb7f249cedf492e5f4413c8c020fb1b85a85ddc481244aa0f7</guid>
+            <pubDate>Mon, 03 Mar 2025 23:58:00 GMT</pubDate>
+            <description><![CDATA[<p>I was too lazy to put spyware on this site so you'll have to share your personal information with me manually. You must email <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a> with your engagement metrics or wild hedgehogs will bite your ankles.</p>]]></description>
+            <content:encoded><![CDATA[<p>I was too lazy to put spyware on this site so you'll have to share your personal information with me manually. You must email <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a> with your engagement metrics or wild hedgehogs will bite your ankles.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The objectively correct guide to making Vim use the system clipboard]]></title>
+            <link>/vim-clipboard</link>
+            <guid>c467f8943446eab0441b6a56d200189714643d771b847f69c4637824bf560d75</guid>
+            <pubDate>Tue, 17 Sep 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Make sure your Vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or Neovim's <code>init.vim</code>, enjoy life:</p>]]></description>
+            <content:encoded><![CDATA[<p>Make sure your Vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or Neovim's <code>init.vim</code>, enjoy life:</p>
+<pre><code class="hljs language-vim"><span class="keyword">set</span> clipboard=
+<span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">y</span> <span class="string">""</span><span class="keyword">y</span>
+<span class="keyword">noremap</span> <span class="string">""</span>yy <span class="string">""</span>yy
+<span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">p</span> <span class="string">""</span><span class="keyword">p</span>
+<span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">P</span> <span class="string">""</span><span class="keyword">P</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> <span class="keyword">y</span>  (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'y'</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> yy (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'yy'</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> <span class="keyword">p</span>  (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'p'</span>
+<span class="keyword">noremap</span> <span class="symbol">&#x3C;expr></span> <span class="keyword">P</span>  (<span class="variable">v:register</span> ==# <span class="string">'"'</span> ? <span class="string">'"+'</span> : <span class="string">''</span>) . <span class="string">'P'</span>
+</code></pre>
+<p>That's it, post over, go home.</p>
+<h2>Wait, what?</h2>
+<p>Okay, so. Vi was originally invented in 1300 BC, before we had GUIs and even the idea of a shared system clipboard. What it had (and what Vim still has today) instead were registers. Registers are basically a bunch of internal Vim clipboards that you can use through the <code>"</code> key — for example, <code>"fy</code> to copy something into the <code>f</code> register, then <code>"fp</code> to paste from it.</p>
+<p>By default, anything you yank (Vim's word for copy) goes into the unnamed register (which is actually assigned to the <code>"</code> key, so you can yank something into it explicitly by doing <code>""y</code>. Then, what Vim's standard way of handling the system clipboard does is simply link up this unnamed register to your global clipboard. Nice and cool, until you overwrite everything you copied with a single character that you just deleted.</p>
+<p>See, anything you delete using keys such as <code>x</code>, <code>d</code>, <code>c</code>, and the like, also goes into this unnamed register, overwriting it (<code>"fd</code> would delete something into the <code>f</code> register, by the way). This may have been okay if you were back in Heian Era Japan and all you had was a simple VT100 terminal to write love poems on, as you would have been living inside Vi anyway, using its registers extensively. However, in this day and age, you want to be consistent with the modern OS you're running Vim on (and if you aren't on a modern OS, the Vim on the ancient computer you're configuring is compiled without clipboard support anyway).</p>
+<p>Anyone first starting to learn Vim will absolutely not be expecting their clipboard to be wiped every time they delete something, and it will drive them <em>insane</em>. They'll look around the internet for a solution, and they will only find two things.</p>
+<p>The first is a bunch of ideology from Unix purists about how you're supposed to just live with that, get used to the Vim way, that poetry declined under the Kamakura shogunate, et cetera. Those people are important and help prevent this world from going completely off the rails drunk on overhyped technology, but listening to them for too long will quickly make the newcomer to Vim start to hate life. To any Vim newcomers reading this, now is also a good time to mention that if you want to have tabs in Vim, search for how to use Vim's buffers. Vim has another feature called tabs, but those are not actually tabs at all. It's complicated and everyone online will be telling you about the Vim way even though you just want to have a little bar on top with two text files that you can quickly switch between.</p>
+<p>But anyway. Any newcomer not scared off at this point will keep looking and will find a bunch of solutions that remap the various delete commands to use the "void" (<code>_</code>) register. Those are <em>okay</em>, until you actually do want to use registers the Vim way, plus you'll have to play whack-a-mole with every single command that puts text in the clipboard register.</p>
+<p>So what you really want is to just remap the yank (copy) and paste keys to use the system clipboard register. That's exactly what that snippet of code does.</p>
+<p>The first line disables any sort of clipboard integration that may have been enabled by default (along with selections automatically getting yanked — change that to <code>set clipboard=autoselect</code> if you're really into that sort of thing and if your Vim supports it).</p>
+<p>The last four lines change the main yank and paste keys: if you invoke a yank or paste command with the default unnamed register, it swaps that register out for the system clipboard one instead.</p>
+<p>The four lines above those add an exception to the rule: if you explicitly try to use the unnamed register, it will be used instead. Make sure you get the order of the lines right in your Vim configuration file, or who knows what might happen.</p>
+<p>So, with the clipboard set up this way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
+<p>The end!</p>
+<p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/SilverEzhik.github.io/issues" class="external">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Radical Lookup]]></title>
+            <link>/radical-lookup</link>
+            <guid>ee27ecbd383367d36623d80a3efde2a38058545e7f2912c2a97b002f6900b075</guid>
+            <pubDate>Tue, 18 Sep 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p>like i said i'm really winging it with this redesign for now but hey it's still here as legacy code™</p>]]></description>
+            <content:encoded><![CDATA[<iframe src="/assets/old/radical-lookup/index.html" style="width: 100%; height: 800px"></iframe>
+<p>like i said i'm really winging it with this redesign for now but hey it's still here as legacy code™</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Beyond 184]]></title>
+            <link>/beyond184</link>
+            <guid>e350b3cb6779c7538d47c82cc2d85495f6a6f9f616c208f75d63cfe0611b3f63</guid>
+            <pubDate>Thu, 28 Jun 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p><strong>Beyond 184</strong> is a cellular automata for simulating traffic in an urban setting.</p>]]></description>
+            <content:encoded><![CDATA[<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<script language="javascript" type="text/javascript" src="/assets/old/beyond184/libraries/p5.js"></script>
+<script language="javascript" type="text/javascript" src="/assets/old/beyond184/sketch.js"></script>
+<style>
+#defaultCanvas0 {
+	height: auto !important;
+	width: 100% !important;
+</style>
+<p id="canvascontainer"></p>
+<p><strong>Beyond 184</strong> is a cellular automata for simulating traffic in an urban setting.</p>
+<p>Every single one of those little cars is not just going in a straight line, but is instead behaving similarly to an actual car – accelerating as they move through an empty road, and slowing down before obstacles.</p>
+<p>It is based on the Rule 184 CA (hence the name), with enhancements made to add varying speed levels and to make the whole thing work in two dimensions.</p>
+<p><a href="https://github.com/SilverEzhik/beyond184" class="external">Source (GPL2)</a>  <a href="/assets/old/beyond184/conference.pdf">Paper</a></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Things I learned when I decided to put every single sticker I could find in my room on my laptop]]></title>
+            <link>/laptop-stickers</link>
+            <guid>7a7ee980c06a3aa9627d869098020cbce1f415d8ea8599af12dc6d7056b79832</guid>
+            <pubDate>Fri, 14 Aug 2015 03:34:39 GMT</pubDate>
+            <description><![CDATA[<p>
+                            &#x3C;figure>
+                                &#x3C;a href="/assets/laptop-stickers/1.jpg" target="_blank">
+                                    &#x3C;img src="/assets/thumbnails/laptop-stickers/1.jpg" alt="please help">
+                                &#x3C;/a>
+                                &#x3C;figcaption>please help&#x3C;/figcaption>
+                            &#x3C;/figure>
+                        </p>]]></description>
+            <content:encoded><![CDATA[<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/1.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/1.jpg" alt="please help">
+                                </a>
+                                <figcaption>please help</figcaption>
+                            </figure>
+                        </p>
+<p>After a hackathon, you are always left with a lot of swag.</p>
+<p>Shirts, bags, and, of course <em>stickers</em>.</p>
+<p><em>So many stickers.</em></p>
+<p>So of course, the most logical thing to do, is to put them all to use.</p>
+<p>All of them.</p>
+<p>Here are the lessons I have learned when torturing my poor laptop with all these stickers.</p>
+<h2>Google stickers have strong adhesive.</h2>
+<p>Like, good luck getting those guys off. There’s an upside down SQL sticker somewhere in that mess and it’s never going to get fixed.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/2.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/2.jpg" alt="why are you doing this">
+                                </a>
+                                <figcaption>why are you doing this</figcaption>
+                            </figure>
+                        </p>
+<h4>I’m pretty sure some of these aren’t even hackathon stickers.</h4>
+<p>Where did I even get these?</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/3.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/3.jpg" alt="these don’t even look good">
+                                </a>
+                                <figcaption>these don’t even look good</figcaption>
+                            </figure>
+                        </p>
+<h4>Big red stickers are boring.</h4>
+<p>Come on man, don’t monopolize my laptop lid.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/4.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/4.jpg" alt="didn’t you plan to put mac os on me">
+                                </a>
+                                <figcaption>didn’t you plan to put mac os on me</figcaption>
+                            </figure>
+                        </p>
+<h4>“Transparent” stickers are the coolest.</h4>
+<p>Check them out, they’re really neat.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/5.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/5.jpg" alt="you can’t even read what the sticker says">
+                                </a>
+                                <figcaption>you can’t even read what the sticker says</figcaption>
+                            </figure>
+                        </p>
+<h4>I have a lot of HackingEDU stickers.</h4>
+<p>Too many, in fact.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/6.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/6.jpg" alt="stop">
+                                </a>
+                                <figcaption>stop</figcaption>
+                            </figure>
+                        </p>
+<p>Seriously.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/7.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/7.jpg" alt="at least don’t wrinkle them dude">
+                                </a>
+                                <figcaption>at least don’t wrinkle them dude</figcaption>
+                            </figure>
+                        </p>
+<p>Where did I even get so many?</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/8.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/8.jpg" alt="bad">
+                                </a>
+                                <figcaption>bad</figcaption>
+                            </figure>
+                        </p>
+<p>I hope I didn’t take all the stickers or something. Stickers are meant for sharing.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/9.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/9.jpg" alt="i am a thinkpad i don’t need these stickers">
+                                </a>
+                                <figcaption>i am a thinkpad i don’t need these stickers</figcaption>
+                            </figure>
+                        </p>
+<p>Still, so many stickers.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/10.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/10.jpg" alt="at least put another “ship it” one">
+                                </a>
+                                <figcaption>at least put another “ship it” one</figcaption>
+                            </figure>
+                        </p>
+<p>Like, damn.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/11.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/11.jpg" alt=":(">
+                                </a>
+                                <figcaption>:(</figcaption>
+                            </figure>
+                        </p>
+<h4>Conclusion</h4>
+<p>I had a big pile of stickers, and now I don’t. Please look forward to the next installment when I try to peel all of these off.</p>
+<p>
+                            <figure>
+                                <a href="/assets/laptop-stickers/12.jpg" target="_blank">
+                                    <img src="/assets/thumbnails/laptop-stickers/12.jpg" alt="The dark side of Sticker Culture">
+                                </a>
+                                <figcaption>The dark side of Sticker Culture</figcaption>
+                            </figure>
+                        </p>
+<p>Also, shout-outs to HHCdT and <a href="http://hackingedu.co/" class="external">HackingEDU</a>.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[ZeroPlan]]></title>
+            <link>/zeroplan</link>
+            <guid>d2f3375f470771a07de3da15f0bfe830bd6c86610bd2708267c3093223508e41</guid>
+            <pubDate>Mon, 27 Apr 2015 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p><strong>ZeroPlan</strong> is a simple app that switches the power plan from “High Performance” to “Power Saver” when you unplug your PC, and vice versa.</p>]]></description>
+            <content:encoded><![CDATA[<p><strong>ZeroPlan</strong> is a simple app that switches the power plan from “High Performance” to “Power Saver” when you unplug your PC, and vice versa.</p>
+<p>It has no installer, no GUI, no options, and uses only a little more than 1 MB of your RAM. Just stick it in your Autorun folder, and you’re ready to go.</p>
+<p>It uses Net Framework 4.5, so in theory it should be able to run on jailbroken Windows RT devices.</p>
+<p><a href="http://www.mediafire.com/download/r4749ke5wkh7kpx/ZeroPlan.zip" class="external">Download</a>  <a href="https://github.com/SilverEzhik/ZeroPlan" class="external">Source (GPL2)</a></p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
