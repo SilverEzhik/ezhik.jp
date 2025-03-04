@@ -24,6 +24,15 @@ body {
     padding: 0;
 }
 
+.home-text {
+    text-align: center;
+}
+
+article.home>ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 h1,
 h2,
@@ -42,20 +51,18 @@ p {
     text-align: justify;
 }
 
-body>:is(nav, article) {
+.site>:is(nav, article) {
     background: white;
     border-radius: 1em;
     box-shadow: 0em 0.2em 0.5em rgba(0, 0, 0, 0.2);
 }
 
-.posts ul {
-    padding: 0;
-}
 
 
 time {
     /* font-family: var(--iosevka); */
     font-variant-numeric: tabular-nums slashed-zero;
+    text-wrap: nowrap;
     /* font-size: 0.9em; */
 }
 
@@ -83,8 +90,6 @@ nav.sidebar {
     padding: 1em;
 }
 
-.sidebar .links li a {}
-
 
 img {
     max-width: 100%;
@@ -92,6 +97,7 @@ img {
 
 .sidebar .hog {
     width: 64px;
+    flex: 0 0 auto;
 }
 
 
@@ -100,10 +106,6 @@ nav {
     max-width: 900px;
 }
 
-body>* {
-    /* outline: 1px solid red; */
-    /* margin: 0px auto; */
-}
 
 h1:has(+ .hogs) {
     margin-bottom: 0.3em;
@@ -118,7 +120,8 @@ h1:has(+ .hogs) {
 article,
 nav {
     padding: 2em;
-    margin: 2em;
+    margin: 2em min(2em, 5%);
+    overflow-x: scroll;
 }
 
 pre {
@@ -128,6 +131,15 @@ pre {
     border-radius: 1em;
     box-shadow: 0em 0.2em 0.5em rgba(0, 0, 0, 0.2);
     margin: initial auto;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.9em;
+    font-style: italic;
 }
 
 aside {
@@ -181,7 +193,7 @@ article>pre {
 
 /* ok so here we get a cool sidebar */
 @media (min-width: 1280px) {
-    body {
+    .site {
         display: grid;
         grid-template-columns: 300px 1fr;
         grid-template-areas:
@@ -225,6 +237,31 @@ article>pre {
         grid-area: content;
         width: 100%;
     }
+
+    /* hacky hacky hacky swapping of backlinks and the article */
+    .focus-backlinks article {
+        grid-area: backlinks;
+        margin: 2em;
+        margin-top: 0;
+        padding: 0;
+        padding-bottom: 2em;
+
+        width: unset;
+    }
+
+    .focus-backlinks article>* {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .focus-backlinks nav.backlinks {
+        grid-area: content;
+        margin: 0 auto;
+        margin-top: 2em;
+        width: 100%;
+    }
 }
 
 a {
@@ -237,6 +274,7 @@ a:visited {
 
 
 a.external::after {
+    display: inline-block;
     content: "";
     background-color: var(--a-color);
     mask-image: url("/icons/external-link.svg");
@@ -244,7 +282,10 @@ a.external::after {
     mask-position: right center;
     mask-composite: intersect;
     mask-size: 0.9em;
-    padding-right: 1.1em;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-top: -3px;
 }
 
 a.external:visited::after {
@@ -252,9 +293,17 @@ a.external:visited::after {
 }
 
 /* home page */
+.posts ul {
+    padding: 0;
+}
+
 .posts ul li {
     display: flex;
     gap: 1ch;
+}
+
+.posts {
+    text-align: left;
 }
 
 pre {

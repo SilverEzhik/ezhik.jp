@@ -4,11 +4,66 @@
         <title>ezhik.me</title>
         <link>https://ezhik.me</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Mon, 03 Mar 2025 16:26:39 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 04 Mar 2025 15:47:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.me</generator>
         <copyright>© 2025 Ezhik</copyright>
         <atom:link href="https:/ezhik.me/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[TIL]]></title>
+            <link>/til</link>
+            <guid>f1bb8b9dbef1c5349d6f9519a499d39022fc1dbf35a2e5ab0f99b459e65acdb1</guid>
+            <pubDate>Thu, 09 Sep 9999 09:09:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>
+                            <figure>
+                                <a href="/assets/the-more-you-know.gif" target="_blank">
+                                    <img src="/assets/thumbnails/the-more-you-know.gif" alt="The More You Know">
+                                </a>
+                                <figcaption>The More You Know</figcaption>
+                            </figure>
+                        </p>]]></content:encoded>
+            <enclosure url="https://ezhik.me/assets/thumbnails/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Fxtec Pro1 X: The silliest battery fix]]></title>
+            <link>/fxtec-pro1-x-the-silliest-battery-fix</link>
+            <guid>dbdcfc6bd19a9c9aa2a0954185af418fdf4d0b0f912955e9fb01d13972c388b5</guid>
+            <pubDate>Tue, 04 Mar 2025 23:02:00 GMT</pubDate>
+            <description><![CDATA[<p>My <a href="/fxtec-pro1-x">Fxtec Pro1 X</a> died a very silly death. It lost so much battery it wouldn't charge anymore. The phone sat dead in my drawer until I came across <a href="https://community.fxtec.com/topic/4106-a-user-found-a-way-to-charge-a-dead-pro1x-confirmed-by-others/" class="external">a very silly fix</a>.</p>]]></description>
+            <content:encoded><![CDATA[<p>
+                            <figure>
+                                <a href="/assets/fxtec-pro1-x-battery-trick.png" target="_blank">
+                                    <img src="/assets/thumbnails/fxtec-pro1-x-battery-trick.png" alt="A Fxtec Pro1 X, reviving very slowly">
+                                </a>
+                                <figcaption>A Fxtec Pro1 X, reviving very slowly</figcaption>
+                            </figure>
+                        </p>
+<p>My <a href="/fxtec-pro1-x">Fxtec Pro1 X</a> died a very silly death. It lost so much battery it wouldn't charge anymore. The phone sat dead in my drawer until I came across <a href="https://community.fxtec.com/topic/4106-a-user-found-a-way-to-charge-a-dead-pro1x-confirmed-by-others/" class="external">a very silly fix</a>.</p>
+<p>When you hold the power button for like 10 seconds, it'll draw <em>juuust</em> a little bit of power. So if you leave it in that state overnight, it will charge like 6%, which is enough for it to revive and start changing normally.</p>
+<p><a href="/til">The more you know!</a></p>]]></content:encoded>
+            <enclosure url="https://ezhik.me/assets/thumbnails/fxtec-pro1-x-battery-trick.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[The new website: Day 2]]></title>
+            <link>/the-new-website-day-2</link>
+            <guid>42a1806a85928c4364af9544e16d7c1626f715d8e1cb18eb12f72ce1302a7589</guid>
+            <pubDate>Tue, 04 Mar 2025 23:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Yesterday I launched <a href="/the-new-website">the new website</a> on a whim. All things considered, it's pretty cool. Of course, I caught some bugs that are now fixed (but there are plenty still left to feed a hedgehog, I'm sure.</p>]]></description>
+            <content:encoded><![CDATA[<p>Yesterday I launched <a href="/the-new-website">the new website</a> on a whim. All things considered, it's pretty cool. Of course, I caught some bugs that are now fixed (but there are plenty still left to feed a hedgehog, I'm sure.</p>
+<p>Here are some little things I fixed though:</p>
+<ul>
+<li>Reduced margins on smaller screens</li>
+<li>Added image previews in <code>&#x3C;meta></code> tags</li>
+<li>Made RSS descriptions nicer</li>
+<li>Fixed the external link indicator on Safari</li>
+<li>Made overflows look prettier</li>
+<li>Made the hog resize less</li>
+<li>Removed some weird stuff like old font imports</li>
+<li>Kinda sorta integrated <a href="/radical-lookup">Radical Lookup</a> into this now (it's an <code>&#x3C;iframe></code> going to the old page, glitchhog aesthetics and all. Flash embed type vibes.)</li>
+</ul>
+<p>I also made a <a href="/til">TIL</a> page. Swap the backlinks and the articles and bam, it's now a tag. Neat. To make it even neater, I made a weird <code>~[[TIL]]</code> syntax that'll exclude that TIL link from its backlinks.</p>
+<p>And since this is a blog about my hedgehog stuff, I'll try to post some stuff that's not just about this blog. Blogging about blogging and taking notes about taking notes. I hate getting stuck in metawork. So I made a small post about a gadget I was messing with: <a href="/fxtec-pro1-x-the-silliest-battery-fix">Fxtec Pro1 X - The silliest battery fix</a>.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[The new website]]></title>
             <link>/the-new-website</link>
@@ -80,8 +135,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <guid>e350b3cb6779c7538d47c82cc2d85495f6a6f9f616c208f75d63cfe0611b3f63</guid>
             <pubDate>Thu, 28 Jun 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[<p><strong>Beyond 184</strong> is a cellular automata for simulating traffic in an urban setting.</p>]]></description>
-            <content:encoded><![CDATA[<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-<script language="javascript" type="text/javascript" src="/assets/old/beyond184/libraries/p5.js"></script>
+            <content:encoded><![CDATA[<script language="javascript" type="text/javascript" src="/assets/old/beyond184/libraries/p5.js"></script>
 <script language="javascript" type="text/javascript" src="/assets/old/beyond184/sketch.js"></script>
 <style>
 #defaultCanvas0 {
@@ -99,14 +153,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <link>/laptop-stickers</link>
             <guid>7a7ee980c06a3aa9627d869098020cbce1f415d8ea8599af12dc6d7056b79832</guid>
             <pubDate>Fri, 14 Aug 2015 03:34:39 GMT</pubDate>
-            <description><![CDATA[<p>
-                            &#x3C;figure>
-                                &#x3C;a href="/assets/laptop-stickers/1.jpg" target="_blank">
-                                    &#x3C;img src="/assets/thumbnails/laptop-stickers/1.jpg" alt="please help">
-                                &#x3C;/a>
-                                &#x3C;figcaption>please help&#x3C;/figcaption>
-                            &#x3C;/figure>
-                        </p>]]></description>
+            <description><![CDATA[<p>After a hackathon, you are always left with a lot of swag.</p>]]></description>
             <content:encoded><![CDATA[<p>
                             <figure>
                                 <a href="/assets/laptop-stickers/1.jpg" target="_blank">
@@ -226,7 +273,8 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
                                 <figcaption>The dark side of Sticker Culture</figcaption>
                             </figure>
                         </p>
-<p>Also, shout-outs to HHCdT and <a href="http://hackingedu.co/" class="external">HackingEDU</a>.</p>]]></content:encoded>
+<p>Also, shout-outs to HHCdT and <a href="https://web.archive.org/web/20150801122117/http://hackingedu.co/" class="external">HackingEDU</a>.</p>]]></content:encoded>
+            <enclosure url="https://ezhik.me/assets/thumbnails/laptop-stickers/1.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[ZeroPlan]]></title>
