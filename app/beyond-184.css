@@ -1,0 +1,11 @@
+#app {
+    p {
+        margin: 0;
+    }
+
+    #defaultCanvas0 {
+        height: auto !important;
+        width: 100% !important;
+        aspect-ratio: 1 / 1;
+    }
+}

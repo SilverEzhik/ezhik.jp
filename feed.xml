@@ -4,7 +4,7 @@
         <title>ezhik.me</title>
         <link>https://ezhik.me</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Thu, 06 Mar 2025 14:07:24 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 06 Mar 2025 14:24:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.me</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -148,15 +148,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <guid>e350b3cb6779c7538d47c82cc2d85495f6a6f9f616c208f75d63cfe0611b3f63</guid>
             <pubDate>Thu, 28 Jun 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[Beyond 184 is a cellular automata for simulating traffic in an urban setting.]]></description>
-            <content:encoded><![CDATA[<script language="javascript" type="text/javascript" src="/assets/old/beyond184/libraries/p5.js"></script>
-<script language="javascript" type="text/javascript" src="/assets/old/beyond184/sketch.js"></script>
-<style>
-#defaultCanvas0 {
-	height: auto !important;
-	width: 100% !important;
-</style>
-<p id="canvascontainer"></p>
-<p><strong>Beyond 184</strong> is a cellular automata for simulating traffic in an urban setting.</p>
+            <content:encoded><![CDATA[<p><strong>Beyond 184</strong> is a cellular automata for simulating traffic in an urban setting.</p>
 <p>Every single one of those little cars is not just going in a straight line, but is instead behaving similarly to an actual car – accelerating as they move through an empty road, and slowing down before obstacles.</p>
 <p>It is based on the Rule 184 CA (hence the name), with enhancements made to add varying speed levels and to make the whole thing work in two dimensions.</p>
 <p><a href="https://github.com/SilverEzhik/beyond184" class="external">Source (GPL2)</a>  <a href="/assets/old/beyond184/conference.pdf">Paper</a></p>]]></content:encoded>
