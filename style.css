@@ -1,38 +1,79 @@
 @import url('/fonts.css');
 
+/* #region reset */
+/*
+    a few things from https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+iframe {
+    display: block;
+    border: 0;
+}
+
+/* #endregion reset */
+
+/* #region basic styles */
 :root {
     --a-color: #36c;
     --a-visited-color: #6a60b0;
-
-    --nav-height: 200px;
-    --backlinks-height: calc(100vh - var(--nav-height));
 }
 
 html {
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
     font-family: var(--pt-serif);
     line-height: 1.5;
-    /* font-size: 18px; */
-    /* font-weight: 500; */
-    /* text-rendering: optimizeLegibility; */
-    /* -webkit-font-smoothing: antialiased; */
     background: #f8f8f8;
 }
 
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-.home-text {
-    text-align: center;
+a {
+    color: var(--a-color);
+
+    &:visited {
+        color: var(--a-visited-color);
+    }
+
+    /* external links */
+    &.external {
+        &:after {
+            display: inline-block;
+            content: "";
+            background-color: var(--a-color);
+            mask-image: url("/icons/external-link.svg");
+            mask-repeat: no-repeat;
+            mask-position: right center;
+            mask-composite: intersect;
+            mask-size: 0.9em;
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            margin-top: -3px;
+        }
+
+        &:visited::after {
+            background-color: var(--a-visited-color);
+        }
+    }
 }
 
-article.home>ul {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
 
 h1,
 h2,
@@ -41,273 +82,253 @@ h4,
 h5,
 h6 {
     font-family: var(--garamond);
-    /* font-weight: 500; */
     font-size: 1.8em;
     line-height: 1.2;
     text-align: center;
 }
 
-p {
-    text-align: justify;
-}
-
-.site>:is(nav, article) {
-    background: white;
-    border-radius: 1em;
-    box-shadow: 0em 0.2em 0.5em rgba(0, 0, 0, 0.2);
-}
-
-
-
 time {
-    /* font-family: var(--iosevka); */
     font-variant-numeric: tabular-nums slashed-zero;
     text-wrap: nowrap;
-    /* font-size: 0.9em; */
 }
 
 pre,
 code {
     font-family: var(--iosevka);
-    /* font-size: 0.9em; */
 }
 
-nav.sidebar {
-    display: flex;
-    gap: 1em;
-    align-items: center;
+/* #endregion basic styles */
+
+
+/* #region block layout */
+.site {
+
+    >aside,
+    >main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+        width: 100%;
+    }
 }
 
-.sidebar .links {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar .links li {
-    display: block;
-    padding: 1em;
-}
-
-
-img {
-    max-width: 100%;
-}
-
-.sidebar .hog {
-    width: 64px;
-    flex: 0 0 auto;
-}
-
-
-article,
-nav {
-    max-width: 900px;
-}
-
-
-h1:has(+ .hogs) {
-    margin-bottom: 0.3em;
-}
-
-.hogs {
-    margin: 0;
-    font-size: 20px;
-}
-
-
-article,
-nav {
-    padding: 2em;
-    margin: 2em min(2em, 5%);
-    overflow-x: scroll;
-}
-
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    background: rgba(0, 0, 0, 0.01);
+.block {
+    background: white;
     border-radius: 1em;
     box-shadow: 0em 0.2em 0.5em rgba(0, 0, 0, 0.2);
-    margin: initial auto;
+    width: 100%;
+    padding: 2em;
+    max-width: 1024px;
+    overflow: hidden;
+
+    &#app {
+        padding: 0;
+
+        p.noscript {
+            text-align: center;
+            padding: 2em;
+        }
+    }
 }
 
-figure {
-    text-align: center;
-}
+/* #endregion */
 
-figcaption {
-    font-size: 0.9em;
-    font-style: italic;
-}
 
-aside {
-    text-align: center;
-    line-height: 1.2em;
-    font-style: italic;
-}
+/* #region article style */
+article.block {
+    container-type: inline-size;
 
-article>:is(p, .hogs, ol, ul, blockquote) {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0px;
-}
+    padding: 2em min(2em, 5cqw);
 
-article>pre {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1em;
-}
+    p {
+        text-align: justify;
+        text-wrap: pretty;
+    }
 
-/* cool asides like on pault.ag */
-@media (min-width: 1024px) {
-
-    article,
-    nav {
-        margin: 2em auto;
+    p,
+    .hogs,
+    ol,
+    >ul,
+    blockquote,
+    pre {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
     }
 
 
-    article>:is(p, .hogs, ol, ul, blockquote) {
-        /* max-width: 900px; */
-        padding-left: 200px;
-        padding-right: 200px;
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background: rgba(0, 0, 0, 0.01);
+        border-radius: 1em;
+        box-shadow: 0em 0.2em 0.5em rgba(0, 0, 0, 0.2);
+        padding: 1em;
+
+        /* use content-box here so it looks nicer */
+        box-sizing: content-box;
     }
+
+    img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    figure {
+        text-align: center;
+
+        figcaption {
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        margin: 0;
+    }
+
+
 
     aside {
-        width: 180px;
-        text-align: left;
+        text-align: center;
+        font-style: italic;
+        font-size: 0.9em;
+
+        @container (min-width: 880px) {
+            & {
+                width: 180px;
+                text-align: left;
+            }
+
+            &.left {
+                float: left;
+            }
+
+            &.right {
+                float: right;
+            }
+        }
     }
 
-    aside.left {
-        float: left;
-    }
 
-    aside.right {
-        float: right;
-    }
-}
-
-/* ok so here we get a cool sidebar */
-@media (min-width: 1280px) {
-    .site {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        grid-template-areas:
-            "sidebar content"
-            "backlinks content"
-            ". content";
-        grid-template-rows: auto auto 1fr;
-        grid-auto-rows: auto;
-        max-width: 1280px;
+    .hogs {
         margin: 0 auto;
+        font-size: 20px;
+
+        h1:has(+ &) {
+            margin-bottom: 0.3em;
+        }
     }
 
-    :root {
-        --sidebar-height: 172px;
-    }
-
-    nav {
-        position: sticky;
-        top: 2em;
-        margin: 2em;
-    }
-
-    nav.sidebar {
-        height: 200px;
-    }
-
-    .sidebar .links {
-        flex-direction: column;
-    }
-
-    .sidebar .links li {
-        padding: 0.1em;
-    }
-
-    nav.backlinks {
-        margin-top: 0;
-        top: calc(200px + 8em);
-    }
-
-    article {
-        grid-area: content;
-        width: 100%;
-    }
-
-    /* hacky hacky hacky swapping of backlinks and the article */
-    .focus-backlinks article {
-        grid-area: backlinks;
-        margin: 2em;
-        margin-top: 0;
-        padding: 0;
-        padding-bottom: 2em;
-
-        width: unset;
-    }
-
-    .focus-backlinks article>* {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-
-    .focus-backlinks nav.backlinks {
-        grid-area: content;
-        margin: 0 auto;
-        margin-top: 2em;
-        width: 100%;
+    &.home {
+        p {
+            text-align: center;
+        }
     }
 }
 
-a {
-    color: var(--a-color);
+/* #endregion article style */
+
+/* #region nav */
+aside.sidebar {
+    nav.links {
+        container-type: inline-size;
+
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        /* flex-wrap: wrap; */
+
+        ul.links {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: block;
+                padding: 1em;
+            }
+
+            @container (max-width: 250px) {
+                & {
+                    flex-direction: column;
+
+                    li {
+                        padding: 0.1em;
+                    }
+                }
+            }
+        }
+
+        img.hog {
+            width: 64px;
+            flex: 0 0 auto;
+        }
+    }
 }
 
-a:visited {
-    color: var(--a-visited-color);
+/* #endregion nav */
+
+/* #region layout */
+.site {
+    display: grid;
+    margin: 2em auto;
+    gap: 2em;
+    justify-items: center;
+
+    @media (max-width: 1280px) {
+        & {
+            grid-template-areas: "links" "main" "backlinks";
+            grid-template-columns: 1fr;
+            margin: 2em min(2em, 5vw);
+        }
+
+        >aside {
+            display: contents;
+        }
+
+        aside.sidebar {
+            .links {
+                grid-area: links;
+            }
+
+            .backlinks {
+                grid-area: backlinks;
+            }
+
+            main {
+                grid-area: main;
+            }
+        }
+
+        &.focus-backlinks {
+            article {
+                grid-area: backlinks;
+            }
+        }
+    }
+
+    @media (min-width: 1280px) {
+        & {
+            grid-template-areas: "sidebar main";
+            grid-template-columns: 300px 1fr;
+            width: 1280px;
+        }
+
+        aside.sidebar {
+            grid-area: sidebar;
+
+            align-self: start;
+            position: sticky;
+            top: 2em;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+    }
 }
 
-
-a.external::after {
-    display: inline-block;
-    content: "";
-    background-color: var(--a-color);
-    mask-image: url("/icons/external-link.svg");
-    mask-repeat: no-repeat;
-    mask-position: right center;
-    mask-composite: intersect;
-    mask-size: 0.9em;
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
-    margin-top: -3px;
-}
-
-a.external:visited::after {
-    background-color: var(--a-visited-color);
-}
-
-/* home page */
-.posts ul {
-    padding: 0;
-}
-
-.posts ul li {
-    display: flex;
-    gap: 1ch;
-}
-
-.posts {
-    text-align: left;
-}
-
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
+/* #endregion layout */

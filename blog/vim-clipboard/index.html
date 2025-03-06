@@ -2,20 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="../../favicon.png" />
+		<link rel="icon" href="/favicon.png" />
 		<link rel="stylesheet" href="/style.css" />
-		<link
-			rel="alternate"
-			type="application/rss+xml"
-			title="RSS Feed for ezhik.me"
-			href="/feed.xml"
-		/>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="refresh" content="0;url=/vim-clipboard"> <meta property="og:type" content="article"> <meta property="og:title" content="The objectively correct guide to making Vim use the system clipboard – ezhik.me"> <meta property="og:description" content="&lt;p>Make sure your Vim has clipboard support (run &lt;code>vim --version&lt;/code> and check for &lt;code>+clipboard&lt;/code>), stick this in your &lt;code>.vimrc&lt;/code> or Neovim's &lt;code>init.vim&lt;/code>, enjoy life:&lt;/p>"> <meta property="og:url" content="https://ezhik.me/vim-clipboard"> <meta property="og:image" content="https://ezhik.mefavicon.png"><title>The objectively correct guide to making Vim use the system clipboard – ezhik.me</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.me" href="/feed.xml" />
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=/vim-clipboard"> <meta property="og:type" content="article"> <meta property="og:title" content="The objectively correct guide to making Vim use the system clipboard – ezhik.me"> <meta property="og:description" content="Make sure your Vim has clipboard support (run vim --version and check for +clipboard), stick this in your .vimrc or Neovim's init.vim, enjoy life:"> <meta property="og:url" content="https://ezhik.me/vim-clipboard"> <meta property="og:image" content="https://ezhik.me/favicon.png"><title>The objectively correct guide to making Vim use the system clipboard – ezhik.me</title>
 	</head>
 
 	<body>
-		<div class="site "><nav class="sidebar"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.me">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.me">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> <article><h1>The objectively correct guide to making Vim use the system clipboard</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>Make sure your Vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or Neovim's <code>init.vim</code>, enjoy life:</p>
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.me">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.me">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> <nav class="backlinks block"><p>Backlinks</p> <ul><li><a href="/test-post">Test Post</a></li></ul></nav></aside> <main> <article class="block"><h1>The objectively correct guide to making Vim use the system clipboard</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>Make sure your Vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or Neovim's <code>init.vim</code>, enjoy life:</p>
 <pre><code class="hljs language-vim"><span class="keyword">set</span> clipboard=
 <span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">y</span> <span class="string">""</span><span class="keyword">y</span>
 <span class="keyword">noremap</span> <span class="string">""</span>yy <span class="string">""</span>yy
@@ -40,6 +34,6 @@
 <p>The four lines above those add an exception to the rule: if you explicitly try to use the unnamed register, it will be used instead. Make sure you get the order of the lines right in your Vim configuration file, or who knows what might happen.</p>
 <p>So, with the clipboard set up this way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
 <p>The end!</p>
-<p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/SilverEzhik.github.io/issues" class="external">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2019-09-17</time></sub></center></article> <nav class="backlinks"><p>Backlinks</p> <ul><li><a href="/test-post">Test Post</a></li></ul></nav></div> 
+<p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/SilverEzhik.github.io/issues" class="external">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2019-09-17</time></sub></center></article></main></div> 
 	</body>
 </html>

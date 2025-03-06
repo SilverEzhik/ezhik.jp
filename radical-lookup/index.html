@@ -2,20 +2,21 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="../favicon.png" />
+		<link rel="icon" href="/favicon.png" />
 		<link rel="stylesheet" href="/style.css" />
-		<link
-			rel="alternate"
-			type="application/rss+xml"
-			title="RSS Feed for ezhik.me"
-			href="/feed.xml"
-		/>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		 <meta property="og:type" content="article"> <meta property="og:title" content="Radical Lookup – ezhik.me"> <meta property="og:description" content="&lt;p>like i said i'm really winging it with this redesign for now but hey it's still here as legacy code™&lt;/p>"> <meta property="og:url" content="https://ezhik.me/radical-lookup"> <meta property="og:image" content="https://ezhik.mefavicon.png"><title>Radical Lookup – ezhik.me</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.me" href="/feed.xml" />
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:type" content="article"> <meta property="og:title" content="Radical Lookup – ezhik.me"> <meta property="og:description" content="This is a kanji radical lookup tool with a little twist - it allows you to also decompose a kanji with its radicals. This is useful if you remember a kanji that uses a certain radical, but are not sure how many strokes it actually has (which you'd need to know to use the Jisho radical tool, for example)."> <meta property="og:url" content="https://ezhik.me/radical-lookup"> <meta property="og:image" content="https://ezhik.me/favicon.png"><title>Radical Lookup – ezhik.me</title>
 	</head>
 
 	<body>
-		<div class="site "><nav class="sidebar"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.me">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.me">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> <article><h1>Radical Lookup</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <iframe src="/assets/old/radical-lookup/index.html" style="width: 100%; height: 800px"></iframe>
-<p>like i said i'm really winging it with this redesign for now but hey it's still here as legacy code™</p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2018-09-18</time></sub></center></article> <nav class="backlinks"><p>Backlinks</p> <ul><li><a href="/the-new-website-day-2">The new website: Day 2</a></li></ul></nav></div> 
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.me">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.me">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> <nav class="backlinks block"><p>Backlinks</p> <ul><li><a href="/the-new-website-day-2">The new website: Day 2</a></li></ul></nav></aside> <main>
+				<script type="module">
+					import init from "/app/radical-lookup.js";
+					init(document.querySelector("#app"));
+				</script>
+			 <div class="block" id="app"><noscript><p class="noscript">JavaScript is required to view this content.</p></noscript></div> <article class="block"><h1>Radical Lookup</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <aside class="right">I haven't gotten around to rebuilding this one for the new site yet so enjoy it in all of its glitchhog aesthetic glory. That's an <code>&#x3C;iframe></code> right there.</aside>
+<p>This is a kanji radical lookup tool with a little twist - it allows you to also decompose a kanji with its radicals. This is useful if you remember a kanji that uses a certain radical, but are not sure how many strokes it actually has (which you'd need to know to use the Jisho radical tool, for example).</p>
+<p>This uses <a href="http://www.edrdg.org/krad/kradinf.html" class="external">KRADFILE</a> for looking things up.</p>
+<p><a href="https://github.com/SilverEzhik/radical-lookup" class="external">Source (GPL3)</a></p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2018-09-18</time></sub></center></article></main></div> 
 	</body>
 </html>

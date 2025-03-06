@@ -4,7 +4,7 @@
         <title>ezhik.me</title>
         <link>https://ezhik.me</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Wed, 05 Mar 2025 15:10:54 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 06 Mar 2025 14:07:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.me</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -15,29 +15,40 @@
             <guid>f1bb8b9dbef1c5349d6f9519a499d39022fc1dbf35a2e5ab0f99b459e65acdb1</guid>
             <pubDate>Thu, 09 Sep 9999 09:09:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>
-                            <figure>
-                                <a href="/assets/the-more-you-know.gif" target="_blank">
-                                    <img src="/assets/the-more-you-know.gif" alt="The More You Know">
-                                </a>
-                                <figcaption>The More You Know</figcaption>
-                            </figure>
-                        </p>]]></content:encoded>
+									<figure>
+										<a href="/assets/the-more-you-know.gif" target="_blank">
+											<img src="/assets/the-more-you-know.gif" alt="The More You Know">
+										</a>
+										<figcaption>The More You Know</figcaption>
+									</figure>
+								</p>]]></content:encoded>
             <enclosure url="https://ezhik.me/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Adding a little interactivity]]></title>
+            <link>/adding-a-little-interactivity</link>
+            <guid>eb107c9093d88b0a70ad1b71d2e93ee6ed12f14ebb0ac655124fdb9f2e3a961b</guid>
+            <pubDate>Thu, 06 Mar 2025 23:00:00 GMT</pubDate>
+            <description><![CDATA[There's this architecture called islands of interactivity – where you add little interactive bits here and there on an otherwise static website. And that sure reminds me of Flash – you'd have a static website, but it'd have an an interactive SWF file embedded, which would include fun stuff.]]></description>
+            <content:encoded><![CDATA[<p>There's this architecture called <em>islands of interactivity</em> – where you add little interactive bits here and there on an otherwise static website. And that sure reminds me of Flash – you'd have a static website, but it'd have an an interactive SWF file embedded, which would include fun stuff.</p>
+<p>I like that approach. The website still works just fine if you don't have JavaScript, but at the same time you can bring in fun bits of interactivity. Make little apps and stuff. So I tried building this for my website too, and the little <a href="/react">React</a> hello world is a demonstration of that.</p>
+<p>These days, <a href="https://react.dev" class="external">react.dev</a> tries really hard to force you to use stuff like Next.js and whatnot. But if you try, you can figure out how to build some little toy web apps that don't require you to get weird with web servers. Just write some code and just make yourself a little app that'll sit in its own rectangle. It's not a big deal. It's not the next big startup. It's just there for you and whoever else you share it with.</p>
+<p>I really do miss Flash.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Fxtec Pro1 X: The silliest battery fix]]></title>
             <link>/fxtec-pro1-x-the-silliest-battery-fix</link>
             <guid>dbdcfc6bd19a9c9aa2a0954185af418fdf4d0b0f912955e9fb01d13972c388b5</guid>
             <pubDate>Tue, 04 Mar 2025 23:02:00 GMT</pubDate>
-            <description><![CDATA[<p>My <a href="/fxtec-pro1-x">Fxtec Pro1 X</a> died a very silly death. It lost so much battery it wouldn't charge anymore. The phone sat dead in my drawer until I came across <a href="https://community.fxtec.com/topic/4106-a-user-found-a-way-to-charge-a-dead-pro1x-confirmed-by-others/" class="external">a very silly fix</a>.</p>]]></description>
+            <description><![CDATA[My Fxtec Pro1 X died a very silly death. It lost so much battery it wouldn't charge anymore. The phone sat dead in my drawer until I came across a very silly fix.]]></description>
             <content:encoded><![CDATA[<p>
-                            <figure>
-                                <a href="/assets/fxtec-pro1-x-battery-trick.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/fxtec-pro1-x-battery-trick.jpg" alt="A Fxtec Pro1 X, reviving very slowly">
-                                </a>
-                                <figcaption>A Fxtec Pro1 X, reviving very slowly</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/fxtec-pro1-x-battery-trick.jpg" target="_blank">
+											<img src="/assets/thumbnails/fxtec-pro1-x-battery-trick.jpg" alt="A Fxtec Pro1 X, reviving very slowly">
+										</a>
+										<figcaption>A Fxtec Pro1 X, reviving very slowly</figcaption>
+									</figure>
+								</p>
 <p>My <a href="/fxtec-pro1-x">Fxtec Pro1 X</a> died a very silly death. It lost so much battery it wouldn't charge anymore. The phone sat dead in my drawer until I came across <a href="https://community.fxtec.com/topic/4106-a-user-found-a-way-to-charge-a-dead-pro1x-confirmed-by-others/" class="external">a very silly fix</a>.</p>
 <p>When you hold the power button for like 10 seconds, it'll draw <em>juuust</em> a little bit of power. So if you leave it in that state overnight, it will charge like 6%, which is enough for it to revive and start changing normally.</p>
 <p><a href="/til">The more you know!</a></p>]]></content:encoded>
@@ -48,7 +59,7 @@
             <link>/the-new-website-day-2</link>
             <guid>42a1806a85928c4364af9544e16d7c1626f715d8e1cb18eb12f72ce1302a7589</guid>
             <pubDate>Tue, 04 Mar 2025 23:00:00 GMT</pubDate>
-            <description><![CDATA[<p>Yesterday I launched <a href="/the-new-website">the new website</a> on a whim. All things considered, it's pretty cool. Of course, I caught some bugs that are now fixed (but there are plenty still left to feed a hedgehog, I'm sure.</p>]]></description>
+            <description><![CDATA[Yesterday I launched the new website on a whim. All things considered, it's pretty cool. Of course, I caught some bugs that are now fixed (but there are plenty still left to feed a hedgehog, I'm sure.]]></description>
             <content:encoded><![CDATA[<p>Yesterday I launched <a href="/the-new-website">the new website</a> on a whim. All things considered, it's pretty cool. Of course, I caught some bugs that are now fixed (but there are plenty still left to feed a hedgehog, I'm sure.</p>
 <p>Here are some little things I fixed though:</p>
 <ul>
@@ -69,7 +80,7 @@
             <link>/the-new-website</link>
             <guid>6c08f5dd70a1b546c9c9e49a0931b12546288829683b320bb62c05905af6dc0d</guid>
             <pubDate>Mon, 03 Mar 2025 23:59:00 GMT</pubDate>
-            <description><![CDATA[<p>I wanted to make a new website for a while. I thought I'd be cool and do it right and stuff, but then I watched Lu Wilson's <a href="https://www.youtube.com/watch?v=73mEhS0gxgI" class="external"><em>Death of the Tadiweb</em></a> and decided to wing it because life is too short to bikeshed a homebrew blogging engine especially since this one is a horror show that uses SvelteKit for some reason even though the whole thing is just a static website with some islands of interactivity Flash applet-style. Don't ask. Or do. Do ask. Email me. <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>. Let's chat. Send me stories. Send me your favorite hedgehog picture or story or video or song or app or novel. Send me small computers.</p>]]></description>
+            <description><![CDATA[I wanted to make a new website for a while. I thought I'd be cool and do it right and stuff, but then I watched Lu Wilson's Death of the Tadiweb and decided to wing it because life is too short to bikeshed a homebrew blogging engine especially since this one is a horror show that uses SvelteKit for some reason even though the whole thing is just a static website with some islands of interactivity Flash applet-style. Don't ask. Or do. Do ask. Email me. i@ezhik.me. Let's chat. Send me stories. Send me your favorite hedgehog picture or story or video or song or app or novel. Send me small computers.]]></description>
             <content:encoded><![CDATA[<p>I wanted to make a new website for a while. I thought I'd be cool and do it right and stuff, but then I watched Lu Wilson's <a href="https://www.youtube.com/watch?v=73mEhS0gxgI" class="external"><em>Death of the Tadiweb</em></a> and decided to wing it because life is too short to bikeshed a homebrew blogging engine especially since this one is a horror show that uses SvelteKit for some reason even though the whole thing is just a static website with some islands of interactivity Flash applet-style. Don't ask. Or do. Do ask. Email me. <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>. Let's chat. Send me stories. Send me your favorite hedgehog picture or story or video or song or app or novel. Send me small computers.</p>
 <p>So here we are. I'm still scouring the internet for my various blog posts (I recovered one so far and it's a silly one!). I've also moved most of my existing stuff on the old site over - ping me if anything's missing as I'm sure it's not gone forever and I want to put it all back.</p>
 <p>Also... There's now an <a href="/feed.xml">✨RSS feed✨</a>. Please follow it.</p>
@@ -84,7 +95,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <link>/privacy-policy</link>
             <guid>8f75388c2d6c62bb7f249cedf492e5f4413c8c020fb1b85a85ddc481244aa0f7</guid>
             <pubDate>Mon, 03 Mar 2025 23:58:00 GMT</pubDate>
-            <description><![CDATA[<p>I was too lazy to put spyware on this site so you'll have to share your personal information with me manually. You must email <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a> with your engagement metrics or wild hedgehogs will bite your ankles.</p>]]></description>
+            <description><![CDATA[I was too lazy to put spyware on this site so you'll have to share your personal information with me manually. You must email i@ezhik.me with your engagement metrics or wild hedgehogs will bite your ankles.]]></description>
             <content:encoded><![CDATA[<p>I was too lazy to put spyware on this site so you'll have to share your personal information with me manually. You must email <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a> with your engagement metrics or wild hedgehogs will bite your ankles.</p>]]></content:encoded>
         </item>
         <item>
@@ -92,7 +103,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <link>/vim-clipboard</link>
             <guid>c467f8943446eab0441b6a56d200189714643d771b847f69c4637824bf560d75</guid>
             <pubDate>Tue, 17 Sep 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p>Make sure your Vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or Neovim's <code>init.vim</code>, enjoy life:</p>]]></description>
+            <description><![CDATA[Make sure your Vim has clipboard support (run vim --version and check for +clipboard), stick this in your .vimrc or Neovim's init.vim, enjoy life:]]></description>
             <content:encoded><![CDATA[<p>Make sure your Vim has clipboard support (run <code>vim --version</code> and check for <code>+clipboard</code>), stick this in your <code>.vimrc</code> or Neovim's <code>init.vim</code>, enjoy life:</p>
 <pre><code class="hljs language-vim"><span class="keyword">set</span> clipboard=
 <span class="keyword">noremap</span> <span class="string">""</span><span class="keyword">y</span> <span class="string">""</span><span class="keyword">y</span>
@@ -125,16 +136,18 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <link>/radical-lookup</link>
             <guid>ee27ecbd383367d36623d80a3efde2a38058545e7f2912c2a97b002f6900b075</guid>
             <pubDate>Tue, 18 Sep 2018 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p>like i said i'm really winging it with this redesign for now but hey it's still here as legacy code™</p>]]></description>
-            <content:encoded><![CDATA[<iframe src="/assets/old/radical-lookup/index.html" style="width: 100%; height: 800px"></iframe>
-<p>like i said i'm really winging it with this redesign for now but hey it's still here as legacy code™</p>]]></content:encoded>
+            <description><![CDATA[This is a kanji radical lookup tool with a little twist - it allows you to also decompose a kanji with its radicals. This is useful if you remember a kanji that uses a certain radical, but are not sure how many strokes it actually has (which you'd need to know to use the Jisho radical tool, for example).]]></description>
+            <content:encoded><![CDATA[<aside class="right">I haven't gotten around to rebuilding this one for the new site yet so enjoy it in all of its glitchhog aesthetic glory. That's an <code>&#x3C;iframe></code> right there.</aside>
+<p>This is a kanji radical lookup tool with a little twist - it allows you to also decompose a kanji with its radicals. This is useful if you remember a kanji that uses a certain radical, but are not sure how many strokes it actually has (which you'd need to know to use the Jisho radical tool, for example).</p>
+<p>This uses <a href="http://www.edrdg.org/krad/kradinf.html" class="external">KRADFILE</a> for looking things up.</p>
+<p><a href="https://github.com/SilverEzhik/radical-lookup" class="external">Source (GPL3)</a></p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Beyond 184]]></title>
             <link>/beyond184</link>
             <guid>e350b3cb6779c7538d47c82cc2d85495f6a6f9f616c208f75d63cfe0611b3f63</guid>
             <pubDate>Thu, 28 Jun 2018 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p><strong>Beyond 184</strong> is a cellular automata for simulating traffic in an urban setting.</p>]]></description>
+            <description><![CDATA[Beyond 184 is a cellular automata for simulating traffic in an urban setting.]]></description>
             <content:encoded><![CDATA[<script language="javascript" type="text/javascript" src="/assets/old/beyond184/libraries/p5.js"></script>
 <script language="javascript" type="text/javascript" src="/assets/old/beyond184/sketch.js"></script>
 <style>
@@ -153,15 +166,15 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <link>/laptop-stickers</link>
             <guid>7a7ee980c06a3aa9627d869098020cbce1f415d8ea8599af12dc6d7056b79832</guid>
             <pubDate>Fri, 14 Aug 2015 03:34:39 GMT</pubDate>
-            <description><![CDATA[<p>After a hackathon, you are always left with a lot of swag.</p>]]></description>
+            <description><![CDATA[After a hackathon, you are always left with a lot of swag.]]></description>
             <content:encoded><![CDATA[<p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/1.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/1.jpg" alt="please help">
-                                </a>
-                                <figcaption>please help</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/1.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/1.jpg" alt="please help">
+										</a>
+										<figcaption>please help</figcaption>
+									</figure>
+								</p>
 <p>After a hackathon, you are always left with a lot of swag.</p>
 <p>Shirts, bags, and, of course <em>stickers</em>.</p>
 <p><em>So many stickers.</em></p>
@@ -171,108 +184,108 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
 <h2>Google stickers have strong adhesive.</h2>
 <p>Like, good luck getting those guys off. There’s an upside down SQL sticker somewhere in that mess and it’s never going to get fixed.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/2.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/2.jpg" alt="why are you doing this">
-                                </a>
-                                <figcaption>why are you doing this</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/2.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/2.jpg" alt="why are you doing this">
+										</a>
+										<figcaption>why are you doing this</figcaption>
+									</figure>
+								</p>
 <h4>I’m pretty sure some of these aren’t even hackathon stickers.</h4>
 <p>Where did I even get these?</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/3.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/3.jpg" alt="these don’t even look good">
-                                </a>
-                                <figcaption>these don’t even look good</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/3.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/3.jpg" alt="these don’t even look good">
+										</a>
+										<figcaption>these don’t even look good</figcaption>
+									</figure>
+								</p>
 <h4>Big red stickers are boring.</h4>
 <p>Come on man, don’t monopolize my laptop lid.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/4.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/4.jpg" alt="didn’t you plan to put mac os on me">
-                                </a>
-                                <figcaption>didn’t you plan to put mac os on me</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/4.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/4.jpg" alt="didn’t you plan to put mac os on me">
+										</a>
+										<figcaption>didn’t you plan to put mac os on me</figcaption>
+									</figure>
+								</p>
 <h4>“Transparent” stickers are the coolest.</h4>
 <p>Check them out, they’re really neat.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/5.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/5.jpg" alt="you can’t even read what the sticker says">
-                                </a>
-                                <figcaption>you can’t even read what the sticker says</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/5.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/5.jpg" alt="you can’t even read what the sticker says">
+										</a>
+										<figcaption>you can’t even read what the sticker says</figcaption>
+									</figure>
+								</p>
 <h4>I have a lot of HackingEDU stickers.</h4>
 <p>Too many, in fact.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/6.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/6.jpg" alt="stop">
-                                </a>
-                                <figcaption>stop</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/6.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/6.jpg" alt="stop">
+										</a>
+										<figcaption>stop</figcaption>
+									</figure>
+								</p>
 <p>Seriously.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/7.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/7.jpg" alt="at least don’t wrinkle them dude">
-                                </a>
-                                <figcaption>at least don’t wrinkle them dude</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/7.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/7.jpg" alt="at least don’t wrinkle them dude">
+										</a>
+										<figcaption>at least don’t wrinkle them dude</figcaption>
+									</figure>
+								</p>
 <p>Where did I even get so many?</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/8.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/8.jpg" alt="bad">
-                                </a>
-                                <figcaption>bad</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/8.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/8.jpg" alt="bad">
+										</a>
+										<figcaption>bad</figcaption>
+									</figure>
+								</p>
 <p>I hope I didn’t take all the stickers or something. Stickers are meant for sharing.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/9.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/9.jpg" alt="i am a thinkpad i don’t need these stickers">
-                                </a>
-                                <figcaption>i am a thinkpad i don’t need these stickers</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/9.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/9.jpg" alt="i am a thinkpad i don’t need these stickers">
+										</a>
+										<figcaption>i am a thinkpad i don’t need these stickers</figcaption>
+									</figure>
+								</p>
 <p>Still, so many stickers.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/10.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/10.jpg" alt="at least put another “ship it” one">
-                                </a>
-                                <figcaption>at least put another “ship it” one</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/10.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/10.jpg" alt="at least put another “ship it” one">
+										</a>
+										<figcaption>at least put another “ship it” one</figcaption>
+									</figure>
+								</p>
 <p>Like, damn.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/11.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/11.jpg" alt=":(">
-                                </a>
-                                <figcaption>:(</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/11.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/11.jpg" alt=":(">
+										</a>
+										<figcaption>:(</figcaption>
+									</figure>
+								</p>
 <h4>Conclusion</h4>
 <p>I had a big pile of stickers, and now I don’t. Please look forward to the next installment when I try to peel all of these off.</p>
 <p>
-                            <figure>
-                                <a href="/assets/laptop-stickers/12.jpg" target="_blank">
-                                    <img src="/assets/thumbnails/laptop-stickers/12.jpg" alt="The dark side of Sticker Culture">
-                                </a>
-                                <figcaption>The dark side of Sticker Culture</figcaption>
-                            </figure>
-                        </p>
+									<figure>
+										<a href="/assets/laptop-stickers/12.jpg" target="_blank">
+											<img src="/assets/thumbnails/laptop-stickers/12.jpg" alt="The dark side of Sticker Culture">
+										</a>
+										<figcaption>The dark side of Sticker Culture</figcaption>
+									</figure>
+								</p>
 <p>Also, shout-outs to HHCdT and <a href="https://web.archive.org/web/20150801122117/http://hackingedu.co/" class="external">HackingEDU</a>.</p>]]></content:encoded>
             <enclosure url="https://ezhik.me/assets/thumbnails/laptop-stickers/1.jpg" length="0" type="image/jpg"/>
         </item>
@@ -281,7 +294,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
             <link>/zeroplan</link>
             <guid>d2f3375f470771a07de3da15f0bfe830bd6c86610bd2708267c3093223508e41</guid>
             <pubDate>Mon, 27 Apr 2015 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p><strong>ZeroPlan</strong> is a simple app that switches the power plan from “High Performance” to “Power Saver” when you unplug your PC, and vice versa.</p>]]></description>
+            <description><![CDATA[ZeroPlan is a simple app that switches the power plan from “High Performance” to “Power Saver” when you unplug your PC, and vice versa.]]></description>
             <content:encoded><![CDATA[<p><strong>ZeroPlan</strong> is a simple app that switches the power plan from “High Performance” to “Power Saver” when you unplug your PC, and vice versa.</p>
 <p>It has no installer, no GUI, no options, and uses only a little more than 1 MB of your RAM. Just stick it in your Autorun folder, and you’re ready to go.</p>
 <p>It uses Net Framework 4.5, so in theory it should be able to run on jailbroken Windows RT devices.</p>

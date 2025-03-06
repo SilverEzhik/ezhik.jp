@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.me" href="/feed.xml" />
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:type" content="article"> <meta property="og:title" content="Adding a little interactivity – ezhik.me"> <meta property="og:description" content="There's this architecture called islands of interactivity – where you add little interactive bits here and there on an otherwise static website. And that sure reminds me of Flash – you'd have a static website, but it'd have an an interactive SWF file embedded, which would include fun stuff."> <meta property="og:url" content="https://ezhik.me/adding-a-little-interactivity"> <meta property="og:image" content="https://ezhik.me/favicon.png"><title>Adding a little interactivity – ezhik.me</title>
+	</head>
+
+	<body>
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.me">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.me">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> </aside> <main>
+				<script type="module">
+					import init from "/app/example-app.js";
+					init(document.querySelector("#app"));
+				</script>
+			 <div class="block" id="app"><noscript><p class="noscript">JavaScript is required to view this content.</p></noscript></div> <article class="block"><h1>Adding a little interactivity</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>There's this architecture called <em>islands of interactivity</em> – where you add little interactive bits here and there on an otherwise static website. And that sure reminds me of Flash – you'd have a static website, but it'd have an an interactive SWF file embedded, which would include fun stuff.</p>
+<p>I like that approach. The website still works just fine if you don't have JavaScript, but at the same time you can bring in fun bits of interactivity. Make little apps and stuff. So I tried building this for my website too, and the little <a href="/react">React</a> hello world is a demonstration of that.</p>
+<p>These days, <a href="https://react.dev" class="external">react.dev</a> tries really hard to force you to use stuff like Next.js and whatnot. But if you try, you can figure out how to build some little toy web apps that don't require you to get weird with web servers. Just write some code and just make yourself a little app that'll sit in its own rectangle. It's not a big deal. It's not the next big startup. It's just there for you and whoever else you share it with.</p>
+<p>I really do miss Flash.</p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2025-03-06</time></sub></center></article></main></div> 
+	</body>
+</html>
