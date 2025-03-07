@@ -4,7 +4,7 @@
         <title>ezhik.me</title>
         <link>https://ezhik.me</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Fri, 07 Mar 2025 16:56:43 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Mar 2025 16:57:08 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.me</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -26,8 +26,8 @@
         </item>
         <item>
             <title><![CDATA[Picture in Picture for your photo gallery]]></title>
-            <link>/picture-in-picture-for-your-photo-gallery</link>
-            <guid>44a8c38b0fdb3af06e5e9c6934ebaadfad60eabe7190b6552f46f2af5b20b127</guid>
+            <link>/pip-pwa</link>
+            <guid>064ec51176409c7000bf4445c9e7f0d3b2c1890cb24c102eae75b783bd1e9039</guid>
             <pubDate>Fri, 07 Mar 2025 17:00:00 GMT</pubDate>
             <description><![CDATA[My phone doesn't let me do picture in picture from its photo gallery and that's just stupid.]]></description>
             <content:encoded><![CDATA[<p>My phone doesn't let me do picture in picture from its photo gallery and that's just stupid.</p>
