@@ -4,7 +4,7 @@
         <title>ezhik.me</title>
         <link>https://ezhik.me</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Fri, 07 Mar 2025 16:57:08 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Mar 2025 17:05:07 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.me</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -33,7 +33,8 @@
             <content:encoded><![CDATA[<p>My phone doesn't let me do picture in picture from its photo gallery and that's just stupid.</p>
 <p>So this little app will have to do instead.</p>
 <p>Select a video by clicking that button above, it'll appear right below it. You can then PiP that.</p>
-<p>I don't receive your videos, I don't need them. This is all like 50 lines of JavaScript magic.</p>]]></content:encoded>
+<p>I don't receive your videos, I don't need them. This is all like 50 lines of JavaScript magic.</p>
+<p>You can also save this to your phone's home screen, it should open as a standalone app.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Fixing 縦書き text in EPUBs on Kindle for iOS]]></title>
