@@ -4,7 +4,7 @@
         <title>ezhik.me</title>
         <link>https://ezhik.me</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Thu, 06 Mar 2025 15:57:41 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Mar 2025 14:14:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.me</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,21 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.me/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Fixing 縦書き text in EPUBs on Kindle for iOS]]></title>
+            <link>/fixing-縦書き-text-in-epubs-on-kindle-for-ios</link>
+            <guid>ce490730d4dd23ec32a749cf89f70c4cdf6dea71c9e169934a6444e99115bda3</guid>
+            <pubDate>Fri, 07 Mar 2025 13:00:00 GMT</pubDate>
+            <description><![CDATA[I was uploading a Japanese book in .epub format via Send to Kindle, but ran into a weird issue: the book would not display as right-to-left vertical text (縦書き), instead displaying as horizontal, left-to-right text, on the Kindle app for iOS and Mac, while still looking fine on my Kindle e-reader.]]></description>
+            <content:encoded><![CDATA[<p>I was uploading a Japanese book in <code>.epub</code> format via <em>Send to Kindle</em>, but ran into a weird issue: the book would not display as right-to-left vertical text (縦書き), instead displaying as horizontal, left-to-right text, on the Kindle app for iOS and Mac, while still looking fine on my Kindle e-reader.</p>
+<p><a href="https://note.com/atsu1166/n/nc2d0ad0f3aab" class="external">This note.com post by Atsu1166</a> has a fix that worked for me - edit the <code>.epub</code> file's <code>.opf</code> <em>rootfile</em> (This was <code>content.opf</code> in my case) to add the following tag in its <code>&#x3C;metadata></code>:</p>
+<pre><code class="hljs language-xml"><span class="tag">&#x3C;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"primary-writing-mode"</span> <span class="attr">content</span>=<span class="string">"horizontal-rl"</span>/></span>
+</code></pre>
+<aside class="right">You read that right, <strong>horizontal</strong> and not <strong>vertical</strong>.</aside>
+<p>For a bit more context, <code>.epub</code> files are really <code>.zip</code> archives containing all the files the book is made out of. You should be able to either unzip the file and edit that <code>.opf</code> <em>rootfile</em> manually, or, if you use Calibre, edit the epub to update it.</p>
+<p>So far I only encountered <code>.opf</code> <em>rootfiles</em> located at the top of the archive, but apparently the EPUB standard specifies that these will be defined in the <code>META-INF/container.xml</code> file in a <code>&#x3C;rootfile></code> tag.</p>
+<p><a href="/til">The more you know...</a></p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Adding a little interactivity]]></title>
