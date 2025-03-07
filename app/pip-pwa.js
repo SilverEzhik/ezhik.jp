@@ -49,7 +49,7 @@ function init(el) {
     video.src = url;
     video.play();
     try {
-      video.requestPictureInPicture();
+      video.controls = true;
     } catch (e) {
       console.error(e);
     }
