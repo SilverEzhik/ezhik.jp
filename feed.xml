@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>ezhik.me</title>
-        <link>https://ezhik.me</link>
+        <title>ezhik.jp</title>
+        <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Fri, 07 Mar 2025 17:13:35 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 08 Mar 2025 06:40:33 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-        <generator>ezhik.me</generator>
+        <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
-        <atom:link href="https:/ezhik.me/feed.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https:/ezhik.jp/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[TIL]]></title>
             <link>/til</link>
@@ -22,7 +22,7 @@
 										<figcaption>The More You Know</figcaption>
 									</figure>
 								</p>]]></content:encoded>
-            <enclosure url="https://ezhik.me/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+            <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
         </item>
         <item>
             <title><![CDATA[Picture in Picture for your photo gallery]]></title>
@@ -78,7 +78,7 @@
 <p>My <a href="/fxtec-pro1-x">Fxtec Pro1 X</a> died a very silly death. It lost so much battery it wouldn't charge anymore. The phone sat dead in my drawer until I came across <a href="https://community.fxtec.com/topic/4106-a-user-found-a-way-to-charge-a-dead-pro1x-confirmed-by-others/" class="external">a very silly fix</a>.</p>
 <p>When you hold the power button for like 10 seconds, it'll draw <em>juuust</em> a little bit of power. So if you leave it in that state overnight, it will charge like 6%, which is enough for it to revive and start changing normally.</p>
 <p><a href="/til">The more you know!</a></p>]]></content:encoded>
-            <enclosure url="https://ezhik.me/assets/thumbnails/fxtec-pro1-x-battery-trick.jpg" length="0" type="image/jpg"/>
+            <enclosure url="https://ezhik.jp/assets/thumbnails/fxtec-pro1-x-battery-trick.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[The new website: Day 2]]></title>
@@ -305,7 +305,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
 									</figure>
 								</p>
 <p>Also, shout-outs to HHCdT and <a href="https://web.archive.org/web/20150801122117/http://hackingedu.co/" class="external">HackingEDU</a>.</p>]]></content:encoded>
-            <enclosure url="https://ezhik.me/assets/thumbnails/laptop-stickers/1.jpg" length="0" type="image/jpg"/>
+            <enclosure url="https://ezhik.jp/assets/thumbnails/laptop-stickers/1.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[ZeroPlan]]></title>
