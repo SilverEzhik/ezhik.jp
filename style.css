@@ -193,10 +193,11 @@ article.block {
         text-align: center;
         font-style: italic;
         font-size: 0.9em;
+        color: #777777;
 
         @container (min-width: 880px) {
             & {
-                width: 180px;
+                width: 170px;
                 text-align: left;
             }
 

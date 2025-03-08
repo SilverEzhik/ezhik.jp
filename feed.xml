@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sat, 08 Mar 2025 06:41:35 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 08 Mar 2025 07:30:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,28 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[The new domain]]></title>
+            <link>/the-new-domain</link>
+            <guid>b487ca3bab074dc08819f59c82991a9af9eb5826b0de288896ce16aeb3f073b4</guid>
+            <pubDate>Sat, 08 Mar 2025 07:30:00 GMT</pubDate>
+            <description><![CDATA[On one of those good old days, I wanted to create an identity for myself online. I called myself Ezhik – a hedgehog – and I was building a corner on the internet that was for me. Hence, ezhik.me.]]></description>
+            <content:encoded><![CDATA[<p>
+									<figure>
+										<a href="/assets/2013-12-27-hog.jpg" target="_blank">
+											<img src="/assets/thumbnails/2013-12-27-hog.jpg" alt="Hedgehogs and URLs during a trip a long time ago">
+										</a>
+										<figcaption>Hedgehogs and URLs during a trip a long time ago</figcaption>
+									</figure>
+								</p>
+<p>On one of those <em>good old days</em>, I wanted to create an identity for myself online. I called myself <em>Ezhik</em> – a hedgehog – and I was building a corner on the internet that was for <em>me</em>. Hence, <em>ezhik.me</em>.</p>
+<p>It was a different time. The internet was still young and there was still hope for a brighter future unburdened by all the baggage of history, all the war, all the nations, all the ideologies. The twentieth century was over but the twenty-first did not yet truly begin.</p>
+<aside class="right">Young Ezhik was a naive idealist, I know.</aside>
+<p>But times have changed. History never ended. And so we are back to the same old mess. <em>Cyberspace</em> never became independent. Worse than that, it was colonized, waves of little communities swept away by corporate interests, propaganda, and psyops.</p>
+<p>And so, rather than a cute domain hack, I have to look at <em>.me</em> for what it truly is: the top-level domain (TLD) for the country of Montenegro. And if I'm going to use a country-based TLD, I might as well pick the country I live in instead.</p>
+<p>So, <em>ezhik.jp</em> it is.</p>]]></content:encoded>
+            <enclosure url="https://ezhik.jp/assets/thumbnails/2013-12-27-hog.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[Picture in Picture for your photo gallery]]></title>
