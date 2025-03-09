@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.jp" href="/feed.xml" />
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:type" content="article"> <meta property="og:title" content="Spreadsheet #1 – ezhik.jp"> <meta property="og:description" content="Let's make a spreadsheet. No looking at hints or cool algorithms. All bugs are intentional."> <meta property="og:url" content="https://ezhik.jp/spreadsheet-1"> <meta property="og:image" content="https://ezhik.jp/favicon.png"><title>Spreadsheet #1 – ezhik.jp</title>
+	</head>
+
+	<body>
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.jp">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.jp">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> </aside> <main>
+				<script type="module">
+					import init from "/app/spreadsheet/1.js";
+					init(document.querySelector("#app"));
+				</script>
+			 <div class="block" id="app"><noscript><p class="noscript">JavaScript is required to view this content.</p></noscript></div> <article class="block"><h1>Spreadsheet #1</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>Let's make a spreadsheet. No looking at hints or cool algorithms. All bugs are intentional.</p>
+<aside class="right"><p>Maybe we can call that <em>naive coding</em> – I just start writing and see where that takes me. Not sure how often people write spreadsheet software for fun, though.</p><p>And yes, I know that <code>eval</code> and friends are not production-grade.</p></aside>
+<p>So, there's a very basic spreadsheet up above. In each cell, you can type a JavaScript expression and it will execute. You can refer to cells by the name that shows up when you hover your mouse cursor over a cell (<code>A1</code>, <code>B1</code>, <code>A2</code>, <code>B2</code>...).</p>
+<h1>So how do you make a spreadsheet, anyway?</h1>
+<p>I made a weird React hook that will give you:</p>
+<ul>
+<li>An object mapping cell IDs to formulas (just good old JS)</li>
+<li>An object mapping cell IDs to computed values</li>
+<li>A function to set a cell's value</li>
+</ul>
+<p>That hook also has an effect that actually handles cell recalculation. When a formula changes:</p>
+<ul>
+<li>Make a cache that'll store computed outputs</li>
+<li>Convert all formulas to <code>AsyncFunction</code>s
+<ul>
+<li>Replace each cell reference with a retrieval of its cached result or queuing that cell reference's formula for execution and awaiting that execution's completion</li>
+</ul>
+</li>
+<li>Execute all the <code>AsyncFunction</code>s and await for them to finish</li>
+</ul>
+<p>Spreadsheets are directed graphs and this is just recursive depth-first graph traversal in disguise, I suppose. I honestly thought this part would be harder, but it actually was alright. I think there are better ways to do it than using JavaScript promises as a weird cache, though.</p>
+<h1>Some food for thought</h1>
+<ul>
+<li>Can the computation/caching be done using React somehow, rather than JS?</li>
+<li>The whole spreadsheet gets redrawn on every change which is lame
+<ul>
+<li>That makes sense given that there is one big blob of all the data that's created at the spreadsheet level rather than at the cell level</li>
+</ul>
+</li>
+<li>Cycles produce <code>NaN</code> – would love to step through that with a debugger to figure out why
+<ul>
+<li>Cool that they don't just freeze up or whatever, though</li>
+</ul>
+</li>
+<li>Do cells really have to just be cells?</li>
+</ul> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2025-03-09</time></sub></center></article></main></div> 
+	</body>
+</html>

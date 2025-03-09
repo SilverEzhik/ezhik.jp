@@ -1,9 +1,8 @@
-{
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "/app/beyond-184.css";
-  document.head.append(link);
-}
+/* empty css               */
+document.head.append(Object.assign(document.createElement("link"), {
+  rel: "stylesheet",
+  href: "/app/beyond-184.css"
+}));
 function init(el) {
   const p = document.createElement("p");
   p.id = "canvascontainer";

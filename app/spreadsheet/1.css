@@ -1,0 +1,13 @@
+#app {
+    container-type: inline-size;
+
+    .container {
+
+        .spreadsheet {
+            display: grid;
+            grid-template-columns: repeat(10, 102.4px);
+            overflow: scroll;
+            width: 100cqw;
+        }
+    }
+}

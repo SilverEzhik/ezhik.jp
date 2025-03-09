@@ -1,10 +1,9 @@
 import { h } from "./lib/userscript.js";
-{
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "/app/pip-pwa.css";
-  document.head.append(link);
-}
+/* empty css            */
+document.head.append(Object.assign(document.createElement("link"), {
+  rel: "stylesheet",
+  href: "/app/pip-pwa.css"
+}));
 function init(el) {
   const input = h("input", { type: "file", accept: "video/*" });
   el.append(input);

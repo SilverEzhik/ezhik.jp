@@ -1,11 +1,10 @@
 import { a as reactExports, j as jsxRuntimeExports } from "./dependencies/react.js";
 import { makeInit } from "./lib/init.js";
-{
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "/app/example-app.css";
-  document.head.append(link);
-}
+/* empty css                */
+document.head.append(Object.assign(document.createElement("link"), {
+  rel: "stylesheet",
+  href: "/app/example-app.css"
+}));
 const phrases = [
   "It's your typical React hello world type of app.",
   "🦔🦔🦔🦔🦔🦔🦔🦔🦔🦔🦔🦔",

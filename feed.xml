@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sat, 08 Mar 2025 08:43:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 09 Mar 2025 15:53:07 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,49 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Spreadsheet #1]]></title>
+            <link>/spreadsheet-1</link>
+            <guid>b394477d8a4ef318a21f87277ab4733b05c535b9ee0610b489d51ec964fd10a4</guid>
+            <pubDate>Sun, 09 Mar 2025 11:00:00 GMT</pubDate>
+            <description><![CDATA[Let's make a spreadsheet. No looking at hints or cool algorithms. All bugs are intentional.]]></description>
+            <content:encoded><![CDATA[<p>Let's make a spreadsheet. No looking at hints or cool algorithms. All bugs are intentional.</p>
+<aside class="right"><p>Maybe we can call that <em>naive coding</em> – I just start writing and see where that takes me. Not sure how often people write spreadsheet software for fun, though.</p><p>And yes, I know that <code>eval</code> and friends are not production-grade.</p></aside>
+<p>So, there's a very basic spreadsheet up above. In each cell, you can type a JavaScript expression and it will execute. You can refer to cells by the name that shows up when you hover your mouse cursor over a cell (<code>A1</code>, <code>B1</code>, <code>A2</code>, <code>B2</code>...).</p>
+<h1>So how do you make a spreadsheet, anyway?</h1>
+<p>I made a weird React hook that will give you:</p>
+<ul>
+<li>An object mapping cell IDs to formulas (just good old JS)</li>
+<li>An object mapping cell IDs to computed values</li>
+<li>A function to set a cell's value</li>
+</ul>
+<p>That hook also has an effect that actually handles cell recalculation. When a formula changes:</p>
+<ul>
+<li>Make a cache that'll store computed outputs</li>
+<li>Convert all formulas to <code>AsyncFunction</code>s
+<ul>
+<li>Replace each cell reference with a retrieval of its cached result or queuing that cell reference's formula for execution and awaiting that execution's completion</li>
+</ul>
+</li>
+<li>Execute all the <code>AsyncFunction</code>s and await for them to finish</li>
+</ul>
+<p>Spreadsheets are directed graphs and this is just recursive depth-first graph traversal in disguise, I suppose. I honestly thought this part would be harder, but it actually was alright. I think there are better ways to do it than using JavaScript promises as a weird cache, though.</p>
+<h1>Some food for thought</h1>
+<ul>
+<li>Can the computation/caching be done using React somehow, rather than JS?</li>
+<li>The whole spreadsheet gets redrawn on every change which is lame
+<ul>
+<li>That makes sense given that there is one big blob of all the data that's created at the spreadsheet level rather than at the cell level</li>
+</ul>
+</li>
+<li>Cycles produce <code>NaN</code> – would love to step through that with a debugger to figure out why
+<ul>
+<li>Cool that they don't just freeze up or whatever, though</li>
+</ul>
+</li>
+<li>Do cells really have to just be cells?</li>
+</ul>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The new domain]]></title>
