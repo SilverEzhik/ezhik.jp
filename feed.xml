@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 09 Mar 2025 15:53:07 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 09 Mar 2025 15:53:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -27,8 +27,8 @@
         <item>
             <title><![CDATA[Spreadsheet #1]]></title>
             <link>/spreadsheet-1</link>
-            <guid>b394477d8a4ef318a21f87277ab4733b05c535b9ee0610b489d51ec964fd10a4</guid>
-            <pubDate>Sun, 09 Mar 2025 11:00:00 GMT</pubDate>
+            <guid>815167e9bda3680814b443e037967b535ea545651f965ede7a94f157996a671b</guid>
+            <pubDate>Sun, 09 Mar 2025 16:00:00 GMT</pubDate>
             <description><![CDATA[Let's make a spreadsheet. No looking at hints or cool algorithms. All bugs are intentional.]]></description>
             <content:encoded><![CDATA[<p>Let's make a spreadsheet. No looking at hints or cool algorithms. All bugs are intentional.</p>
 <aside class="right"><p>Maybe we can call that <em>naive coding</em> – I just start writing and see where that takes me. Not sure how often people write spreadsheet software for fun, though.</p><p>And yes, I know that <code>eval</code> and friends are not production-grade.</p></aside>
