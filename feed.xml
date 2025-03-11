@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 09 Mar 2025 15:53:53 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 11 Mar 2025 15:54:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,16 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Spreadsheet #2]]></title>
+            <link>/spreadsheet-2</link>
+            <guid>b4d3cac3340999bfc86dcfc98007460086d375650ca359b1985a6e99e831ab0f</guid>
+            <pubDate>Tue, 11 Mar 2025 16:00:00 GMT</pubDate>
+            <description><![CDATA[What if we could set other properties besides just the cell value?]]></description>
+            <content:encoded><![CDATA[<p>What if we could set other properties besides just the cell value?</p>
+<p>Here's <a href="/spreadsheet-1">Spreadsheet No. 1</a> enhanced to allow setting properties based on other cells. It's still all nice and reactive.</p>
+<p>I might be on to something interesting here...</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Spreadsheet #1]]></title>
