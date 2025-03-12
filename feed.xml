@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Wed, 12 Mar 2025 12:11:40 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Mar 2025 12:14:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -249,7 +249,7 @@ What do you think of that hog? I was kinda winging it with this one and don't kn
 <p>The four lines above those add an exception to the rule: if you explicitly try to use the unnamed register, it will be used instead. Make sure you get the order of the lines right in your Vim configuration file, or who knows what might happen.</p>
 <p>So, with the clipboard set up this way, everybody wins! You get to have sane clipboard settings that work the same way as the rest of your OS, while still having the flexibility of proper registers if you need it.</p>
 <p>The end!</p>
-<p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.me" class="external">i@ezhik.me</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/SilverEzhik.github.io/issues" class="external">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p>]]></content:encoded>
+<p>P.S. If you find out that I made a mistake in my hubris, please email me at <a href="mailto:i@ezhik.jp" class="external">i@ezhik.jp</a>, or maybe make an issue on this site's <a href="https://github.com/SilverEzhik/ezhik.jp/issues" class="external">GitHub</a> if it's urgent enough to require public shaming. Thanks!</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Radical Lookup]]></title>
