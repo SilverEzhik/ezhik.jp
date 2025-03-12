@@ -1,10 +1,5 @@
 import { a as reactExports, j as jsxRuntimeExports } from "../dependencies/react.js";
-/* empty css      */
 import { makeInit } from "../lib/init.js";
-document.head.append(Object.assign(document.createElement("link"), {
-  rel: "stylesheet",
-  href: "/app/spreadsheet/2.css"
-}));
 const xNames = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const props = ["", "_fontWeight", "_fontFamily", "_bgColor", "_fgColor"];
 const cellIds = [];
@@ -176,3 +171,4 @@ const _2 = makeInit(Spreadsheet);
 export {
   _2 as default
 };
+//# sourceMappingURL=2.js.map

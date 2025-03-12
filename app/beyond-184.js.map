@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "beyond-184.js",
+  "sources": [
+    "/app/beyond-184.ts"
+  ],
+  "sourcesContent": [
+    "export default function init(el) {\n\tconst p = document.createElement(\"p\");\n\tp.id = \"canvascontainer\";\n\tel.append(p);\n\n\tconst p5 = document.createElement(\"script\");\n\tp5.type = \"text/javascript\";\n\tp5.src = \"/assets/old/beyond184/libraries/p5.js\";\n\tel.append(p5);\n\n\tconst sketch = document.createElement(\"script\");\n\tsketch.type = \"text/javascript\";\n\tsketch.src = \"/assets/old/beyond184/sketch.js\";\n\tel.appendChild(sketch);\n}\n"
+  ],
+  "names": [],
+  "mappings": "AAAA,SAAwB,KAAK,IAAI;AAC1B,QAAA,IAAI,SAAS,cAAc,GAAG;AACpC,IAAE,KAAK;AACP,KAAG,OAAO,CAAC;AAEL,QAAA,KAAK,SAAS,cAAc,QAAQ;AAC1C,KAAG,OAAO;AACV,KAAG,MAAM;AACT,KAAG,OAAO,EAAE;AAEN,QAAA,SAAS,SAAS,cAAc,QAAQ;AAC9C,SAAO,OAAO;AACd,SAAO,MAAM;AACb,KAAG,YAAY,MAAM;AACtB;"
+}

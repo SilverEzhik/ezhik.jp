@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sources": [
+    "/app/index.tsx"
+  ],
+  "sourcesContent": [
+    "import React from \"react\";\nimport { renderToString } from \"react-dom/server\";\n// import { render } from \"react-dom\";\n\nconsole.log(\"hello\", React, renderToString(<div>hello</div>));\n\nexport const foo = \"123\";\n"
+  ],
+  "names": [
+    "renderToString"
+  ],
+  "mappings": ";;AAIA,QAAQ,IAAI,SAAS,OAAOA,2EAAgB,OAAI,EAAA,UAAA,QAAK,CAAA,CAAM,CAAC;AAErD,MAAM,MAAM;"
+}

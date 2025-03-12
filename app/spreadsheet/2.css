@@ -11,7 +11,7 @@
 
             input {
                 &.has-focus {
-                    border: 1px solid blueviolet;
+                    /* border: 1px solid blueviolet; */
                 }
             }
         }

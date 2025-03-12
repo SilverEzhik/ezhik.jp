@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "css.js",
+  "sources": [
+    "/app/lib/css.ts"
+  ],
+  "sourcesContent": [
+    "export function injectCss(path: string) {\n\tconst link = document.createElement(\"link\");\n\tlink.rel = \"stylesheet\";\n\tlink.href = path;\n\tdocument.head.append(link);\n}\n"
+  ],
+  "names": [],
+  "mappings": "AAAO,SAAS,UAAU,MAAc;AACjC,QAAA,OAAO,SAAS,cAAc,MAAM;AAC1C,OAAK,MAAM;AACX,OAAK,OAAO;AACH,WAAA,KAAK,OAAO,IAAI;AAC1B;"
+}

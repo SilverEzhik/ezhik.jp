@@ -1,9 +1,4 @@
 import { h } from "./lib/userscript.js";
-/* empty css            */
-document.head.append(Object.assign(document.createElement("link"), {
-  rel: "stylesheet",
-  href: "/app/pip-pwa.css"
-}));
 function init(el) {
   const input = h("input", { type: "file", accept: "video/*" });
   el.append(input);
@@ -49,3 +44,4 @@ function init(el) {
 export {
   init as default
 };
+//# sourceMappingURL=pip-pwa.js.map

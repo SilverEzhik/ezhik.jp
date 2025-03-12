@@ -5,3 +5,4 @@ const foo = "123";
 export {
   foo
 };
+//# sourceMappingURL=index.js.map

@@ -1,10 +1,5 @@
 import { a as reactExports, j as jsxRuntimeExports } from "./dependencies/react.js";
 import { makeInit } from "./lib/init.js";
-/* empty css                */
-document.head.append(Object.assign(document.createElement("link"), {
-  rel: "stylesheet",
-  href: "/app/example-app.css"
-}));
 const phrases = [
   "It's your typical React hello world type of app.",
   "🦔🦔🦔🦔🦔🦔🦔🦔🦔🦔🦔🦔",
@@ -74,3 +69,4 @@ const exampleApp = makeInit(App);
 export {
   exampleApp as default
 };
+//# sourceMappingURL=example-app.js.map

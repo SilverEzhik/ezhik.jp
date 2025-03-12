@@ -1,10 +1,5 @@
 import { j as jsxRuntimeExports, a as reactExports } from "../dependencies/react.js";
-/* empty css      */
 import { makeInit } from "../lib/init.js";
-document.head.append(Object.assign(document.createElement("link"), {
-  rel: "stylesheet",
-  href: "/app/spreadsheet/1.css"
-}));
 const xNames = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const cellIds = [];
 for (let y = 1; y <= 10; y++) {
@@ -125,3 +120,4 @@ const _1 = makeInit(Spreadsheet);
 export {
   _1 as default
 };
+//# sourceMappingURL=1.js.map

@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "file": "init.js",
+  "sources": [
+    "/app/lib/init.tsx"
+  ],
+  "sourcesContent": [
+    "import React from \"react\";\nimport { Container, createRoot } from \"react-dom/client\";\n\nexport function initApp(\n\tnode: Container,\n\tApp: React.JSX.ElementType,\n\tprops: Record<string, unknown> = {},\n\tchildren: unknown,\n) {\n\t// hehe\n\tcreateRoot(node).render(<App {...props}>{children}</App>);\n}\n\nexport function makeInit(App) {\n\treturn function init(el) {\n\t\tcreateRoot(el).render(<App />);\n\t};\n}\n"
+  ],
+  "names": [
+    "createRoot",
+    "jsx"
+  ],
+  "mappings": ";;AAGO,SAAS,QACf,MACA,KACA,QAAiC,CAAA,GACjC,UACC;AAEUA,2BAAA,IAAI,EAAE,OAAOC,kCAAA,IAAC,OAAK,GAAG,OAAQ,UAAS,CAAM;AACzD;AAEO,SAAS,SAAS,KAAK;AACtB,SAAA,SAAS,KAAK,IAAI;AACxBD,kBAAA,WAAW,EAAE,EAAE,OAAOC,kCAAAA,IAAC,OAAI,CAAE;AAAA,EAC9B;AACD;"
+}

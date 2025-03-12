@@ -12,3 +12,4 @@ export {
   initApp,
   makeInit
 };
+//# sourceMappingURL=init.js.map

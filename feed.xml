@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Tue, 11 Mar 2025 15:54:06 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Mar 2025 12:11:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,25 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Posting a little more code]]></title>
+            <link>/posting-a-little-more-code</link>
+            <guid>4cad40ea6e7a218d5a18fe0e19243e514364e0c973c91a4d9d48be7e30910476</guid>
+            <pubDate>Wed, 12 Mar 2025 12:00:00 GMT</pubDate>
+            <description><![CDATA[Here's a little enhancement to the website. All the little apps will now have a little link to the source code on the bottom that'll take you to the website repository.]]></description>
+            <content:encoded><![CDATA[<p>
+									<figure>
+										<a href="/assets/hedgehog-footer.png" target="_blank">
+											<img src="/assets/thumbnails/hedgehog-footer.jpg" alt="Posts with apps will now have a little &quot;source code&quot; link at the bottom.">
+										</a>
+										<figcaption>Posts with apps will now have a little &quot;source code&quot; link at the bottom.</figcaption>
+									</figure>
+								</p>
+<p>Here's a little enhancement to the website. All the little apps will now have a little link to the source code on the bottom that'll take you to the website repository.</p>
+<aside class="right">Once again I was inspired by a TodePond talk - "<a href="https://www.youtube.com/watch?v=MJzV0CX0q8o" class="external">What it means to be open</a>" this time.</aside>
+<p>I'm now also including the original TypeScript code for these along with source maps, so if anybody here likes to play with browser developer tools, you'll hopefully have a better time doing it.</p>]]></content:encoded>
+            <enclosure url="https://ezhik.jp/assets/thumbnails/hedgehog-footer.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[Spreadsheet #2]]></title>

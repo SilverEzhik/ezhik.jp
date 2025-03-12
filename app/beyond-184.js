@@ -1,8 +1,3 @@
-/* empty css               */
-document.head.append(Object.assign(document.createElement("link"), {
-  rel: "stylesheet",
-  href: "/app/beyond-184.css"
-}));
 function init(el) {
   const p = document.createElement("p");
   p.id = "canvascontainer";
@@ -19,3 +14,4 @@ function init(el) {
 export {
   init as default
 };
+//# sourceMappingURL=beyond-184.js.map

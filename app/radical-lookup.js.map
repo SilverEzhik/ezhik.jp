@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "radical-lookup.js",
+  "sources": [
+    "/app/radical-lookup.tsx"
+  ],
+  "sourcesContent": [
+    "export default function init(el) {\n\tel.innerHTML = `\n        <iframe src=\"/assets/old/radical-lookup/index.html\" style=\"width: 100%; height: 600px\"></iframe>\n    `;\n}\n"
+  ],
+  "names": [],
+  "mappings": "AAAA,SAAwB,KAAK,IAAI;AAChC,KAAG,YAAY;AAAA;AAAA;AAGhB;"
+}
