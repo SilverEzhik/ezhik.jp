@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Wed, 12 Mar 2025 12:14:24 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 16 Mar 2025 16:06:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,33 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Hypertext Maximalism]]></title>
+            <link>/hypertext-maximalism</link>
+            <guid>7f7f9dc8053afdd5782967fc51ba842bd91c1df72156ec01b6694f1c13ec9a79</guid>
+            <pubDate>Sun, 16 Mar 2025 16:10:00 GMT</pubDate>
+            <description><![CDATA[I've always been enamored with the idea of note-taking but always struggled with actually practicing it. But I managed to develop a nice system for it.]]></description>
+            <content:encoded><![CDATA[<p>I've always been enamored with the <em>idea</em> of note-taking but always struggled with actually practicing it. But I managed to develop a nice system for it.</p>
+<p>And here it is:</p>
+<h1>The System</h1>
+<ol>
+<li>Get a note-taking app with links and backlinks, such as <a href="/obsidian">Obsidian</a>.</li>
+<li>Make sure every note is connected via links or backlinks to at least two other notes</li>
+<li>Go write.</li>
+</ol>
+<h1>What?</h1>
+<p>Okay, so. I've sucked at note-taking for most of my life.</p>
+<p>Andy Mauschak's working notes. Zettelkasten. Johnny Decimal. Digital gardens. Bullet Journals. All these cool people and cool systems. I've tried to emulate them and I failed.</p>
+<p>From piles of Moleskine notebooks to Surfaces and iPad Pros, from Evernote and OneNote to plain old text files and Apple Notes, there is a graveyard of note-taking tech in my drawers, including some attempts of my own like <a href="/notegram">Notegram</a> and <a href="/iroiro">IroIro</a> <s>and all the hours wasted trying to comprehend <code>contenteditable</code></s>. I was always looking for a better bicycle for the mind having never learned to ride a bike to begin with.</p>
+<aside class="right">People who use some of the smarter systems I've mentioned above might instantly point out many flaws with hypertext maximalism, especially as the amount of notes grows. But consider this as a metaphorical <strong>ladder to be thrown away</strong>. This system got me to actually start note-taking consistently, and that I think is the most important aspect of it.</aside>
+<p>I couldn't do analog notes because I'd misplace notebooks.<br>
+I couldn't do folders because I'd always want to put one note into multiple folders.<br>
+I couldn't do tags because I'd want to write a note about the tag itself.<br>
+And so on, and so on, forever distracted by the meta-problem of <em>how</em> to write rather than <em>what</em> to write.</p>
+<p>But one day a friend suggested Obsidian, and it just clicked for me – just the right kind of mix between Markdown and What-You-See-Is-What-You-Get, and, of course, the way it displays backlinks very, very prominently.</p>
+<p>So I decided to just roll with it. Sick to death of worrying about these systems, I decided to just roll with the three rules above. No tags, no folders, no categories, no inboxes. Only hypertext. It's hypertext maximalism.</p>
+<p>From zero notes three years ago, to 6,961 as of me writing this, I think this system worked out pretty well for me.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Posting a little more code]]></title>
