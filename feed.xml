@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Tue, 18 Mar 2025 17:22:34 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Mar 2025 17:23:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -27,8 +27,8 @@
         <item>
             <title><![CDATA[Fixing window frame manipulation in Hammerspoon]]></title>
             <link>/fixing-window-frame-manipulation-in-hammerspoon</link>
-            <guid>4e2d9c14cbbb71f5df961d1e7710081ceeb416e01d576c5606ec417d96f35399</guid>
-            <pubDate>Tue, 18 Mar 2025 15:20:00 GMT</pubDate>
+            <guid>153d56d9e762d8a8a11ff3edde9fffecea892bd2963966e1625292e9ca3dbf13</guid>
+            <pubDate>Tue, 18 Mar 2025 17:30:00 GMT</pubDate>
             <description><![CDATA[I use Hammerspoon to automate all sorts of things on my Mac. I've been running some annoying issues where trying to use :setFrame(...) and the like on hs.window objects would behave erratically.]]></description>
             <content:encoded><![CDATA[<p>I use <a href="/hammerspoon">Hammerspoon</a> to automate all sorts of things on my Mac. I've been running some annoying issues where trying to use <code>:setFrame(...)</code> and the like on <code>hs.window</code> objects would behave erratically.</p>
 <p>
