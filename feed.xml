@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 16 Mar 2025 16:34:04 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Mar 2025 17:22:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,119 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Fixing window frame manipulation in Hammerspoon]]></title>
+            <link>/fixing-window-frame-manipulation-in-hammerspoon</link>
+            <guid>4e2d9c14cbbb71f5df961d1e7710081ceeb416e01d576c5606ec417d96f35399</guid>
+            <pubDate>Tue, 18 Mar 2025 15:20:00 GMT</pubDate>
+            <description><![CDATA[I use Hammerspoon to automate all sorts of things on my Mac. I've been running some annoying issues where trying to use :setFrame(...) and the like on hs.window objects would behave erratically.]]></description>
+            <content:encoded><![CDATA[<p>I use <a href="/hammerspoon">Hammerspoon</a> to automate all sorts of things on my Mac. I've been running some annoying issues where trying to use <code>:setFrame(...)</code> and the like on <code>hs.window</code> objects would behave erratically.</p>
+<p>
+									<figure>
+										<a href="/assets/hammerspoon/setframemachinebroke.gif" target="_blank">
+											<img src="/assets/hammerspoon/setframemachinebroke.gif" alt="Trying to resize a window with the animation duration set to zero, with the window not moving properly and still animating the resize animation.">
+										</a>
+										<figcaption>Trying to resize a window with the animation duration set to zero, with the window not moving properly and still animating the resize animation.</figcaption>
+									</figure>
+								</p>
+<p>Here's what's actually supposed to happen:</p>
+<p>
+									<figure>
+										<a href="/assets/hammerspoon/setframemachinefixed.gif" target="_blank">
+											<img src="/assets/hammerspoon/setframemachinefixed.gif" alt="Same exact resize operations as above, but with the fix applied. The window now moves across an invisible grid instantly.">
+										</a>
+										<figcaption>Same exact resize operations as above, but with the fix applied. The window now moves across an invisible grid instantly.</figcaption>
+									</figure>
+								</p>
+<h1>The fix</h1>
+<pre><code class="hljs language-lua"><span class="comment">---</span>
+<span class="comment">--- Monkeypatch for hs.window operations to temporarily</span>
+<span class="comment">--- disable accessibility while moving/resizing windows</span>
+<span class="comment">---</span>
+
+<span class="keyword">do</span>
+    <span class="keyword">local</span> axOnTimers = {}
+    <span class="keyword">local</span> axOriginalState = {}
+    <span class="keyword">local</span> windowMT = hs.getObjectMetatable(<span class="string">"hs.window"</span>)
+
+    <span class="comment">-- clean up when apps are closed</span>
+    hs.window.axTimerWatcher = hs.application.watcher.new(<span class="function"><span class="keyword">function</span><span class="params">(name, event, app)</span></span>
+        <span class="keyword">if</span> event == hs.application.watcher.terminated <span class="keyword">then</span>
+            <span class="keyword">local</span> pid = app:pid()
+            <span class="keyword">if</span> axOnTimers[pid] <span class="keyword">then</span>
+                axOnTimers[pid]:stop()
+            <span class="keyword">end</span>
+            axOnTimers[pid] = <span class="literal">nil</span>
+            axOriginalState[pid] = <span class="literal">nil</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>):start()
+
+
+    <span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">patch</span><span class="params">(fn)</span></span>
+        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(window, ...)</span></span>
+            <span class="keyword">local</span> app = window:application()
+            <span class="keyword">local</span> pid = app:pid()
+
+            <span class="keyword">local</span> ax = hs.axuielement.applicationElement(app)
+            <span class="comment">-- disable accessibility, remembering what the original state was</span>
+            <span class="built_in">pcall</span>(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>
+                <span class="keyword">if</span> <span class="keyword">not</span> axOriginalState[pid] <span class="keyword">then</span>
+                    axOriginalState[pid] = {
+                        AXEnhancedUserInterface = ax.AXEnhancedUserInterface,
+                        AXManualAccessibility = ax.AXManualAccessibility
+                    }
+                <span class="keyword">end</span>
+
+                ax.AXEnhancedUserInterface = <span class="literal">false</span>
+                ax.AXManualAccessibility = <span class="literal">false</span>
+            <span class="keyword">end</span>)
+
+            <span class="keyword">local</span> ok, result = <span class="built_in">pcall</span>(fn, window, ...)
+
+            <span class="comment">-- restore accessibility after a short delay</span>
+            axOnTimers[pid] = (
+                axOnTimers[pid]
+                <span class="keyword">or</span> hs.timer.delayed.new(
+                    <span class="built_in">math</span>.<span class="built_in">max</span>(<span class="number">0.2</span>, hs.window.animationDuration <span class="keyword">or</span> <span class="number">0</span>),
+                    <span class="function"><span class="keyword">function</span><span class="params">()</span></span>
+                        <span class="keyword">local</span> orig = axOriginalState[pid] <span class="keyword">or</span> {}
+
+                        <span class="built_in">pcall</span>(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>
+                            ax.AXEnhancedUserInterface = orig.AXEnhancedUserInterface
+                            ax.AXManualAccessibility = orig.AXManualAccessibility
+                        <span class="keyword">end</span>)
+
+                        axOriginalState[pid] = <span class="literal">nil</span>
+                    <span class="keyword">end</span>)):start()
+
+            <span class="keyword">if</span> ok <span class="keyword">then</span>
+                <span class="keyword">return</span> result
+            <span class="keyword">else</span>
+                <span class="built_in">error</span>(result)
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+
+    <span class="keyword">for</span> _, key <span class="keyword">in</span> <span class="built_in">ipairs</span>({
+        <span class="string">"setFrame"</span>, <span class="string">"setFrameInScreenBounds"</span>,
+        <span class="string">"setFrameWithWorkarounds"</span>, <span class="string">"setTopLeft"</span>,
+        <span class="string">"setSize"</span>, <span class="string">"maximize"</span>, <span class="string">"move"</span>,
+        <span class="string">"moveToUnit"</span>, <span class="string">"moveToScreen"</span>,
+        <span class="string">"moveOneScreenEast"</span>, <span class="string">"moveOneScreenNorth"</span>,
+        <span class="string">"moveOneScreenSouth"</span>, <span class="string">"moveOneScreenWest"</span>,
+    }) <span class="keyword">do</span>
+        windowMT[key] = patch(windowMT[key])
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="comment">-- 🦔🦔🦔</span>
+
+</code></pre>
+<p>This issue seems to be related to accessibility services – when they are enabled for a specific app, it may misbehave. The Hammerspoon team is tracking the problem as <a href="https://github.com/Hammerspoon/hammerspoon/issues/3224" class="external">Bug #3224</a>, but this appears to be an application-specific issue.</p>
+<p>Unfortunately the application in question is Chrome and in the future, everything is Chrome.</p>
+<p><a href="/til">The more you know</a>, the more Chrome you start to notice.</p>]]></content:encoded>
+            <enclosure url="https://ezhik.jp/assets/hammerspoon/setframemachinebroke.gif" length="0" type="image/gif"/>
         </item>
         <item>
             <title><![CDATA[Hypertext Maximalism]]></title>
@@ -51,8 +164,7 @@ And so on, and so on, forever distracted by the meta-problem of <em>how</em> to 
 <p>So I decided to just roll with it. Sick to death of worrying about these systems, I decided to just roll with the three rules above. No tags, no folders, no categories, no inboxes. Only hypertext.</p>
 <p>At first, you navigate through weaponized wiki-wandering – dropping into the closest relevant note and clicking through links and backlinks until you find what you need. But eventually, patterns start to emerge. Perhaps you start to use some notes as hubs. And so the organization system emerges organically. Things start to fall into places where your own brain expects them to be, rather than artificial categories made up on the spot. And all that happens without having to think much about it.</p>
 <p>That's Hypertext Maximalism.</p>
-<p>From zero notes three years ago, to 6,961 as of me writing this, I think this system worked out pretty well for me.</p>
-<p><a href="https://bsky.app/profile/ezhik.jp/post/3lkizop6h222j" class="external">Discuss on Bluesky</a> • <a href="https://mastodon.social/@Ezhik/114172982172653088" class="external">Discuss on Mastodon</a></p>]]></content:encoded>
+<p>From zero notes three years ago, to 6,961 as of me writing this, I think this system worked out pretty well for me.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Posting a little more code]]></title>

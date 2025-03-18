@@ -160,6 +160,7 @@ article.block {
 
 
     pre {
+        max-width: 100%;
         white-space: pre-wrap;
         word-wrap: break-word;
         background: rgba(0, 0, 0, 0.01);
@@ -333,3 +334,39 @@ aside.sidebar {
 }
 
 /* #endregion layout */
+
+/* #region code highlight */
+pre:has(code.hljs) {
+    --blue: #66809a;
+    --purple: #80688c;
+    --cyan: #688b86;
+    --green: #8d934c;
+
+    .keyword {
+        font-weight: bold;
+    }
+
+    .string {
+        color: var(--blue);
+    }
+
+    .literal {
+        color: var(--purple);
+    }
+
+    .title {
+        color: var(--cyan);
+    }
+
+    .comment {
+        color: var(--green);
+    }
+
+    position: relative;
+
+    button.copy {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+}
