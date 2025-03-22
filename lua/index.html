@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.jp" href="/feed.xml" />
+		<script type="module" src="/script.js"></script>
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:type" content="article"> <meta property="og:title" content="Lua – ezhik.jp"> <meta property="og:description" content="Lua is a programming language that's often used in embedded contexts. It's pretty small and pretty cute."> <meta property="og:url" content="https://ezhik.jp/lua"> <meta property="og:image" content="https://ezhik.jp/favicon.png"><title>Lua – ezhik.jp</title>
+	</head>
+
+	<body>
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.jp">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.jp">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> <nav class="backlinks block"><p>Backlinks</p> <ul><li><a href="/hammerspoon">Hammerspoon</a></li></ul></nav></aside> <main><link rel="stylesheet" href="/app/lua.css"> 
+				<script type="module">
+					import init from "/app/lua.js";
+					init(document.querySelector("#app"));
+				</script>
+			 <div class="block" id="app"><noscript><p class="noscript">JavaScript is required to view this content.</p></noscript></div> <article class="block"><h1>Lua</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>Lua is a programming language that's often used in embedded contexts. It's pretty small and pretty cute.</p>
+<p>Please enjoy a little REPL up above.</p>
+<aside class="right">This REPL powered by <a href="https://github.com/ceifa/wasmoon" class="external">wasmoon</a>. Wasmoon is nice to work with, but I sure wish it had documentation.</aside>
+<p><a href="https://lua.org" class="external">https://lua.org</a></p>
+<p>I do like working with Lua, though some things about it mildly annoy me:</p>
+<ul>
+<li>No assignment operators like <code>+=</code></li>
+<li>No destructuring assignments like <code>[a, b] = tbl</code></li>
+<li><code>~=</code> instead of <code>!=</code></li>
+<li>No <code>continue</code> in loops</li>
+<li>Inability to have statements after <code>return</code> so I have to do <code>do return end</code> whenever I want to quickly return while testing</li>
+<li>No shorthand for function definitions like JavaScript's arrow functions</li>
+<li>No syntax for coroutines</li>
+<li>No string interpolation</li>
+</ul>
+<p>Most of these are syntactic, which is interesting. The common one-based array indexing complaint doesn't really bother me that much in practice.</p>
+<p>It'd be nice to have some more batteries, but it's fine, I guess.</p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2025-03-23</time> • <a class="external" href="https://github.com/SilverEzhik/ezhik.jp/tree/master/app/lua.tsx">source code</a>  </sub></center></article></main></div> 
+	</body>
+</html>

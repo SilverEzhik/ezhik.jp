@@ -336,11 +336,16 @@ aside.sidebar {
 /* #endregion layout */
 
 /* #region code highlight */
-pre:has(code.hljs) {
+.hljs {
+    --red: #994845;
     --blue: #66809a;
     --purple: #80688c;
     --cyan: #688b86;
     --green: #8d934c;
+
+    .error {
+        color: var(--red);
+    }
 
     .keyword {
         font-weight: bold;
@@ -361,7 +366,9 @@ pre:has(code.hljs) {
     .comment {
         color: var(--green);
     }
+}
 
+pre:has(code.hljs) {
     position: relative;
 
     button.copy {

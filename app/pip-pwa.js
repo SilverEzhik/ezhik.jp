@@ -13,8 +13,7 @@ function init(el) {
   el.append(video);
   video.play();
   input.addEventListener("change", () => {
-    var _a;
-    const file = (_a = input.files) == null ? void 0 : _a[0];
+    const file = input.files?.[0];
     if (!file) {
       return;
     }
@@ -32,11 +31,10 @@ function init(el) {
     console.log("dragover");
   });
   document.addEventListener("drop", (e) => {
-    var _a, _b, _c;
     e.preventDefault();
     console.log("drop");
-    if ((_b = (_a = e.dataTransfer) == null ? void 0 : _a.files) == null ? void 0 : _b.length) {
-      input.files = (_c = e.dataTransfer) == null ? void 0 : _c.files;
+    if (e.dataTransfer?.files?.length) {
+      input.files = e.dataTransfer?.files;
       input.dispatchEvent(new Event("change"));
     }
   });

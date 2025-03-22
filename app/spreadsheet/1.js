@@ -11,8 +11,8 @@ const startCells = Object.fromEntries(cellIds.map((id) => [id, ""]));
 startCells.A1 = "1";
 startCells.B1 = "2";
 startCells.C1 = "A1 + B1";
-const AsyncFunction = (async function() {
-}).constructor;
+const AsyncFunction = async function() {
+}.constructor;
 function useSheetNaiveAf() {
   const [sheet, setSheet] = reactExports.useState(startCells);
   const cellUpdaterFactory = reactExports.useCallback(
@@ -47,7 +47,7 @@ function useSheetNaiveAf() {
     Promise.all(
       Object.entries(computers).map(async ([id, computer]) => [
         id,
-        await (computingComputers[id] ?? (computingComputers[id] = computer(computers, computingComputers)))
+        await (computingComputers[id] ??= computer(computers, computingComputers))
       ])
     ).then((values) => {
       const coolSheet = Object.fromEntries(values);
@@ -85,12 +85,11 @@ function Cell({ id, sheet, computedSheet, setValue }) {
       title: id,
       className: "cell",
       onKeyUp: (e) => {
-        var _a;
         if (e.key === "Enter") {
           const cellBelow = id[0] + (parseInt(id.slice(1)) + 1);
           const cellAbove = id[0] + (parseInt(id.slice(1)) - 1);
           const cell = e.shiftKey ? cellAbove : cellBelow;
-          (_a = document.querySelector(`#${cell}`)) == null ? void 0 : _a.focus();
+          document.querySelector(`#${cell}`)?.focus();
         }
       },
       onChange: (e) => {

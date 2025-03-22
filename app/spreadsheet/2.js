@@ -30,8 +30,8 @@ startCells.F6 = `"blue"`;
 startCells.E7 = `"FG color:"`;
 startCells.E7_fontWeight = `"bold"`;
 startCells.F7 = `"white"`;
-const AsyncFunction = (async function() {
-}).constructor;
+const AsyncFunction = async function() {
+}.constructor;
 function useSheetNaiveAf() {
   const [sheet, setSheet] = reactExports.useState(startCells);
   const cellUpdaterFactory = reactExports.useCallback(
@@ -66,7 +66,7 @@ function useSheetNaiveAf() {
     Promise.all(
       Object.entries(computers).map(async ([id, computer]) => [
         id,
-        await (computingComputers[id] ?? (computingComputers[id] = computer(computers, computingComputers)))
+        await (computingComputers[id] ??= computer(computers, computingComputers))
       ])
     ).then((values) => {
       const coolSheet = Object.fromEntries(values);
@@ -98,7 +98,7 @@ function Cell({ id, sheet, computedSheet, setValue, setCurrentCell }) {
     }
   }
   const propIds = props.map((prop) => `${id}${prop}`);
-  const [_unneeded, fontWeight, fontFamily, bgColor, fgColor] = propIds.map((propId) => computedSheet == null ? void 0 : computedSheet[propId]);
+  const [_unneeded, fontWeight, fontFamily, bgColor, fgColor] = propIds.map((propId) => computedSheet?.[propId]);
   const [hasFocus, setHasFocus] = reactExports.useState(false);
   const valueToShow = hasFocus ? value : computedValue;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -108,12 +108,11 @@ function Cell({ id, sheet, computedSheet, setValue, setCurrentCell }) {
       title: id,
       className: "cell" + (hasFocus ? " has-focus" : ""),
       onKeyUp: (e) => {
-        var _a;
         if (e.key === "Enter") {
           const cellBelow = id[0] + (parseInt(id.slice(1)) + 1);
           const cellAbove = id[0] + (parseInt(id.slice(1)) - 1);
           const cell = e.shiftKey ? cellAbove : cellBelow;
-          (_a = document.querySelector(`#${cell}`)) == null ? void 0 : _a.focus();
+          document.querySelector(`#${cell}`)?.focus();
         }
       },
       onChange: (e) => {

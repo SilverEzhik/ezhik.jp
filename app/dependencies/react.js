@@ -1,6 +1,30 @@
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
 }
+function getAugmentedNamespace(n) {
+  if (n.__esModule) return n;
+  var f = n.default;
+  if (typeof f == "function") {
+    var a = function a2() {
+      if (this instanceof a2) {
+        return Reflect.construct(f, arguments, this.constructor);
+      }
+      return f.apply(this, arguments);
+    };
+    a.prototype = f.prototype;
+  } else a = {};
+  Object.defineProperty(a, "__esModule", { value: true });
+  Object.keys(n).forEach(function(k) {
+    var d = Object.getOwnPropertyDescriptor(n, k);
+    Object.defineProperty(a, k, d.get ? d : {
+      enumerable: true,
+      get: function() {
+        return n[k];
+      }
+    });
+  });
+  return a;
+}
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production = {};
 /**
@@ -497,6 +521,7 @@ const React = /* @__PURE__ */ getDefaultExportFromCjs(reactExports);
 export {
   React as R,
   reactExports as a,
+  getAugmentedNamespace as g,
   jsxRuntimeExports as j,
   requireReact as r
 };
