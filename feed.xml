@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sat, 22 Mar 2025 17:44:28 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 Mar 2025 17:45:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -32,7 +32,7 @@
             <description><![CDATA[Lua is a programming language that's often used in embedded contexts. It's pretty small and pretty cute.]]></description>
             <content:encoded><![CDATA[<p>Lua is a programming language that's often used in embedded contexts. It's pretty small and pretty cute.</p>
 <p>Please enjoy a little REPL up above.</p>
-<aside class="right">This REPL powered by <a href="https://github.com/ceifa/wasmoon" class="external">wasmoon</a>. Wasmoon is nice to work with, but I sure wish it had documentation.</aside>
+<aside class="right"><p>This REPL powered by <a href="https://github.com/ceifa/wasmoon" class="external">wasmoon</a>. Wasmoon is nice to work with, but I sure wish it had documentation.</p><p>Pretty cool that we can just run Lua in the web browser.</p></aside>
 <p><a href="https://lua.org" class="external">https://lua.org</a></p>
 <p>I do like working with Lua, though some things about it mildly annoy me:</p>
 <ul>
