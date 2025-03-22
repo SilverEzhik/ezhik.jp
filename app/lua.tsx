@@ -62,6 +62,9 @@ function App() {
 					]);
 				});
 
+				// go nuts
+				lua.global.set("window", window);
+
 				lua.global.set("_fetchModuleCode", async (module: string) => {
 					return await fetch(`/app/lua/${module}.lua`).then((r) => {
 						if (!r.ok) {
