@@ -63,7 +63,30 @@ function App() {
 				});
 
 				// go nuts
-				lua.global.set("window", window);
+				lua.global.set("JSON", JSON);
+
+				const methodProxy = (target) =>
+					new Proxy(target, {
+						get: (target, prop) => {
+							if (typeof target[prop] === "function") {
+								return target[prop].bind(target);
+							} else {
+								return target[prop];
+							}
+						},
+					});
+
+				// function autoAwait(name, fn) {
+				// 	lua.global.set(name, fn);
+				// 	lua.doString(`do
+				//             local fn = ${name}
+				//             ${name} = nil
+				//             function ${name}(...)
+				//             return fn(...):await()
+				//             end
+				//             end`);
+				// }
+				// autoAwait("fetch", (...args) => fetch(...args).then(methodProxy));
 
 				lua.global.set("_fetchModuleCode", async (module: string) => {
 					return await fetch(`/app/lua/${module}.lua`).then((r) => {
@@ -92,6 +115,10 @@ function App() {
 	}, []);
 
 	const containerRef = useRef<HTMLDivElement>(null);
+	const inputRef = useRef<HTMLInputElement>(null);
+	useEffect(() => {
+		inputRef.current?.focus();
+	}, []);
 
 	const [inputHistoryIndex, setInputHistoryIndex] = useState(-1);
 
@@ -130,6 +157,7 @@ function App() {
 				}}
 			>
 				<input
+					ref={inputRef}
 					value={luaInput}
 					onChange={(e) => setLuaInput(e.target.value)}
 					onKeyDown={(e) => {

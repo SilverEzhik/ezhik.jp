@@ -45,7 +45,7 @@ function App() {
           }
         ]);
       });
-      lua3.global.set("window", window);
+      lua3.global.set("JSON", JSON);
       lua3.global.set("_fetchModuleCode", async (module) => {
         return await fetch(`/app/lua/${module}.lua`).then((r) => {
           if (!r.ok) {
@@ -70,6 +70,10 @@ function App() {
     });
   }, []);
   const containerRef = reactExports.useRef(null);
+  const inputRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
   const [inputHistoryIndex, setInputHistoryIndex] = reactExports.useState(-1);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, className: "output-container hljs", children: luaOutput.map(({ text, what }, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${what} block`, children: text }, idx)) }),
@@ -103,6 +107,7 @@ function App() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "input",
             {
+              ref: inputRef,
               value: luaInput,
               onChange: (e) => setLuaInput(e.target.value),
               onKeyDown: (e) => {
