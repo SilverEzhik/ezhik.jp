@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.jp" href="/feed.xml" />
+		<script type="module" src="/script.js"></script>
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:type" content="article"> <meta property="og:title" content="Spreadsheet #3 – ezhik.jp"> <meta property="og:description" content="What if Spreadsheet #2 was Lua? You get Spreadsheet #3."> <meta property="og:url" content="https://ezhik.jp/spreadsheet-3"> <meta property="og:image" content="https://ezhik.jp/favicon.png"><title>Spreadsheet #3 – ezhik.jp</title>
+	</head>
+
+	<body>
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.jp">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.jp">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> </aside> <main><link rel="stylesheet" href="/app/spreadsheet/3.css"> 
+				<script type="module">
+					import init from "/app/spreadsheet/3.js";
+					init(document.querySelector("#app"));
+				</script>
+			 <div class="block" id="app"><noscript><p class="noscript">JavaScript is required to view this content.</p></noscript></div> <article class="block"><h1>Spreadsheet #3</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>What if <a href="/spreadsheet-2">Spreadsheet #2</a> was <a href="/lua">Lua</a>? You get Spreadsheet #3.</p>
+<p>Here we get to use one of the coolest parts of Lua: metatables. You can set all sorts of properties on objects using this way – what happens when you call or index them, what happens when you assign, what happens when you use operators, and so on.</p>
+<p>The special <code>__index</code> metatable method will be called whenever you try to access a non-existent table property – so if I try to do <code>foo.bar</code> when <code>bar</code> doesn't exist, <code>__index</code> will be called, giving me a chance to resolve its value.</p>
+<p>Now, Lua has a global table, <code>_G</code>. This table holds all the global variables – think JavaScript's <code>window</code>.</p>
+<p>And you can set a metatable on that as well. This means that we can use metatable tricks like <code>__index</code> with global variables.</p>
+<p>To make things even cooler, Lua lets you evaluate some code using <a href="https://www.lua.org/manual/5.4/manual.html#pdf-load" class="external"><code>load()</code></a>, letting you set that code's environment. This means we can craft our own environment that'll automatically resolve dependencies for us whenever the cell formula tries to access any other cell, all while keeping each cell isolated from one another since they all have their own unique environments.</p>
+<p>Pretty neat!</p>
+<p>I originally wrote this as a more JavaScript-intensive thing, where each cell got its own Lua interpreter, efficiency be damned. But the more I looked at metatables, the more I started to realize how powerful they are.</p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2025-03-23</time> • <a class="external" href="https://github.com/SilverEzhik/ezhik.jp/tree/master/app/spreadsheet/3.tsx">source code</a>  </sub></center></article></main></div> 
+	</body>
+</html>

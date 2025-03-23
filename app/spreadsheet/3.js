@@ -1,4 +1,5 @@
 import { a as reactExports, j as jsxRuntimeExports } from "../dependencies/react.js";
+import { debounce } from "../lib/userscript.js";
 import { makeInit } from "../lib/init.js";
 import { d as distExports } from "../dependencies/wasmoon.js";
 const xNames = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -27,14 +28,80 @@ startCells.E5_fontWeight = `"bold"`;
 startCells.F5 = `"monospace"`;
 startCells.E6 = `"BG color:"`;
 startCells.E6_fontWeight = `"bold"`;
-startCells.F6 = `"blue"`;
+startCells.F6 = `C1 % 2 == 0 and "red" or "blue"`;
 startCells.E7 = `"FG color:"`;
 startCells.E7_fontWeight = `"bold"`;
 startCells.F7 = `"white"`;
+startCells.A2 = "asdf";
 const luaFactory = new distExports.LuaFactory();
 async function getLua() {
-  return await luaFactory.createEngine({ enableProxy: false });
+  return await luaFactory.createEngine({
+    enableProxy: false
+  });
 }
+const lua = await getLua();
+const compute = async (sheet, resultsCallback) => {
+  lua.global.set("sheet", sheet);
+  await lua.doString(`do
+		local NaN = 0/0
+		results = {}
+
+		local function trim(s)
+			return s:match("^%s*(.-)%s*$")
+		end
+
+		local function getResult(id)
+			if results[id] then
+				return results[id]
+			end
+
+			local code = sheet[id]
+			code = code and trim(code)
+			if code == nil or code == "" then
+				results[id] = ""
+				return ""
+			end
+
+			local new_G = setmetatable({
+				math = math,
+			}, {
+				__index = function(_, key)
+					if sheet[key] then
+						return getResult(key)
+					end
+				end
+			})
+
+			-- treat as expr first
+			local ok, result = pcall(load("return " .. code, id, "t", new_G))
+			if not ok then
+				ok, result = pcall(load(code, id, "t", new_G))
+			end
+
+			if ok then
+				if result == nil then
+					results[id] = "(nil)"
+				else
+					results[id] = result
+				end
+			else
+				results[id] = NaN
+			end
+
+			return results[id]
+		end
+
+		for k, v in pairs(sheet) do
+			getResult(k)
+		end
+	end`);
+  const results = lua.global.get("results");
+  resultsCallback(results);
+};
+let computeDebounced = (...args) => {
+  compute(...args);
+  computeDebounced = debounce(compute, 200);
+};
 function useSheetNaiveAf() {
   const [sheet, setSheet] = reactExports.useState(startCells);
   const cellUpdaterFactory = reactExports.useCallback(
@@ -50,41 +117,7 @@ function useSheetNaiveAf() {
   );
   const [computedSheet, setComputedSheet] = reactExports.useState(null);
   reactExports.useEffect(() => {
-    const computers = {};
-    const computingComputers = {};
-    for (const [it, code] of Object.entries(sheet)) {
-      computers[it] = async () => {
-        const lua = await getLua();
-        lua.global.set("_getCell", async (id) => {
-          if (computers[id]) {
-            computingComputers[id] ??= computers[id]();
-            return await computingComputers[id];
-          } else {
-            return null;
-          }
-        });
-        await lua.doString(`
-					do
-						local getCell = _getCell
-						_getCell = nil
-						setmetatable(_G, {
-							__index = function(_, key)
-								return getCell(key):await()
-							end
-						})
-						print(_G)
-					end
-				`);
-        return await lua.doString(`return ${code}`);
-      };
-    }
-    Promise.all(
-      Object.entries(computers).map(async ([id, computer]) => [id, await (computingComputers[id] ??= computer())])
-    ).then((values) => {
-      const coolSheet = Object.fromEntries(values);
-      setComputedSheet(coolSheet);
-      console.log("we computed this:", coolSheet);
-    });
+    computeDebounced(sheet, setComputedSheet);
   }, [sheet]);
   return {
     sheet,
@@ -99,8 +132,8 @@ function Cell({ id, sheet, computedSheet, setValue, setCurrentCell }) {
     computedValue = "...";
   } else {
     const cv = computedSheet[id];
-    if (cv === void 0) {
-      computedValue = "";
+    if (cv == null) {
+      computedValue = "nil";
     } else if (cv !== cv) {
       computedValue = "NaN";
     } else if (typeof cv === "string") {

@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 23 Mar 2025 07:37:54 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Mar 2025 09:03:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,21 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Spreadsheet #3]]></title>
+            <link>/spreadsheet-3</link>
+            <guid>5153cfbb9327c74f74fc0875791693882f3779ac139ceb85179b45fd66a0c0ff</guid>
+            <pubDate>Sun, 23 Mar 2025 08:00:00 GMT</pubDate>
+            <description><![CDATA[What if Spreadsheet #2 was Lua? You get Spreadsheet #3.]]></description>
+            <content:encoded><![CDATA[<p>What if <a href="/spreadsheet-2">Spreadsheet #2</a> was <a href="/lua">Lua</a>? You get Spreadsheet #3.</p>
+<p>Here we get to use one of the coolest parts of Lua: metatables. You can set all sorts of properties on objects using this way – what happens when you call or index them, what happens when you assign, what happens when you use operators, and so on.</p>
+<p>The special <code>__index</code> metatable method will be called whenever you try to access a non-existent table property – so if I try to do <code>foo.bar</code> when <code>bar</code> doesn't exist, <code>__index</code> will be called, giving me a chance to resolve its value.</p>
+<p>Now, Lua has a global table, <code>_G</code>. This table holds all the global variables – think JavaScript's <code>window</code>.</p>
+<p>And you can set a metatable on that as well. This means that we can use metatable tricks like <code>__index</code> with global variables.</p>
+<p>To make things even cooler, Lua lets you evaluate some code using <a href="https://www.lua.org/manual/5.4/manual.html#pdf-load" class="external"><code>load()</code></a>, letting you set that code's environment. This means we can craft our own environment that'll automatically resolve dependencies for us whenever the cell formula tries to access any other cell, all while keeping each cell isolated from one another since they all have their own unique environments.</p>
+<p>Pretty neat!</p>
+<p>I originally wrote this as a more JavaScript-intensive thing, where each cell got its own Lua interpreter, efficiency be damned. But the more I looked at metatables, the more I started to realize how powerful they are.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Lua]]></title>
