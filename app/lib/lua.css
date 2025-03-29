@@ -1,0 +1,53 @@
+#app {
+	background: rgba(255, 255, 255, 0.5);
+
+
+	.output-container {
+		font-family: var(--iosevka);
+
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 1em;
+
+
+		.block {
+			padding: 1em;
+			flex-shrink: 0;
+			width: auto;
+			white-space: pre-wrap;
+
+			&.input {
+				background-color: rgba(255, 255, 255, 0.2);
+				margin-left: 2em;
+			}
+
+			&:not(.input) {
+				margin-right: 2em;
+			}
+
+		}
+
+		height: 500px;
+
+		overflow: scroll;
+	}
+
+	form {
+		display: flex;
+		padding: 1em;
+		gap: 0.5em;
+
+		input {
+			font-size: 1em;
+			font-family: var(--iosevka);
+			flex-grow: 1;
+		}
+
+		button {
+			font-size: 1em;
+			font-family: var(--iosevka);
+			padding: 0 1em;
+		}
+	}
+}

@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sat, 29 Mar 2025 07:38:06 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 29 Mar 2025 09:26:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,63 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Promise.lua]]></title>
+            <link>/promise.lua</link>
+            <guid>2b4fee4546e858633e0d88d0b9667c0e39c4c71900c1e4f123a3a9978411edae</guid>
+            <pubDate>Sat, 29 Mar 2025 09:15:00 GMT</pubDate>
+            <description><![CDATA[A JavaScript-style Promise library for Lua.]]></description>
+            <content:encoded><![CDATA[<p>A JavaScript-style Promise library for <a href="/lua">Lua</a>.</p>
+<p><a href="https://github.com/SilverEzhik/Promise.lua" class="external">Source code (MPL-2.0)</a></p>
+<p>You can play with it above by messing with the <code>Promise</code> object and also <code>setTimeout</code> and <code>setInterval</code> which work exactly as you'd expect them to work in JavaScript.</p>
+<h1>The API</h1>
+<p>I tried to cover most of the API I saw on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="external">MDN</a>:</p>
+<ul>
+<li>Constructor
+<ul>
+<li><strong><code>Promise.new(fn)</code></strong> – returns a new Promise. <code>fn</code> is a function which takes in two parameters, <code>resolve</code> and <code>reject</code>, both of which are functions that will either resolve or reject the promise with the given value. If the value given to <code>resolve</code> is a promise or a table that has a <code>next</code> method, it will use the result of that method instead.</li>
+</ul>
+</li>
+<li>Instance methods
+<ul>
+<li><strong><code>:next(onFulfilled, onRejected)</code></strong> – registers callbacks to run when the promise is settled (either fulfilled or rejected). This is called <code>next</code> instead of <code>then</code> as <code>then</code> is a reserved keyword in Lua.</li>
+<li><strong><code>:catch(onRejected)</code></strong> – registers a callback to run when the promise is rejected.</li>
+<li><strong><code>:finally(onFinally)</code></strong> – registers a callback that will run when the promise is settled. This promise will settle with whatever the original promise's state is.</li>
+</ul>
+</li>
+<li>Static methods
+<ul>
+<li><strong><code>Promise.all(promises)</code></strong> – takes a list of promises and returns a promise that is fulfilled when all input promises are fulfilled or is rejected when any of the promises are rejected.</li>
+<li><strong><code>Promise.allSettled(promises)</code></strong> – takes a list of promises and returns a promise that is fulfilled when all input promises are settled with a list of tables in the shape of <code>{ status = "fulfilled", value = &#x3C;...> }</code> or <code>{ status = "rejected", reason = &#x3C;...> }</code>.</li>
+<li><strong><code>Promise.any(promises)</code></strong> – takes a list of promises and returns a promise that is fulfilled when any of the input promises are fulfilled or is rejected when all of the input promises are rejected.</li>
+<li><strong><code>Promise.race(promises)</code></strong> – takes a list of promises and returns a promise that is settled with the state of the first promise in the list to settle.</li>
+<li><strong><code>Promise.reject(reason)</code></strong> – returns a promise that's rejected with the given reason.</li>
+<li><strong><code>Promise.resolve(value)</code></strong> – returns a promise that's resolved with the given value.</li>
+<li><strong><code>Promise.try(fn)</code></strong> – takes a callback of any kind and wraps its result in a promise.</li>
+<li><strong><code>Promise.withResolvers()</code></strong> – returns a promise, its <code>resolve</code> function, and its <code>reject</code> function.
+I also added a few extra helpers for my own sake:</li>
+</ul>
+</li>
+<li>Async-await
+<ul>
+<li><strong><code>Promise.async(fn)</code></strong> – returns a function that returns a promise that will be resolved or rejected based on the result of executing <code>fn</code> in a coroutine.</li>
+<li><strong><code>:await()</code></strong> – if executed from a coroutine, will yield until the promise is settled and return the resolved value or <code>error</code> with the rejection reason.</li>
+</ul>
+</li>
+<li>Various
+<ul>
+<li><strong><code>:ok()</code></strong> – converts rejections of the promise into <code>nil</code>, think Rust's <a href="https://doc.rust-lang.org/std/result/enum.Result.html#method.ok" class="external">Result.ok()</a>.</li>
+<li><strong><code>:print()</code></strong> – prints the settled result of the promise without modifying it.</li>
+</ul>
+</li>
+</ul>
+<p>I've kept this async runtime-agnostic. You can override the <strong><code>Promise.schedule(fn)</code></strong> function with your own implementation that will schedule functions for later asynchronous execution. An example implementation for Hammerspoon is provided in the repository.</p>
+<h1>Making of</h1>
+<p>I've been suffering from callback hell when automating things with <a href="/hammerspoon">Hammerspoon</a>, so I ended up using <a href="https://github.com/zserge/lua-promises" class="external">zserge/lua-promises</a> (<code>deferred</code>) for a while, but then decided to write my own because reinventing the wheel is a good way to learn how the wheel works.</p>
+<p>It was pretty fun to make. The <a href="https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise-objects" class="external">TC39</a> specification for JavaScript is insanely detailed, so I always could count on it to help me resolve any ambiguities, though I didn't implement it word for word.</p>
+<p>I actually get quite a lot of use out of those async-await functions in Hammerspoon, as they let me completely flatten functions that deal with UI automation, which can require waiting for animations to finish and so on.</p>
+<p><a href="https://github.com/SilverEzhik/Promise.lua" class="external">Source code (MPL-2.0)</a></p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Disabling Dash 7 paid upgrade prompts]]></title>

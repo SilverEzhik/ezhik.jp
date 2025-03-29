@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "file": "promise.lua.js",
+  "sources": [
+    "/app/promise.lua.tsx"
+  ],
+  "sourcesContent": [
+    "import { JSX, useEffect, useRef, useState } from \"react\";\nimport { makeInit } from \"./lib/init\";\nimport { LuaEngine, LuaFactory } from \"wasmoon\";\nimport React from \"react\";\nimport { LuaApp } from \"./lib/lua\";\n\nconst initialLuaSetup = async (lua: LuaEngine) => {\n\tfor (const verb of [\"set\", \"clear\"]) {\n\t\tfor (const name of [\"Interval\", \"Timeout\"]) {\n\t\t\tconst id = `${verb}${name}`;\n\t\t\tlua.global.set(id, window[id]);\n\t\t}\n\t}\n\tawait lua.doString(`\n\t\t_ = require('pipeline')\n\t\tPromise = require('Promise')\n\n\t\tPromise.schedule = function(fn)\n\t\t\tsetTimeout(fn, 0)\n\t\tend\n\t`);\n};\n\nconst example = `Promise.new(function(r) setTimeout(r, 1000) end)\n\t:next(function(v) print(\"Resolved\") end)`;\n\nfunction App() {\n\treturn (\n\t\t<LuaApp\n\t\t\tinitialLuaSetup={initialLuaSetup}\n\t\t\twelcomeMessage={\n\t\t\t\t<>\n\t\t\t\t\t<p>This is a Lua REPL. Type Lua code in the box below and press 'Run'.</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\tThis REPL includes the <b>Promise</b> class described below, along with JavaScript's <b>setTimeout</b>,{\" \"}\n\t\t\t\t\t\t<b>setInterval</b>, <b>clearTimeout</b>, and <b>clearInterval</b> functions.\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>Example:</p>\n\t\t\t\t\t<b>\n\t\t\t\t\t\t<code>{example}</code>\n\t\t\t\t\t</b>\n\t\t\t\t</>\n\t\t\t}\n\t\t/>\n\t);\n}\n\nexport default makeInit(App);\n"
+  ],
+  "names": [
+    "jsx",
+    "jsxs",
+    "Fragment"
+  ],
+  "mappings": ";;;AAMA,MAAM,kBAAkB,OAAO,QAAmB;AACjD,aAAW,QAAQ,CAAC,OAAO,OAAO,GAAG;AACpC,eAAW,QAAQ,CAAC,YAAY,SAAS,GAAG;AAC3C,YAAM,KAAK,GAAG,IAAI,GAAG,IAAI;AACzB,UAAI,OAAO,IAAI,IAAI,OAAO,EAAE,CAAC;AAAA,IAAA;AAAA,EAC9B;AAED,QAAM,IAAI,SAAS;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,EAOlB;AACF;AAEA,MAAM,UAAU;AAAA;AAGhB,SAAS,MAAM;AAEb,SAAAA,kCAAA;AAAA,IAAC;AAAA,IAAA;AAAA,MACA;AAAA,MACA,gBAEEC,kCAAA,KAAAC,4BAAA,EAAA,UAAA;AAAA,QAAAF,kCAAAA,IAAC,OAAE,UAAmE,sEAAA,CAAA;AAAA,+CACrE,KAAE,EAAA,UAAA;AAAA,UAAA;AAAA,UACqBA,kCAAAA,IAAC,OAAE,UAAO,UAAA,CAAA;AAAA,UAAI;AAAA,UAAgDA,kCAAAA,IAAC,OAAE,UAAU,aAAA,CAAA;AAAA,UAAI;AAAA,UAAE;AAAA,UACxGA,kCAAAA,IAAC,OAAE,UAAW,cAAA,CAAA;AAAA,UAAI;AAAA,UAAEA,kCAAAA,IAAC,OAAE,UAAY,eAAA,CAAA;AAAA,UAAI;AAAA,UAAMA,kCAAAA,IAAC,OAAE,UAAa,gBAAA,CAAA;AAAA,UAAI;AAAA,QAAA,GAClE;AAAA,QACAA,kCAAAA,IAAC,OAAE,UAAQ,WAAA,CAAA;AAAA,QACVA,sCAAA,KAAA,EACA,UAACA,kCAAAA,IAAA,QAAA,EAAM,mBAAQ,EAChB,CAAA;AAAA,MAAA,EACD,CAAA;AAAA,IAAA;AAAA,EAEF;AAEF;AAEA,MAAe,cAAA,SAAS,GAAG;"
+}
