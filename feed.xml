@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sat, 29 Mar 2025 07:36:05 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 29 Mar 2025 07:36:55 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -47,7 +47,7 @@
 </code></pre>
 <aside class="right">As this disables all update checks for Dash, you probably should keep an eye on their website to make sure you don't miss out on any important security notices for the app.</aside>
 <p>This doesn't really seem like a malicious action on the part of the developer – the prompt is just a standard <a href="https://sparkle-project.org/" class="external">Sparkle</a> update window, used by most artisan Mac software. However, I couldn't find a toggle to disable update checks in the app's settings, so I had to figure out a slightly more manual way.</p>
-<p>I tried the <a href="/nsuserdefaults">NSUserDefaults</a> route next, as Sparkle offers ways to customize itself through <code>Info.plist</code> configuration: <a href="https://sparkle-project.org/documentation/customization/" class="external">https://sparkle-project.org/documentation/customization/</a> – however, both <code>SUEnableAutomaticChecks</code> and <code>SULastCheckTime</code> keys would get reset whenever I relaunched Dash. So I tried setting the URL that the app uses to an empty string and that seemed to do the trick.</p>
+<p>I tried the <a href="/nsuserdefaults">NSUserDefaults</a> route next, as Sparkle offers ways to customize itself through <code>Info.plist</code> configuration: <a href="https://sparkle-project.org/documentation/customization/" class="external">https://sparkle-project.org/documentation/customization/</a> – however, both <code>SUEnableAutomaticChecks</code> and <code>SULastCheckTime</code> keys would get reset whenever I relaunched Dash. So I tried setting the URL that the app polls for new updates to an empty string and that seemed to do the trick.</p>
 <p>By the way, it's pretty neat that Sparkle update feeds are just RSS. <a href="/til">The more you know!</a></p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/thumbnails/dash-7-paid-upgrade-prompt.png" length="0" type="image/png"/>
         </item>
