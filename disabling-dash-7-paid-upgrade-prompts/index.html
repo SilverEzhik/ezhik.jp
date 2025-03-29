@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.jp" href="/feed.xml" />
+		<script type="module" src="/script.js"></script>
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:type" content="article"> <meta property="og:title" content="Disabling Dash 7 paid upgrade prompts – ezhik.jp"> <meta property="og:description" content="So I use a rather nice documentation browser, Kapeli's Dash. With version 7, this app switched to a subscription model, which came with an unfortunate side effect of daily paid upgrade prompts for those staying on their one-time purchase licenses."> <meta property="og:url" content="https://ezhik.jp/disabling-dash-7-paid-upgrade-prompts"> <meta property="og:image" content="https://ezhik.jp/assets/thumbnails/dash-7-paid-upgrade-prompt.png"><title>Disabling Dash 7 paid upgrade prompts – ezhik.jp</title>
+	</head>
+
+	<body>
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.jp">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.jp">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> </aside> <main> <article class="block"><h1>Disabling Dash 7 paid upgrade prompts</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>
+									<figure>
+										<a href="/assets/dash-7-paid-upgrade-prompt.png" target="_blank">
+											<img src="/assets/thumbnails/dash-7-paid-upgrade-prompt.png" alt="This prompt appears every single day.">
+										</a>
+										<figcaption>This prompt appears every single day.</figcaption>
+									</figure>
+								</p>
+<p>So I use a rather nice documentation browser, Kapeli's <a href="https://kapeli.com/dash" class="external">Dash</a>. With version 7, this app switched to a subscription model, which came with an unfortunate side effect of daily paid upgrade prompts for those staying on their one-time purchase licenses.</p>
+<p>Here's how I disabled those update checks:</p>
+<pre><code class="hljs language-sh">defaults write com.kapeli.dashdoc SUFeedURL <span class="string">""</span>
+</code></pre>
+<p>To restore things back to normal, do:</p>
+<pre><code class="hljs language-sh">defaults delete com.kapeli.dashdoc SUFeedURL
+</code></pre>
+<aside class="right">As this disables all update checks for Dash, you probably should keep an eye on their website to make sure you don't miss out on any important security notices for the app.</aside>
+<p>This doesn't really seem like a malicious action on the part of the developer – the prompt is just a standard <a href="https://sparkle-project.org/" class="external">Sparkle</a> update window, used by most artisan Mac software. However, I couldn't find a toggle to disable update checks in the app's settings, so I had to figure out a slightly more manual way.</p>
+<p>I tried the <a href="/nsuserdefaults">NSUserDefaults</a> route next, as Sparkle offers ways to customize itself through <code>Info.plist</code> configuration: <a href="https://sparkle-project.org/documentation/customization/" class="external">https://sparkle-project.org/documentation/customization/</a> – however, both <code>SUEnableAutomaticChecks</code> and <code>SULastCheckTime</code> keys would get reset whenever I relaunched Dash. So I tried setting the URL that the app uses to an empty string and that seemed to do the trick.</p>
+<p>By the way, it's pretty neat that Sparkle update feeds are just RSS. <a href="/til">The more you know!</a></p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2025-03-29</time>   </sub></center></article></main></div> 
+	</body>
+</html>

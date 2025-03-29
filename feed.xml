@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 23 Mar 2025 09:05:49 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 29 Mar 2025 07:33:29 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,33 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Disabling Dash 7 paid upgrade prompts]]></title>
+            <link>/disabling-dash-7-paid-upgrade-prompts</link>
+            <guid>c1b104915824827fd3300b976a4d07972784c6ec9139a7b24b57866c3f704b5b</guid>
+            <pubDate>Sat, 29 Mar 2025 07:30:00 GMT</pubDate>
+            <description><![CDATA[So I use a rather nice documentation browser, Kapeli's Dash. With version 7, this app switched to a subscription model, which came with an unfortunate side effect of daily paid upgrade prompts for those staying on their one-time purchase licenses.]]></description>
+            <content:encoded><![CDATA[<p>
+									<figure>
+										<a href="/assets/dash-7-paid-upgrade-prompt.png" target="_blank">
+											<img src="/assets/thumbnails/dash-7-paid-upgrade-prompt.png" alt="This prompt appears every single day.">
+										</a>
+										<figcaption>This prompt appears every single day.</figcaption>
+									</figure>
+								</p>
+<p>So I use a rather nice documentation browser, Kapeli's <a href="https://kapeli.com/dash" class="external">Dash</a>. With version 7, this app switched to a subscription model, which came with an unfortunate side effect of daily paid upgrade prompts for those staying on their one-time purchase licenses.</p>
+<p>Here's how I disabled those update checks:</p>
+<pre><code class="hljs language-sh">defaults write com.kapeli.dashdoc SUFeedURL <span class="string">""</span>
+</code></pre>
+<p>To restore things back to normal, do:</p>
+<pre><code class="hljs language-sh">defaults delete com.kapeli.dashdoc SUFeedURL
+</code></pre>
+<aside class="right">As this disables all update checks for Dash, you probably should keep an eye on their website to make sure you don't miss out on any important security notices for the app.</aside>
+<p>This doesn't really seem like a malicious action on the part of the developer – the prompt is just a standard <a href="https://sparkle-project.org/" class="external">Sparkle</a> update window, used by most artisan Mac software. However, I couldn't find a toggle to disable update checks in the app's settings, so I had to figure out a slightly more manual way.</p>
+<p>I tried the <a href="/nsuserdefaults">NSUserDefaults</a> route next, as Sparkle offers ways to customize itself through <code>Info.plist</code> configuration: <a href="https://sparkle-project.org/documentation/customization/" class="external">https://sparkle-project.org/documentation/customization/</a> – however, both <code>SUEnableAutomaticChecks</code> and <code>SULastCheckTime</code> keys would get reset whenever I relaunched Dash. So I tried setting the URL that the app uses to an empty string and that seemed to do the trick.</p>
+<p>By the way, it's pretty neat that Sparkle update feeds are just RSS. <a href="/til">The more you know!</a></p>]]></content:encoded>
+            <enclosure url="https://ezhik.jp/assets/thumbnails/dash-7-paid-upgrade-prompt.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Spreadsheet #3]]></title>
