@@ -19,10 +19,10 @@
 									</figure>
 								</p>
 <p>So I use a rather nice documentation browser, Kapeli's <a href="https://kapeli.com/dash" class="external">Dash</a>. With version 7, this app switched to a subscription model, which came with an unfortunate side effect of daily paid upgrade prompts for those staying on their one-time purchase licenses.</p>
-<p>Here's how I disabled those update checks:</p>
+<p>Run this in the terminal to disable those update prompts:</p>
 <pre><code class="hljs language-sh">defaults write com.kapeli.dashdoc SUFeedURL <span class="string">""</span>
 </code></pre>
-<p>To restore things back to normal, do:</p>
+<p>To restore things back to normal, run:</p>
 <pre><code class="hljs language-sh">defaults delete com.kapeli.dashdoc SUFeedURL
 </code></pre>
 <aside class="right">As this disables all update checks for Dash, you probably should keep an eye on their website to make sure you don't miss out on any important security notices for the app.</aside>
