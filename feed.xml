@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 13 Apr 2025 12:45:47 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 13 Apr 2025 12:49:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -67,7 +67,7 @@
 <li>Uses <code>debug</code> so is probably slow as heck</li>
 </ul>
 <h1>Making-of</h1>
-<p>This was fun to make. Writing parsers is always good fun and the little one I hand-rolled here seems to do the job well enough, giving this handling for strings and comments that's a lot better than a regex-based approach.</p>
+<p>This was fun to make. Writing parsers is always good fun and the little one I hand-rolled here seems to do the job well enough, giving this handling for strings and comments that's a lot better than a regex-based approach. Writing up little parsers comes up a lot for me and previously I'd try to take care of the stack myself and only go character by character, but here I tried to use the function stack as the stack (hence all the parse local functions) for some recursive descent parser action, along with making it easier to take and check multiple characters ahead and it made for a pretty nice experience for me.</p>
 <p>I did ask <em>the computer</em> to write <code>test.lua</code> for me, which saved some time but was not as fun. It works though, I guess.</p>
 <p><a href="https://github.com/SilverEzhik/f-string.lua" class="external">Source code (MPL-2.0)</a></p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/f-string.lua.png" length="0" type="image/png"/>
