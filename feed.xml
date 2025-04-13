@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 13 Apr 2025 12:39:18 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 13 Apr 2025 12:45:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -40,11 +40,15 @@
 </code></pre>
 <h2>Features</h2>
 <p>You can put any Lua expression into the f-string and it'll hopefully work.</p>
-<p><code>=</code> endings are supported:</p>
+<ul>
+<li><code>=</code> endings are supported:</li>
+</ul>
 <pre><code class="hljs language-lua">> f<span class="string">"{1 + 1 = }"</span>
 <span class="number">1</span> + <span class="number">1</span> = <span class="number">2</span>
 </code></pre>
-<p>Formatting specs support everything in <code>string.format</code> and can be used with <code>:%</code>:</p>
+<ul>
+<li>Formatting specs support everything in <code>string.format</code> and can be used with <code>:%</code>:</li>
+</ul>
 <pre><code class="hljs language-lua">> f<span class="string">"{100:%.2f}"</span>
 <span class="number">100.00</span>
 </code></pre>
@@ -62,6 +66,9 @@
 <ul>
 <li>Uses <code>debug</code> so is probably slow as heck</li>
 </ul>
+<h1>Making-of</h1>
+<p>This was fun to make. Writing parsers is always good fun and the little one I hand-rolled here seems to do the job well enough, giving this handling for strings and comments that's a lot better than a regex-based approach.</p>
+<p>I did ask <em>the computer</em> to write <code>test.lua</code> for me, which saved some time but was not as fun. It works though, I guess.</p>
 <p><a href="https://github.com/SilverEzhik/f-string.lua" class="external">Source code (MPL-2.0)</a></p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/f-string.lua.png" length="0" type="image/png"/>
         </item>

@@ -25,11 +25,15 @@
 </code></pre>
 <h2>Features</h2>
 <p>You can put any Lua expression into the f-string and it'll hopefully work.</p>
-<p><code>=</code> endings are supported:</p>
+<ul>
+<li><code>=</code> endings are supported:</li>
+</ul>
 <pre><code class="hljs language-lua">> f<span class="string">"{1 + 1 = }"</span>
 <span class="number">1</span> + <span class="number">1</span> = <span class="number">2</span>
 </code></pre>
-<p>Formatting specs support everything in <code>string.format</code> and can be used with <code>:%</code>:</p>
+<ul>
+<li>Formatting specs support everything in <code>string.format</code> and can be used with <code>:%</code>:</li>
+</ul>
 <pre><code class="hljs language-lua">> f<span class="string">"{100:%.2f}"</span>
 <span class="number">100.00</span>
 </code></pre>
@@ -47,6 +51,9 @@
 <ul>
 <li>Uses <code>debug</code> so is probably slow as heck</li>
 </ul>
+<h1>Making-of</h1>
+<p>This was fun to make. Writing parsers is always good fun and the little one I hand-rolled here seems to do the job well enough, giving this handling for strings and comments that's a lot better than a regex-based approach.</p>
+<p>I did ask <em>the computer</em> to write <code>test.lua</code> for me, which saved some time but was not as fun. It works though, I guess.</p>
 <p><a href="https://github.com/SilverEzhik/f-string.lua" class="external">Source code (MPL-2.0)</a></p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2025-04-13</time> • <a class="external" href="https://github.com/SilverEzhik/ezhik.jp/tree/master/app/f-string.lua.tsx">source code</a> • <a class="external" href="https://mastodon.social/@Ezhik/114330692894476968">Discuss on Mastodon</a> • <a class="external" href="https://bsky.app/profile/ezhik.jp/post/3lmp2vh3wxk22">Discuss on Bluesky</a></sub></center></article></main></div> 
 	</body>
 </html>
