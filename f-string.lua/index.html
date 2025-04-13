@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed for ezhik.jp" href="/feed.xml" />
+		<script type="module" src="/script.js"></script>
+		<meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:type" content="article"> <meta property="og:title" content="f-string.lua – ezhik.jp"> <meta property="og:description" content="A Python-like f-string implementation for Lua."> <meta property="og:url" content="https://ezhik.jp/f-string.lua"> <meta property="og:image" content="https://ezhik.jp/assets/f-string.lua.png"><title>f-string.lua – ezhik.jp</title>
+	</head>
+
+	<body>
+		<div class="site "><aside class="sidebar"><nav class="links block"><img class="hog" src="/icons/hog.svg" alt="A hedgehog, crudely drawn. I'm just winging it here. If you think you know how to draw a better hedgehog then you do it. Email me if you do."> <ul class="links"><li><a href="/">Home</a></li> <li><a href="mailto:i@ezhik.jp">Email</a></li> <li><a href="https://bsky.app/profile/ezhik.jp">Bluesky</a></li> <li><a rel="me" href="https://mastodon.social/@Ezhik">Mastodon</a></li> <li><a href="https://github.com/silverezhik">GitHub</a></li> <li><a href="/resume.pdf">Resume</a></li> <li><a href="/feed.xml">RSS</a></li></ul></nav> </aside> <main><link rel="stylesheet" href="/app/f-string.lua.css"> 
+				<script type="module">
+					import init from "/app/f-string.lua.js";
+					init(document.querySelector("#app"));
+				</script>
+			 <div class="block" id="app"><noscript><p class="noscript">JavaScript is required to view this content.</p></noscript></div> <article class="block"><h1>f-string.lua</h1> <h2 class="hogs">🦔 🦔 🦔</h2> <p>A <a href="/python">Python</a>-like f-string implementation for <a href="/lua">Lua</a>.</p>
+<p><a href="https://github.com/SilverEzhik/f-string.lua" class="external">Source code (MPL-2.0)</a></p>
+<p>You can play with it above by using <code>f"fancy strings with variable interpolations: {1 + 2 = }"</code> in it and they should work exactly as you'd expect.</p>
+<pre><code class="hljs language-lua">f = <span class="built_in">require</span>(<span class="string">"f-string"</span>)
+
+<span class="keyword">local</span> who = <span class="string">"hedgehogs"</span>
+<span class="built_in">print</span>(f<span class="string">"hello {who}!"</span>)
+</code></pre>
+<h2>Features</h2>
+<p>You can put any Lua expression into the f-string and it'll hopefully work.</p>
+<p><code>=</code> endings are supported:</p>
+<pre><code class="hljs language-lua">> f<span class="string">"{1 + 1 = }"</span>
+<span class="number">1</span> + <span class="number">1</span> = <span class="number">2</span>
+</code></pre>
+<p>Formatting specs support everything in <code>string.format</code> and can be used with <code>:%</code>:</p>
+<pre><code class="hljs language-lua">> f<span class="string">"{100:%.2f}"</span>
+<span class="number">100.00</span>
+</code></pre>
+<h2>Caveats</h2>
+<ul>
+<li>Upvalue access is kinda broken: Variables from outer scopes of functions (upvalues) are only reliably accessible if they are referenced outside the f-string. For example:</li>
+</ul>
+<pre><code class="hljs language-lua"><span class="keyword">local</span> x = <span class="string">"outer scope"</span>
+<span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span></span>
+	<span class="comment">-- This reference is needed for the upvalue to be accessible in the f-string</span>
+	<span class="keyword">if</span> x <span class="keyword">then</span> <span class="keyword">end</span>
+	<span class="keyword">local</span> result = f<span class="string">"x = {x}"</span>  <span class="comment">-- Now works correctly</span>
+<span class="keyword">end</span>
+</code></pre>
+<ul>
+<li>Uses <code>debug</code> so is probably slow as heck</li>
+</ul>
+<p><a href="https://github.com/SilverEzhik/f-string.lua" class="external">Source code (MPL-2.0)</a></p> <h2 class="hogs">🦔 🦔 🦔</h2> <center><sub><time>2025-04-13</time> • <a class="external" href="https://github.com/SilverEzhik/ezhik.jp/tree/master/app/f-string.lua.tsx">source code</a>  </sub></center></article></main></div> 
+	</body>
+</html>

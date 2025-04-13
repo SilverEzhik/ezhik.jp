@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sat, 29 Mar 2025 09:29:02 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 13 Apr 2025 12:35:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,47 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[f-string.lua]]></title>
+            <link>/f-string.lua</link>
+            <guid>88cb174cc20b938ada233d58e1ccfcc274a6e4006da88a8fd11ef73afc4e288c</guid>
+            <pubDate>Sun, 13 Apr 2025 12:40:00 GMT</pubDate>
+            <description><![CDATA[A Python-like f-string implementation for Lua.]]></description>
+            <content:encoded><![CDATA[<p>A <a href="/python">Python</a>-like f-string implementation for <a href="/lua">Lua</a>.</p>
+<p><a href="https://github.com/SilverEzhik/f-string.lua" class="external">Source code (MPL-2.0)</a></p>
+<p>You can play with it above by using <code>f"fancy strings with variable interpolations: {1 + 2 = }"</code> in it and they should work exactly as you'd expect.</p>
+<pre><code class="hljs language-lua">f = <span class="built_in">require</span>(<span class="string">"f-string"</span>)
+
+<span class="keyword">local</span> who = <span class="string">"hedgehogs"</span>
+<span class="built_in">print</span>(f<span class="string">"hello {who}!"</span>)
+</code></pre>
+<h2>Features</h2>
+<p>You can put any Lua expression into the f-string and it'll hopefully work.</p>
+<p><code>=</code> endings are supported:</p>
+<pre><code class="hljs language-lua">> f<span class="string">"{1 + 1 = }"</span>
+<span class="number">1</span> + <span class="number">1</span> = <span class="number">2</span>
+</code></pre>
+<p>Formatting specs support everything in <code>string.format</code> and can be used with <code>:%</code>:</p>
+<pre><code class="hljs language-lua">> f<span class="string">"{100:%.2f}"</span>
+<span class="number">100.00</span>
+</code></pre>
+<h2>Caveats</h2>
+<ul>
+<li>Upvalue access is kinda broken: Variables from outer scopes of functions (upvalues) are only reliably accessible if they are referenced outside the f-string. For example:</li>
+</ul>
+<pre><code class="hljs language-lua"><span class="keyword">local</span> x = <span class="string">"outer scope"</span>
+<span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span></span>
+	<span class="comment">-- This reference is needed for the upvalue to be accessible in the f-string</span>
+	<span class="keyword">if</span> x <span class="keyword">then</span> <span class="keyword">end</span>
+	<span class="keyword">local</span> result = f<span class="string">"x = {x}"</span>  <span class="comment">-- Now works correctly</span>
+<span class="keyword">end</span>
+</code></pre>
+<ul>
+<li>Uses <code>debug</code> so is probably slow as heck</li>
+</ul>
+<p><a href="https://github.com/SilverEzhik/f-string.lua" class="external">Source code (MPL-2.0)</a></p>]]></content:encoded>
+            <enclosure url="https://ezhik.jp/assets/f-string.lua.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Promise.lua]]></title>
