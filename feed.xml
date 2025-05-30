@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 13 Apr 2025 12:49:47 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 May 2025 17:42:10 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -23,6 +23,26 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Obsidian's 10,000 note surprise]]></title>
+            <link>/obsidian-10000-note-surprise</link>
+            <guid>f437dbda9c6ba510614c02fe5764fd50c47bd0949fc134d45eb9ac621a01d3e0</guid>
+            <pubDate>Tue, 20 May 2025 17:45:00 GMT</pubDate>
+            <description><![CDATA[Once you hit 10,000 notes—and any alias or link to a non-existent note counts towards this limit—Obsidian's fuzzy search becomes Very Bad.]]></description>
+            <content:encoded><![CDATA[<p>Once you hit 10,000 notes—and any alias or link to a non-existent note counts towards this limit—<a href="/obsidian">Obsidian</a>'s fuzzy search becomes Very Bad.</p>
+<aside class="right">All em dashes in this post are organically-made.
+<code>Cmd</code>+<code>Shift</code>+<code>-</code> is all it takes. On my machine, at least.</aside>
+<p>There's <a href="https://forum.obsidian.md/t/options-to-control-the-quick-switcher-links-suggestion-algorithm-above-10000-items-ignore-spaces/56861" class="external">a feature request on the Obsidian forum with more details</a>, but the really nice fuzzy search mechanism where you can type something like <code>[[objc</code> and have it match "<strong>Obj</strong>ective-<strong>C</strong>" just no longer works.</p>
+<p>Obsidian developers say the limit is there for performance reasons, but I've paid lots of yen for my computer and so I intend to play my note-taking apps with maximum settings.</p>
+<p>Here's a cursed little plugin that works around the problem as of Obsidian 1.8.10 using the ✨Monte Carlo method✨:</p>
+<p><strong><a href="/assets/obsidian/patch-fuzzy-search.zip">Download</a></strong></p>
+<p>Unzip that to your vault's plugin folder (there should be a button to open it in the <em>Community plugins</em> section of the settings), then reload your plugins and enable it.</p>
+<p>I've only encountered this problem when inserting links, so not sure if this helps with the quick switcher—please let me know if it doesn't.</p>
+<h1>Tell me more</h1>
+<p>I had to do a bit of digging and reverse engineering to figure this one out. Obsidian's all webpacked and stuff so sadly I couldn't easily patch the check itself from a plugin, so instead I patched the function that collects files to only return up to 9,999 items, sampled randomly, with the sample reshuffled once a second or so (check the code out, it's very silly). If you are just a little over the limit, this works pretty well in practice as the list gets reshuffled while you type.</p>
+<h1>Tell me less</h1>
+<p>Now your fuzzy searches can be even fuzzier.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[f-string.lua]]></title>
