@@ -16,9 +16,10 @@
 <p>There's <a href="https://forum.obsidian.md/t/options-to-control-the-quick-switcher-links-suggestion-algorithm-above-10000-items-ignore-spaces/56861" class="external">a feature request on the Obsidian forum with more details</a>, but the really nice fuzzy search mechanism where you can type something like <code>[[objc</code> and have it match "<strong>Obj</strong>ective-<strong>C</strong>" just no longer works.</p>
 <p>Obsidian developers say the limit is there for performance reasons, but I've paid lots of yen for my computer and so I intend to play my note-taking apps with maximum settings.</p>
 <p>Here's a cursed little plugin that works around the problem as of Obsidian 1.8.10 using the ✨Monte Carlo method✨:</p>
-<p><strong><a href="/assets/obsidian/patch-fuzzy-search.zip">Download</a></strong></p>
+<p><strong><a href="/assets/obsidian/patch-fuzzy-search.zip">Download (1.1.0)</a></strong></p>
 <p>Unzip that to your vault's plugin folder (there should be a button to open it in the <em>Community plugins</em> section of the settings), then reload your plugins and enable it.</p>
-<p>I've only encountered this problem when inserting links, so not sure if this helps with the quick switcher—please let me know if it doesn't.</p>
+<p><del>I've only encountered this problem when inserting links, so not sure if this helps with the quick switcher—please let me know if it doesn't.</del>
+<strong>UPDATE 2025-06-07:</strong> There's now a fix for the quick switcher too, using the same mechanism.</p>
 <h1>Tell me more</h1>
 <p>I had to do a bit of digging and reverse engineering to figure this one out. Obsidian's all webpacked and stuff so sadly I couldn't easily patch the check itself from a plugin, so instead I patched the function that collects files to only return up to 9,999 items, sampled randomly, with the sample reshuffled once a second or so (check the code out, it's very silly). If you are just a little over the limit, this works pretty well in practice as the list gets reshuffled while you type.</p>
 <h1>Tell me less</h1>
