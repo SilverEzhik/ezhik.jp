@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Mon, 14 Jul 2025 15:11:30 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Aug 2025 16:24:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -25,6 +25,52 @@
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
         </item>
         <item>
+            <title><![CDATA[Losing the Plot That Was Never There]]></title>
+            <link>/losing-the-plot-that-was-never-there</link>
+            <guid>f939a3aa363063a9343fc409d9ee54f330403f0446508b2f0dc61054327b8156</guid>
+            <pubDate>Tue, 12 Aug 2025 16:25:00 GMT</pubDate>
+            <description><![CDATA[Somewhere along the way, we've lost the "fun" part of "for fun and profit".]]></description>
+            <content:encoded><![CDATA[<p>
+									<figure>
+										<a href="/assets/making-the-world-a-better-place.png" target="_blank">
+											<img src="/assets/thumbnails/making-the-world-a-better-place.jpg" alt="I don&#39;t know about you people, but I don&#39;t wanna live in a world where someone else makes the world a better place better than we do.">
+										</a>
+										<figcaption>I don&#39;t know about you people, but I don&#39;t wanna live in a world where someone else makes the world a better place better than we do.</figcaption>
+									</figure>
+								</p>
+<aside class="left"><p>This post isn't going to go into all the man-made horrors created by Silicon Valley—places like <a href="https://www.404media.co/" class="external">404 Media</a> do a much better job covering that than I ever could.</p><p>By the way, all em dashes in this post are organically-made.</p></aside>
+<p>Somewhere along the way, we've lost the "fun" part of "for fun and profit".</p>
+<p>I have this temptation to act like a hipster and complain about people just being in it for the money now, but then I'd be making the exact same mistake that gradually drove Silicon Valley's culture insane: treating technology-as-a-craft and technology-as-a-job as one and the same.</p>
+<p>Silicon Valley (and the tech industry as a whole) used to have a silly catchphrase about "making the world a better place" with tech. It was all lies, of course, but it was an interesting sign of lingering naive optimism held by a sizable enough portion of technologists still drunk on dreams of <a href="https://www.eff.org/cyberspace-independence" class="external">cyberspace independence</a>.</p>
+<p>Being passionate—being a nerd—used to be an indicator of skill. Skilled programmers used to be in demand. To succeed as a tech company, you needed to sell an idea to the nerds. A "don't be evil" for the altruistic, a Tolkien allusion for those who above all else desired power—"passion" is not equal to "ethics", after all.</p>
+<p>And so, passionate, well-fed programmers practiced tech as a craft at the same time as they practiced tech as a means to get paid. From all the open source projects to <a href="https://www.pacifict.com/story/" class="external">breaking into Apple offices to work on a graphing calculator</a>, it was an interesting time.</p>
+<p>For the majority of programmers out there, though, the noble pursuit of putting food on the table is much more important than tech-as-a-craft.</p>
+<p>But passion for the craft never stopped being a signal for skill. And signals get gamed.</p>
+<h1>Perversion</h1>
+<aside class="right">I know it's bait, but I just couldn't resist with the Hundred Rabbits mention.</aside>
+<p>Imagine getting inspired by <a href="https://100r.co" class="external">a low-tech artist collective</a> to ruin your sleep schedule to... <a href="https://mattwie.se/no-sleep-till-agi" class="external">work on a B2B SaaS project</a>? What the fuck?</p>
+<p>This is the cursed version of that graphing calculator story, with love for the craft sucked out and replaced with love for getting that MRR.</p>
+<p>I seek love for the craft, and find perversion instead.</p>
+<p>And that's my real problem—not somebody losing sleep to get paid—but them dressing that up as passion for <em>technology</em>. My problem is going to tech meetups and getting told to just make a web app when I try to talk about learning AppKit on an old PowerBook. My problem is that I have the misfortune of loving tech as a craft and as a hobby.</p>
+<p>The <a href="https://fly.io/blog/youre-all-nuts/" class="external">hit rage-bait blog post of June 2025</a> had an entire section about the craft that pissed me off.</p>
+<blockquote>
+<p>Professional software developers are in the business of solving practical problems for people with code. We are not, in our day jobs, artisans. Steve Jobs was wrong: we do not need to carve the unseen feet in the sculpture. Nobody cares if the logic board traces are pleasingly routed. If anything we build endures, it won’t be because the codebase was beautiful.</p>
+</blockquote>
+<p>In our day jobs, we are not artisans. And that's fine! But when work and play bleed into each other so much, when "hacker" is synonymous with "entrepreneur", when the hell do we find the time for art?</p>
+<blockquote>
+<p>Do you like fine Japanese woodworking? All hand tools and sashimono joinery? Me too. Do it on your own time.</p>
+</blockquote>
+<p>When the hell do I get to talk about my Japanese woodworking, if the local crafts circle just fucking talks about leasing out IKEA furniture?</p>
+<h1>For <del>Fun</del> and <del>Profit</del></h1>
+<aside class="right">The profit seekers and the artisans are often the same person. Sometimes you wear one hat, sometimes you wear another.</aside>
+<p>Now that we no longer pretend that technology is a force for good, now that we've struck out the fun from "for fun and profit", can we drop the charade? Can we let people who see technology as a job just do their job in peace? Can we let people who see technology as a craft just do their artisan projects in peace?</p>
+<p>I don't want <a href="https://www.youtube.com/watch?v=73mEhS0gxgl" class="external">a yet another better computing manifesto</a>. I don't want to claim that real artists starve or that making money is or isn't evil. But can't we have a way to signal that we are doing something <a href="https://justforfunnoreally.dev/" class="external">for fun</a> or out of love for the craft? Can't we have a space to discuss creating <a href="https://maggieappleton.com/home-cooked-software" class="external">home-cooked software</a> without having to deflect monetization questions? To talk about generative art without getting NFTs involved? To talk about homelabs without getting told to migrate to the cloud?</p>
+<aside class="right">Hobbyist programming?</aside>
+<p>I mean, it's not like tech communities that prioritize the craft don't exist. The aforementioned low-tech arts collective, <a href="https://100r.co" class="external">Hundred Rabbits</a>, all the incredibly skilled retrocomputing enthusiasts, research laboratories like <a href="https://inkandswitch.com/" class="external">Ink &#x26; Switch</a>, the open source community, all the decentralized protocol hackers. There's tons and tons of interesting people out there.</p>
+<p>It's just too bad that their voices get drowned out by an entirely different community with an entirely different set of priorities.</p>]]></content:encoded>
+            <enclosure url="https://ezhik.jp/assets/thumbnails/making-the-world-a-better-place.jpg" length="0" type="image/jpg"/>
+        </item>
+        <item>
             <title><![CDATA[Obsidian's 10,000 note surprise]]></title>
             <link>/obsidian-10000-note-surprise</link>
             <guid>f437dbda9c6ba510614c02fe5764fd50c47bd0949fc134d45eb9ac621a01d3e0</guid>
@@ -32,7 +78,7 @@
             <description><![CDATA[Once you hit 10,000 notes—and any alias or link to a non-existent note counts towards this limit—Obsidian's fuzzy search becomes Very Bad.]]></description>
             <content:encoded><![CDATA[<p>Once you hit 10,000 notes—and any alias or link to a non-existent note counts towards this limit—<a href="/obsidian">Obsidian</a>'s fuzzy search becomes Very Bad.</p>
 <aside class="right">All em dashes in this post are organically-made.
-<code>Cmd</code>+<code>Shift</code>+<code>-</code> is all it takes. On my machine, at least.</aside>
+<code>Opt</code>+<code>Shift</code>+<code>-</code> is all it takes. On my machine, at least.</aside>
 <p>There's <a href="https://forum.obsidian.md/t/options-to-control-the-quick-switcher-links-suggestion-algorithm-above-10000-items-ignore-spaces/56861" class="external">a feature request on the Obsidian forum with more details</a>, but the really nice fuzzy search mechanism where you can type something like <code>[[objc</code> and have it match "<strong>Obj</strong>ective-<strong>C</strong>" just no longer works.</p>
 <p>Obsidian developers say the limit is there for performance reasons, but I've paid lots of yen for my computer and so I intend to play my note-taking apps with maximum settings.</p>
 <p>Here's a cursed little plugin that works around the problem as of Obsidian 1.8.10 using the ✨Monte Carlo method✨:</p>
