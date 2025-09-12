@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Fri, 12 Sep 2025 17:49:10 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 Sep 2025 17:53:21 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2025 Ezhik</copyright>
@@ -33,9 +33,9 @@
             <content:encoded><![CDATA[<p>
 									<figure>
 										<a href="/assets/obsidian/note-codes.png" target="_blank">
-											<img src="/assets/thumbnails/obsidian/note-codes.png" alt="Obsidian with the note code plugin in the bottom right showing the code for a note about hedgehogs.">
+											<img src="/assets/thumbnails/obsidian/note-codes.png" alt="Obsidian with the Note Code plugin on the bottom right showing the code for a note about hedgehogs.">
 										</a>
-										<figcaption>Obsidian with the note code plugin in the bottom right showing the code for a note about hedgehogs.</figcaption>
+										<figcaption>Obsidian with the Note Code plugin on the bottom right showing the code for a note about hedgehogs.</figcaption>
 									</figure>
 								</p>
 <p>I made a little plugin for Obsidian: <a href="https://github.com/SilverEzhik/obsidian-note-codes" class="external">Note Codes</a>.</p>
