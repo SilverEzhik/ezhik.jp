@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Sun, 08 Feb 2026 10:25:58 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Feb 2026 13:05:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2026 Ezhik</copyright>
@@ -245,7 +245,8 @@
             <pubDate>Sat, 29 Mar 2025 09:15:00 GMT</pubDate>
             <description><![CDATA[A JavaScript-style Promise library for Lua.]]></description>
             <content:encoded><![CDATA[<p>A JavaScript-style Promise library for <a href="/lua">Lua</a>.</p>
-<p><a href="https://github.com/SilverEzhik/Promise.lua" class="external">Source code (MPL-2.0)</a></p>
+<p><a href="https://github.com/SilverEzhik/Promise.lua" class="external">Source code (MPL-2.0)</a>
+<a href="https://luarocks.org/modules/ezhik/promise-dot-lua" class="external">LuaRocks</a></p>
 <p>You can play with it above by messing with the <code>Promise</code> object and also <code>setTimeout</code> and <code>setInterval</code> which work exactly as you'd expect them to work in JavaScript.</p>
 <h1>The API</h1>
 <p>I tried to cover most of the API I saw on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="external">MDN</a>:</p>
