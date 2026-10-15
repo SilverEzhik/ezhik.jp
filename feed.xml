@@ -4,7 +4,7 @@
         <title>ezhik.jp</title>
         <link>https://ezhik.jp</link>
         <description>A website for an Internet Hedgehog</description>
-        <lastBuildDate>Mon, 22 Jun 2026 14:46:38 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Oct 2026 16:56:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>ezhik.jp</generator>
         <copyright>© 2026 Ezhik</copyright>
@@ -23,6 +23,35 @@
 									</figure>
 								</p>]]></content:encoded>
             <enclosure url="https://ezhik.jp/assets/the-more-you-know.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[Twitter's 2010 iPad app but as a Bluesky PWA]]></title>
+            <link>/panes-for-bluesky</link>
+            <guid>107e087193b3c896892ff5eb76550a5a63ca90726fb3016de6b35e1ffed5049c</guid>
+            <pubDate>Thu, 15 Oct 2026 16:55:00 GMT</pubDate>
+            <description><![CDATA[apparently you can just do things now so here's the 2010 twitter app for ipad (the one with the cool sliding panels) but turned into a pwa for bluesky:]]></description>
+            <content:encoded><![CDATA[<p>
+									<figure>
+										<a href="/assets/port-the-2010-ipad-twitter-app-to-a-pwa-for-bluesky.png" target="_blank">
+											<img src="/assets/thumbnails/port-the-2010-ipad-twitter-app-to-a-pwa-for-bluesky.jpg">
+										</a>
+										
+									</figure>
+								</p>
+<p>apparently you can just do things now so here's the 2010 twitter app for ipad (the one with the cool sliding panels) but turned into a pwa for bluesky:</p>
+<p><a href="https://panes.ezhik.jp" class="external">https://panes.ezhik.jp</a></p>
+<hr>
+<p>here's the source too: <a href="https://github.com/SilverEzhik/panes-for-bluesky" class="external">https://github.com/SilverEzhik/panes-for-bluesky</a></p>
+<hr>
+<p>y'know, <a href="/ai-slop-terrifies-me">ai slop still terrifies me</a>.</p>
+<aside class="right">it was actually codex not gork</aside>
+<p>like on one hand, this revives a bunch of people's hard work that was dead for like 15 years. on the other hand, what did i do? no woodworking here, i pretty much just said <code>gork port this app</code> in the morning and then in the evening that thing was there.</p>
+<p>that ai slop post actually called out llms as not being able to recreate paper by 53 but <a href="https://bsky.app/profile/ezhik.jp/post/3mxtlj34skc2p" class="external">guess what i did</a> in addition to this...</p>
+<p>but this is just porting dead software, i guess. but these old apps have been living in my head rent-free ever since i got that very first ipad.</p>
+<p>did i preserve the craft or make a mockery of it? hell, did i do anything at all?</p>
+<p>where do we even go with this? like can a project like this thrive and become a valuable little thing?</p>
+<p>feed your dead software to the wolves and let it live forever...?</p>]]></content:encoded>
+            <enclosure url="https://ezhik.jp/assets/thumbnails/port-the-2010-ipad-twitter-app-to-a-pwa-for-bluesky.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[hey machine]]></title>
